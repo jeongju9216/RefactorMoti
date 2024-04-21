@@ -16,6 +16,7 @@
 		9B45813C2BD52EB9002A32DC /* RefactorMotiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45813B2BD52EB9002A32DC /* RefactorMotiTests.swift */; };
 		9B4581462BD52EB9002A32DC /* RefactorMotiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581452BD52EB9002A32DC /* RefactorMotiUITests.swift */; };
 		9B4581482BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */; };
+		9B4581552BD52F0D002A32DC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581542BD52F0D002A32DC /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9B4581412BD52EB9002A32DC /* RefactorMotiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactorMotiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581452BD52EB9002A32DC /* RefactorMotiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiUITests.swift; sourceTree = "<group>"; };
 		9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B4581542BD52F0D002A32DC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		9B4581152BD52EB7002A32DC = {
 			isa = PBXGroup;
 			children = (
+				9B4581542BD52F0D002A32DC /* .swiftlint.yml */,
 				9B4581202BD52EB7002A32DC /* RefactorMoti */,
 				9B45813A2BD52EB9002A32DC /* RefactorMotiTests */,
 				9B4581442BD52EB9002A32DC /* RefactorMotiUITests */,
@@ -137,6 +140,7 @@
 				9B45811A2BD52EB7002A32DC /* Sources */,
 				9B45811B2BD52EB7002A32DC /* Frameworks */,
 				9B45811C2BD52EB7002A32DC /* Resources */,
+				9B4581562BD52F44002A32DC /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -231,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4581552BD52F0D002A32DC /* .swiftlint.yml in Resources */,
 				9B4581312BD52EB9002A32DC /* LaunchScreen.storyboard in Resources */,
 				9B45812E2BD52EB9002A32DC /* Assets.xcassets in Resources */,
 			);
@@ -251,6 +256,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B4581562BD52F44002A32DC /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B45811A2BD52EB7002A32DC /* Sources */ = {
@@ -435,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WPX8MV29XR;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RefactorMoti/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -462,6 +490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WPX8MV29XR;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RefactorMoti/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
