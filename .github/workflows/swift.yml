@@ -1,4 +1,4 @@
-16# workflow 의 이름
+# workflow 의 이름
 name: Run Test
 
 on:
