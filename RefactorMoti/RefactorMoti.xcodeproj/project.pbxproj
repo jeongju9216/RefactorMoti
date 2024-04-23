@@ -116,7 +116,7 @@
 		9B45813A2BD52EB9002A32DC /* RefactorMotiTests */ = {
 			isa = PBXGroup;
 			children = (
-				9B4581572BD7DF17002A32DC /* LaunchTests.swift */,
+				9B4581592BD7E3A9002A32DC /* Launch */,
 			);
 			path = RefactorMotiTests;
 			sourceTree = "<group>";
@@ -128,6 +128,14 @@
 				9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */,
 			);
 			path = RefactorMotiUITests;
+			sourceTree = "<group>";
+		};
+		9B4581592BD7E3A9002A32DC /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581572BD7DF17002A32DC /* LaunchTests.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
