@@ -13,10 +13,10 @@
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
 		9B45812E2BD52EB9002A32DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B45812D2BD52EB9002A32DC /* Assets.xcassets */; };
 		9B4581312BD52EB9002A32DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45812F2BD52EB9002A32DC /* LaunchScreen.storyboard */; };
-		9B45813C2BD52EB9002A32DC /* RefactorMotiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45813B2BD52EB9002A32DC /* RefactorMotiTests.swift */; };
 		9B4581462BD52EB9002A32DC /* RefactorMotiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581452BD52EB9002A32DC /* RefactorMotiUITests.swift */; };
 		9B4581482BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */; };
 		9B4581552BD52F0D002A32DC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581542BD52F0D002A32DC /* .swiftlint.yml */; };
+		9B4581582BD7DF17002A32DC /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581572BD7DF17002A32DC /* LaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +46,11 @@
 		9B4581302BD52EB9002A32DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B4581322BD52EB9002A32DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4581372BD52EB9002A32DC /* RefactorMotiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactorMotiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B45813B2BD52EB9002A32DC /* RefactorMotiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiTests.swift; sourceTree = "<group>"; };
 		9B4581412BD52EB9002A32DC /* RefactorMotiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactorMotiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581452BD52EB9002A32DC /* RefactorMotiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiUITests.swift; sourceTree = "<group>"; };
 		9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9B4581542BD52F0D002A32DC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		9B4581572BD7DF17002A32DC /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		9B45813A2BD52EB9002A32DC /* RefactorMotiTests */ = {
 			isa = PBXGroup;
 			children = (
-				9B45813B2BD52EB9002A32DC /* RefactorMotiTests.swift */,
+				9B4581572BD7DF17002A32DC /* LaunchTests.swift */,
 			);
 			path = RefactorMotiTests;
 			sourceTree = "<group>";
@@ -202,6 +202,7 @@
 					};
 					9B4581362BD52EB9002A32DC = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 						TestTargetID = 9B45811D2BD52EB7002A32DC;
 					};
 					9B4581402BD52EB9002A32DC = {
@@ -295,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B45813C2BD52EB9002A32DC /* RefactorMotiTests.swift in Sources */,
+				9B4581582BD7DF17002A32DC /* LaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +516,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WPX8MV29XR;
@@ -524,6 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeongju9216.RefactorMotiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefactorMoti.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RefactorMoti";
@@ -535,6 +538,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WPX8MV29XR;
