@@ -1,5 +1,5 @@
 //
-//  LaunchTests.swift
+//  LaunchViewModelTests.swift
 //  RefactorMotiTests
 //
 //  Created by 유정주 on 4/23/24.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class LaunchTests: XCTestCase {
+final class LaunchViewModelTests: XCTestCase {
     
     // MARK: 현재 버전과 최신 버전 비교 결과
     

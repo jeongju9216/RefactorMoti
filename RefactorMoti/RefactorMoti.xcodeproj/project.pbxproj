@@ -16,7 +16,7 @@
 		9B4581462BD52EB9002A32DC /* RefactorMotiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581452BD52EB9002A32DC /* RefactorMotiUITests.swift */; };
 		9B4581482BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */; };
 		9B4581552BD52F0D002A32DC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581542BD52F0D002A32DC /* .swiftlint.yml */; };
-		9B4581582BD7DF17002A32DC /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581572BD7DF17002A32DC /* LaunchTests.swift */; };
+		9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */; };
 		9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		9B4581452BD52EB9002A32DC /* RefactorMotiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiUITests.swift; sourceTree = "<group>"; };
 		9B4581472BD52EB9002A32DC /* RefactorMotiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorMotiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9B4581542BD52F0D002A32DC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		9B4581572BD7DF17002A32DC /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
+		9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelTests.swift; sourceTree = "<group>"; };
 		9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +135,7 @@
 		9B4581592BD7E3A9002A32DC /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				9B4581572BD7DF17002A32DC /* LaunchTests.swift */,
+				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
 				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
 			);
 			path = Launch;
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
-				9B4581582BD7DF17002A32DC /* LaunchTests.swift in Sources */,
+				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
