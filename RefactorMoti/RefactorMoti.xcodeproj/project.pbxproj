@@ -23,6 +23,8 @@
 		9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45816F2BD7EB37002A32DC /* FirebaseStorage.swift */; };
 		9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B4581732BD7EC40002A32DC /* FirebaseDatabase */; };
 		9B4581762BD7EE85002A32DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581752BD7EE85002A32DC /* GoogleService-Info.plist */; };
+		9B4581782BD7EF2F002A32DC /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581772BD7EF2F002A32DC /* Version.swift */; };
+		9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		9B45816B2BD7EAED002A32DC /* LaunchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRepository.swift; sourceTree = "<group>"; };
 		9B45816F2BD7EB37002A32DC /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		9B4581752BD7EE85002A32DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B4581772BD7EF2F002A32DC /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			children = (
 				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
 				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
+				9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		9B45815D2BD7EA1E002A32DC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9B4581792BD7EF36002A32DC /* Entity */,
 				9B4581632BD7EAB0002A32DC /* Launch */,
 			);
 			path = Domain;
@@ -225,6 +231,14 @@
 				9B45816F2BD7EB37002A32DC /* FirebaseStorage.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		9B4581792BD7EF36002A32DC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581772BD7EF2F002A32DC /* Version.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +409,7 @@
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* LaunchRepositoryProtocol.swift in Sources */,
+				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
 			);
