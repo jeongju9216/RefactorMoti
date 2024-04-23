@@ -104,13 +104,11 @@
 		9B4581202BD52EB7002A32DC /* RefactorMoti */ = {
 			isa = PBXGroup;
 			children = (
-				9B4581212BD52EB7002A32DC /* AppDelegate.swift */,
-				9B4581232BD52EB7002A32DC /* SceneDelegate.swift */,
-				9B4581252BD52EB7002A32DC /* ViewController.swift */,
-				9B45812D2BD52EB9002A32DC /* Assets.xcassets */,
-				9B45812F2BD52EB9002A32DC /* LaunchScreen.storyboard */,
-				9B4581322BD52EB9002A32DC /* Info.plist */,
-				9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */,
+				9B4581602BD7EA34002A32DC /* Application */,
+				9B45815F2BD7EA26002A32DC /* Presentation */,
+				9B45815D2BD7EA1E002A32DC /* Domain */,
+				9B45815E2BD7EA23002A32DC /* Data */,
+				9B4581612BD7EA3C002A32DC /* Resource */,
 			);
 			path = RefactorMoti;
 			sourceTree = "<group>";
@@ -139,6 +137,56 @@
 				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		9B45815D2BD7EA1E002A32DC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9B45815E2BD7EA23002A32DC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581622BD7EA6C002A32DC /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9B45815F2BD7EA26002A32DC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581252BD52EB7002A32DC /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9B4581602BD7EA34002A32DC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9B45812F2BD52EB9002A32DC /* LaunchScreen.storyboard */,
+				9B4581212BD52EB7002A32DC /* AppDelegate.swift */,
+				9B4581232BD52EB7002A32DC /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9B4581612BD7EA3C002A32DC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9B45812D2BD52EB9002A32DC /* Assets.xcassets */,
+				9B4581322BD52EB9002A32DC /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9B4581622BD7EA6C002A32DC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,7 +525,7 @@
 				DEVELOPMENT_TEAM = WPX8MV29XR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RefactorMoti/Info.plist;
+				INFOPLIST_FILE = RefactorMoti/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -505,7 +553,7 @@
 				DEVELOPMENT_TEAM = WPX8MV29XR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RefactorMoti/Info.plist;
+				INFOPLIST_FILE = RefactorMoti/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
