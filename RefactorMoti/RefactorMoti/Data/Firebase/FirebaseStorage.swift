@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-final class FirebaseStorage {
+final class FirebaseStorage: FirebaseStorageProtocol {
     
     // MARK: - Interface
     
@@ -23,14 +23,16 @@ final class FirebaseStorage {
         firebaseRef = Database.database().reference()
     }
     
-    func fetchVersion() async -> Version? {
-        let snapshot = try? await firebaseRef?.child("version").getData()
-        let snapData = snapshot?.value as? [String: String]
+    func fetchVersion() async -> (latest: String, forced: String)? {
+        guard let snapshot = try? await firebaseRef?.child("version").getData(),
+              let snapData = snapshot.value as? [String: String],
+              let latest = snapData["latest"],
+              let forced = snapData["forced"]
+        else {
+            return nil
+        }
         
-        let latest = snapData?["latest"] ?? "0.0.0"
-        let forced = snapData?["forced"] ?? "0.0.0"
-        
-        return Version(latest: latest, forced: forced)
+        return (latest, forced)
     }
     
     

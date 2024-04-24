@@ -9,6 +9,7 @@ import Foundation
 
 struct Version {
     
+    let current: String
     let latest: String
     let forced: String
 }

@@ -18,13 +18,16 @@
 		9B4581552BD52F0D002A32DC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581542BD52F0D002A32DC /* .swiftlint.yml */; };
 		9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */; };
 		9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */; };
-		9B45816A2BD7EAE7002A32DC /* LaunchRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581692BD7EAE7002A32DC /* LaunchRepositoryProtocol.swift */; };
-		9B45816C2BD7EAED002A32DC /* LaunchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45816B2BD7EAED002A32DC /* LaunchRepository.swift */; };
+		9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581692BD7EAE7002A32DC /* VersionRepositoryProtocol.swift */; };
+		9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45816B2BD7EAED002A32DC /* VersionRepository.swift */; };
 		9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45816F2BD7EB37002A32DC /* FirebaseStorage.swift */; };
 		9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B4581732BD7EC40002A32DC /* FirebaseDatabase */; };
 		9B4581762BD7EE85002A32DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581752BD7EE85002A32DC /* GoogleService-Info.plist */; };
 		9B4581782BD7EF2F002A32DC /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581772BD7EF2F002A32DC /* Version.swift */; };
 		9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */; };
+		9B4581802BD92FED002A32DC /* VersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817F2BD92FED002A32DC /* VersionUseCase.swift */; };
+		9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */; };
+		9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +63,15 @@
 		9B4581542BD52F0D002A32DC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelTests.swift; sourceTree = "<group>"; };
 		9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRepositoryTests.swift; sourceTree = "<group>"; };
-		9B4581692BD7EAE7002A32DC /* LaunchRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRepositoryProtocol.swift; sourceTree = "<group>"; };
-		9B45816B2BD7EAED002A32DC /* LaunchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRepository.swift; sourceTree = "<group>"; };
+		9B4581692BD7EAE7002A32DC /* VersionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9B45816B2BD7EAED002A32DC /* VersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRepository.swift; sourceTree = "<group>"; };
 		9B45816F2BD7EB37002A32DC /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		9B4581752BD7EE85002A32DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B4581772BD7EF2F002A32DC /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkTests.swift; sourceTree = "<group>"; };
+		9B45817F2BD92FED002A32DC /* VersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionUseCase.swift; sourceTree = "<group>"; };
+		9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageProtocol.swift; sourceTree = "<group>"; };
+		9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		9B4581592BD7E3A9002A32DC /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				9B4581842BD9344A002A32DC /* Stub */,
 				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
 				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
 				9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */,
@@ -158,7 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				9B4581792BD7EF36002A32DC /* Entity */,
-				9B4581632BD7EAB0002A32DC /* Launch */,
+				9B45817E2BD92FD9002A32DC /* UseCase */,
+				9B4581632BD7EAB0002A32DC /* RepositoryProtocol */,
+				9B4581812BD9340D002A32DC /* StorageProtocol */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -168,7 +177,7 @@
 			children = (
 				9B4581622BD7EA6C002A32DC /* CoreData */,
 				9B45816D2BD7EAF2002A32DC /* Firebase */,
-				9B4581672BD7EAC6002A32DC /* Launch */,
+				9B4581672BD7EAC6002A32DC /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -209,20 +218,20 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		9B4581632BD7EAB0002A32DC /* Launch */ = {
+		9B4581632BD7EAB0002A32DC /* RepositoryProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				9B4581692BD7EAE7002A32DC /* LaunchRepositoryProtocol.swift */,
+				9B4581692BD7EAE7002A32DC /* VersionRepositoryProtocol.swift */,
 			);
-			path = Launch;
+			path = RepositoryProtocol;
 			sourceTree = "<group>";
 		};
-		9B4581672BD7EAC6002A32DC /* Launch */ = {
+		9B4581672BD7EAC6002A32DC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				9B45816B2BD7EAED002A32DC /* LaunchRepository.swift */,
+				9B45816B2BD7EAED002A32DC /* VersionRepository.swift */,
 			);
-			path = Launch;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		9B45816D2BD7EAF2002A32DC /* Firebase */ = {
@@ -239,6 +248,30 @@
 				9B4581772BD7EF2F002A32DC /* Version.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		9B45817E2BD92FD9002A32DC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9B45817F2BD92FED002A32DC /* VersionUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		9B4581812BD9340D002A32DC /* StorageProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */,
+			);
+			path = StorageProtocol;
+			sourceTree = "<group>";
+		};
+		9B4581842BD9344A002A32DC /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,12 +436,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B45816C2BD7EAED002A32DC /* LaunchRepository.swift in Sources */,
+				9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581262BD52EB7002A32DC /* ViewController.swift in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
+				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
-				9B45816A2BD7EAE7002A32DC /* LaunchRepositoryProtocol.swift in Sources */,
+				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
+				9B4581802BD92FED002A32DC /* VersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 			);
@@ -418,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */,
 				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
