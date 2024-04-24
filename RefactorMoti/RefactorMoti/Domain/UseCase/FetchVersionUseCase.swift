@@ -1,5 +1,5 @@
 //
-//  VersionUseCase.swift
+//  FetchVersionUseCase.swift
 //  RefactorMoti
 //
 //  Created by 유정주 on 4/24/24.

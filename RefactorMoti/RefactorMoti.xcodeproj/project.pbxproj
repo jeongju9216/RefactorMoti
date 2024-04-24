@@ -25,7 +25,7 @@
 		9B4581762BD7EE85002A32DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B4581752BD7EE85002A32DC /* GoogleService-Info.plist */; };
 		9B4581782BD7EF2F002A32DC /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581772BD7EF2F002A32DC /* Version.swift */; };
 		9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */; };
-		9B4581802BD92FED002A32DC /* VersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817F2BD92FED002A32DC /* VersionUseCase.swift */; };
+		9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */; };
 		9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */; };
 		9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +69,7 @@
 		9B4581752BD7EE85002A32DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B4581772BD7EF2F002A32DC /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkTests.swift; sourceTree = "<group>"; };
-		9B45817F2BD92FED002A32DC /* VersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionUseCase.swift; sourceTree = "<group>"; };
+		9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCase.swift; sourceTree = "<group>"; };
 		9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageProtocol.swift; sourceTree = "<group>"; };
 		9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,7 +253,7 @@
 		9B45817E2BD92FD9002A32DC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				9B45817F2BD92FED002A32DC /* VersionUseCase.swift */,
+				9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -443,7 +443,8 @@
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
-				9B4581802BD92FED002A32DC /* VersionUseCase.swift in Sources */,
+				9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */,
+				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 			);
