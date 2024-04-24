@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct FetchVersionUseCase {
+protocol FetchVersionUseCaseProtocol {
+    
+    func execute() async -> Version
+}
+
+struct FetchVersionUseCase: FetchVersionUseCaseProtocol {
     
     // MARK: - Interface
     
@@ -23,7 +28,7 @@ struct FetchVersionUseCase {
     
     // MARK: - Initializer
     
-    init(repository: VersionRepositoryProtocol) {
+    init(repository: VersionRepositoryProtocol = VersionRepository()) {
         self.repository = repository
     }
 }

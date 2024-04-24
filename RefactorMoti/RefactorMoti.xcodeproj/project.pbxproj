@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
-		9B4581262BD52EB7002A32DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581252BD52EB7002A32DC /* ViewController.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
 		9B45812E2BD52EB9002A32DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B45812D2BD52EB9002A32DC /* Assets.xcassets */; };
 		9B4581312BD52EB9002A32DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45812F2BD52EB9002A32DC /* LaunchScreen.storyboard */; };
@@ -28,6 +27,9 @@
 		9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */; };
 		9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */; };
 		9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */; };
+		9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */; };
+		9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */; };
+		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,6 @@
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9B4581252BD52EB7002A32DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B45812B2BD52EB7002A32DC /* RefactorMoti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RefactorMoti.xcdatamodel; sourceTree = "<group>"; };
 		9B45812D2BD52EB9002A32DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B4581302BD52EB9002A32DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +73,9 @@
 		9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCase.swift; sourceTree = "<group>"; };
 		9B4581822BD9341A002A32DC /* FirebaseStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageProtocol.swift; sourceTree = "<group>"; };
 		9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageStub.swift; sourceTree = "<group>"; };
+		9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCaseStub.swift; sourceTree = "<group>"; };
+		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +189,7 @@
 		9B45815F2BD7EA26002A32DC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9B4581252BD52EB7002A32DC /* ViewController.swift */,
+				9B4581872BD936BE002A32DC /* Launch */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -270,8 +274,18 @@
 			isa = PBXGroup;
 			children = (
 				9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */,
+				9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */,
 			);
 			path = Stub;
+			sourceTree = "<group>";
+		};
+		9B4581872BD936BE002A32DC /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */,
+				9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,12 +452,12 @@
 			files = (
 				9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
-				9B4581262BD52EB7002A32DC /* ViewController.swift in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
 				9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */,
+				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
@@ -456,6 +470,7 @@
 			files = (
 				9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */,
 				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
+				9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
 			);
