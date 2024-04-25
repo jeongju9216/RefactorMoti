@@ -13,7 +13,7 @@ jobs:
   # 이 workflow 는 "build" 라는 single job 으로 구성
   build:
     # job이 실행될 환경 - 최신 mac os
-    runs-on: macos-latest
+    runs-on: macos-14
 
     # Step은 job의 일부로 실행될 일련의 task들을 나타냄
     steps:
