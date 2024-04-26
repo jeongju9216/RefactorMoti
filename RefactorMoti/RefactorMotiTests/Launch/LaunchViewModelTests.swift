@@ -96,4 +96,14 @@ final class LaunchViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
         XCTAssertTrue(canLaunch)
     }
+    
+    // MARK: 자동 로그인
+    
+    func test_앱을_시작했을_때_저장된_계정정보가_있으면_canAutoLogin_이_true() throws { }
+    
+    func test_앱을_시작했을_때_저장된_계정정보가_없으면_canAutoLogin_이_false() throws { }
+    
+    func test_자동로그인을_시도했을_때_로그인에_성공하면_isSuccessLogin이_true() throws { }
+    
+    func test_자동로그인을_시도했을_때_로그인에_실패하면_isSuccessLogin이_false() throws { }
 }
