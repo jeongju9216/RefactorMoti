@@ -30,9 +30,6 @@ struct VersionRepository: VersionRepositoryProtocol {
     
     private let firebaseStorage = FirebaseStorage.shared
     private let mainBundleInfomation = Bundle.main.infoDictionary
-    
-    
-    // MARK: - Initializer
 }
 
 
