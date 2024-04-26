@@ -9,9 +9,11 @@ import XCTest
 
 final class AuthUseCaseTests: XCTestCase {
 
-    // MARK: 난수 생성
+    // MARK: 회원 가입
     
-    func test_난수_생성_요청을_했을_때_100개의_난수가_모두_다르면_true() throws { }
+    func test_회원가입을_시도했을_때_성공이면_반환값이_true() throws { }
+    
+    func test_회원가입을_시도했을_때_실패하면_반환값이_false() throws { }
     
     // MARK: 로그인
     
