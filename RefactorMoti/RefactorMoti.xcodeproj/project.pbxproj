@@ -13,6 +13,12 @@
 		9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C762BDCED27000813C1 /* LaunchViewController.swift */; };
 		9B289C792BDCED2C000813C1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C782BDCED2C000813C1 /* LaunchView.swift */; };
 		9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C7A2BDCF0E0000813C1 /* LayoutViewController.swift */; };
+		9B289C7E2BDD34B7000813C1 /* AutoLayoutWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C7D2BDD34B7000813C1 /* AutoLayoutWrapper.swift */; };
+		9B289C802BDD34E1000813C1 /* AutoLayoutWrapper+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C7F2BDD34E1000813C1 /* AutoLayoutWrapper+Size.swift */; };
+		9B289C822BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C812BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift */; };
+		9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C832BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift */; };
+		9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C852BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift */; };
+		9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C872BDD3C03000813C1 /* AutoLayoutWrapper+All.swift */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -53,6 +59,12 @@
 		9B289C762BDCED27000813C1 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B289C782BDCED2C000813C1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		9B289C7A2BDCF0E0000813C1 /* LayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
+		9B289C7D2BDD34B7000813C1 /* AutoLayoutWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutWrapper.swift; sourceTree = "<group>"; };
+		9B289C7F2BDD34E1000813C1 /* AutoLayoutWrapper+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayoutWrapper+Size.swift"; sourceTree = "<group>"; };
+		9B289C812BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayoutWrapper+Center.swift"; sourceTree = "<group>"; };
+		9B289C832BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayoutWrapper+Vertical.swift"; sourceTree = "<group>"; };
+		9B289C852BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayoutWrapper+Horizontal.swift"; sourceTree = "<group>"; };
+		9B289C872BDD3C03000813C1 /* AutoLayoutWrapper+All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayoutWrapper+All.swift"; sourceTree = "<group>"; };
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +125,19 @@
 				9B289C7A2BDCF0E0000813C1 /* LayoutViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		9B289C7C2BDD3368000813C1 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9B289C7D2BDD34B7000813C1 /* AutoLayoutWrapper.swift */,
+				9B289C7F2BDD34E1000813C1 /* AutoLayoutWrapper+Size.swift */,
+				9B289C812BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift */,
+				9B289C832BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift */,
+				9B289C852BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift */,
+				9B289C872BDD3C03000813C1 /* AutoLayoutWrapper+All.swift */,
+			);
+			path = AutoLayout;
 			sourceTree = "<group>";
 		};
 		9B4581152BD52EB7002A32DC = {
@@ -190,6 +215,7 @@
 		9B45815F2BD7EA26002A32DC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9B289C7C2BDD3368000813C1 /* AutoLayout */,
 				9B289C712BDCDDB5000813C1 /* Base */,
 				9B4581872BD936BE002A32DC /* Launch */,
 			);
@@ -424,8 +450,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B289C802BDD34E1000813C1 /* AutoLayoutWrapper+Size.swift in Sources */,
 				9B289C752BDCE249000813C1 /* BaseViewController.swift in Sources */,
+				9B289C7E2BDD34B7000813C1 /* AutoLayoutWrapper.swift in Sources */,
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
+				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
 				9B289C792BDCED2C000813C1 /* LaunchView.swift in Sources */,
 				9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
@@ -435,8 +464,11 @@
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
+				9B289C822BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift in Sources */,
 				9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */,
+				9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */,
 				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
+				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
