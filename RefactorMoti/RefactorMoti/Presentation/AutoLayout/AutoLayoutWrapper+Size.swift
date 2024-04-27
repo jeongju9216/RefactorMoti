@@ -12,10 +12,10 @@ extension AutoLayoutWrapper {
     // MARK: - Size
     
     @discardableResult
-    func size(width: CGFloat, height: CGFloat) -> Self {
+    func size(_ size: CGSize) -> Self {
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.widthAnchor.constraint(equalToConstant: width).isActive = true
-        view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        view.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        view.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         return self
     }
     
