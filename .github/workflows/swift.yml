@@ -26,9 +26,9 @@ jobs:
     - uses: actions/cache@v3
       with:
         path: .build
-        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
         restore-keys: |
-          ${{ runner.os }}-spm-  
+          ${{ runner.os }}-packages-
     # shell 이용해서 하나의 command 수행
     - name: Start xcode build 🛠
       run: |
