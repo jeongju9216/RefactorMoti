@@ -23,17 +23,11 @@ jobs:
       run: sudo xcode-select -s /Applications/Xcode_15.3.app/Contents/Developer
     # uses 키워드를 통해 Github Actions에서 기본으로 제공하는 액션을 사용 가능. 아래 액션은 repository 에 체크아웃하는 것
     - uses: actions/checkout@v3
-    - uses: actions/cache@v3
-      name: "Cache: SPM"
-      with:
-        path: ~/Library/Developer/Xcode/DerivedData/RefactorMoti*/SourcePackages/
-        key: ${{ runner.os }}-spm-${{ hashFiles('RefactorMoti.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
-        restore-keys: |
-            ${{ runner.os }}-spm-
     # shell 이용해서 하나의 command 수행
     - name: Start xcode build 🛠
       run: |
         xcodebuild clean test -project RefactorMoti/RefactorMoti.xcodeproj \
         -scheme RefactorMoti \
+        -clonedSourcePackagesDirPath SourcePackages \
         -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest'
 
