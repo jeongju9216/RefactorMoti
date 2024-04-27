@@ -10,6 +10,7 @@
 		9B289C6C2BDBD4E1000813C1 /* AuthUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */; };
 		9B289C702BDCD350000813C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B289C6F2BDCD350000813C1 /* SnapKit */; };
 		9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C722BDCDDBD000813C1 /* BaseView.swift */; };
+		9B289C752BDCE249000813C1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C742BDCE249000813C1 /* BaseViewController.swift */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseTests.swift; sourceTree = "<group>"; };
 		9B289C722BDCDDBD000813C1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		9B289C742BDCE249000813C1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				9B289C722BDCDDBD000813C1 /* BaseView.swift */,
+				9B289C742BDCE249000813C1 /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B289C752BDCE249000813C1 /* BaseViewController.swift in Sources */,
 				9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
