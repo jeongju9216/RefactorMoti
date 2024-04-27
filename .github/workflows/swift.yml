@@ -26,7 +26,7 @@ jobs:
     - uses: actions/cache@v3
       name: "Cache: SPM"
       with:
-        path: ~/Library/Developer/Xcode/DerivedData/RefactorMoti/SourcePackages/
+        path: ~/Library/Developer/Xcode/DerivedData/RefactorMoti*/SourcePackages/
         key: ${{ runner.os }}-spm-${{ hashFiles('RefactorMoti.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
         restore-keys: |
             ${{ runner.os }}-spm-
