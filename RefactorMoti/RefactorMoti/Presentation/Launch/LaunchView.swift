@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 final class LaunchView: BaseView {
     
@@ -36,14 +35,13 @@ final class LaunchView: BaseView {
     }
     
     override func setUpConstraint() {
-        motiIconImageView.snp.makeConstraints {
-            $0.size.equalTo(Size.appIconRound)
-            $0.center.equalToSuperview()
-        }
-        versionLabel.snp.makeConstraints {
-            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-Metric.VersionLabel.bottomOffset)
-            $0.centerX.equalToSuperview()
-        }
+        motiIconImageView.atl
+            .size(Size.appIconRound)
+            .center(equalTo: safeAreaLayoutGuide)
+        
+        versionLabel.atl
+            .centerX(equalTo: safeAreaLayoutGuide.centerXAnchor)
+            .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.VersionLabel.bottomOffset)
     }
 }
 
@@ -56,7 +54,7 @@ private extension LaunchView {
         
         enum VersionLabel {
             
-            static let bottomOffset = 20
+            static let bottomOffset: CGFloat = 20
         }
     }
     
