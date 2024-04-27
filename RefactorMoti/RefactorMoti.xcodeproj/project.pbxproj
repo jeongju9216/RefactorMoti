@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B289C6C2BDBD4E1000813C1 /* AuthUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */; };
 		9B289C702BDCD350000813C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B289C6F2BDCD350000813C1 /* SnapKit */; };
+		9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C722BDCDDBD000813C1 /* BaseView.swift */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseTests.swift; sourceTree = "<group>"; };
+		9B289C722BDCDDBD000813C1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		9B289C712BDCDDB5000813C1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9B289C722BDCDDBD000813C1 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		9B4581152BD52EB7002A32DC = {
@@ -172,6 +182,7 @@
 		9B45815F2BD7EA26002A32DC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9B289C712BDCDDB5000813C1 /* Base */,
 				9B4581872BD936BE002A32DC /* Launch */,
 			);
 			path = Presentation;
@@ -408,6 +419,7 @@
 				9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
+				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
