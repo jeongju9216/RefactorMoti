@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B289C6C2BDBD4E1000813C1 /* AuthUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */; };
+		9B289C702BDCD350000813C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B289C6F2BDCD350000813C1 /* SnapKit */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */,
+				9B289C702BDCD350000813C1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +290,7 @@
 			name = RefactorMoti;
 			packageProductDependencies = (
 				9B4581732BD7EC40002A32DC /* FirebaseDatabase */,
+				9B289C6F2BDCD350000813C1 /* SnapKit */,
 			);
 			productName = RefactorMoti;
 			productReference = 9B45811E2BD52EB7002A32DC /* RefactorMoti.app */;
@@ -342,6 +345,7 @@
 			mainGroup = 9B4581152BD52EB7002A32DC;
 			packageReferences = (
 				9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9B289C6E2BDCD350000813C1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 9B45811F2BD52EB7002A32DC /* Products */;
 			projectDirPath = "";
@@ -709,6 +713,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9B289C6E2BDCD350000813C1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -720,6 +732,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9B289C6F2BDCD350000813C1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B289C6E2BDCD350000813C1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		9B4581732BD7EC40002A32DC /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
