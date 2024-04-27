@@ -1,0 +1,24 @@
+//
+//  BaseLayoutViewController.swift
+//  RefactorMoti
+//
+//  Created by 유정주 on 4/27/24.
+//
+
+import UIKit
+
+class LayoutViewController<LayoutView: BaseView>: BaseViewController {
+    
+    // MARK: - Interface
+    
+    var layoutView: LayoutView {
+        view as! LayoutView
+    }
+    
+    
+    // MARK: - Life Cycle
+    
+    override func loadView() {
+        view = LayoutView()
+    }
+}
