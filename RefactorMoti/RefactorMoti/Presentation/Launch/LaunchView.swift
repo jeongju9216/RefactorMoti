@@ -35,19 +35,13 @@ final class LaunchView: BaseView {
     }
     
     override func setUpConstraint() {
-        motiIconImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            motiIconImageView.widthAnchor.constraint(equalToConstant: Size.appIconRound.width),
-            motiIconImageView.heightAnchor.constraint(equalToConstant: Size.appIconRound.height),
-            motiIconImageView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            motiIconImageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)
-        ])
+        motiIconImageView.atl
+            .size(Size.appIconRound)
+            .center(equalTo: safeAreaLayoutGuide)
         
-        versionLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            versionLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            versionLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.VersionLabel.bottomOffset)
-        ])
+        versionLabel.atl
+            .centerX(equalTo: safeAreaLayoutGuide.centerXAnchor)
+            .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.VersionLabel.bottomOffset)
     }
 }
 
