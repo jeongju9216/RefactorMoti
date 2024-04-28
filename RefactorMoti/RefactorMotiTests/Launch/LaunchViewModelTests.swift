@@ -33,21 +33,23 @@ final class LaunchViewModelTests: XCTestCase {
         let viewModel = LaunchViewModel(fetchVersionUseCase: usecase)
         let input = LaunchViewModel.Input()
         viewModel.bind(input: input)
+        input.viewDidLoad.send()
         
         // when
-        var version: Version? = nil
-        input.viewDidLoad.send()
-        viewModel.output.version
-            .sink { [weak self] newVersion in
-                guard let self else { return }
-                version = newVersion
+        var version: String? = nil
+        viewModel.output.currentVersion
+            .receive(on: RunLoop.main)
+            .sink { currentVersion in
+                version = currentVersion
                 expectation.fulfill()
             }
             .store(in: &cancellables)
 
         // then
         wait(for: [expectation], timeout: 5)
+        
         XCTAssertNotNil(version)
+        XCTAssertEqual(version, "1.0.0")
     }
     
     // MARK: 현재 버전과 강제 업데이트 버전 비교 결과

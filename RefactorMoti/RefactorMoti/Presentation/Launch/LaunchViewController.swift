@@ -40,11 +40,11 @@ final class LaunchViewController: LayoutViewController<LaunchView> {
 private extension LaunchViewController {
     
     func setUpViewModelBinding() {
-        output.version
+        output.currentVersion
             .receive(on: RunLoop.main)
-            .sink { [weak self] version in
+            .sink { [weak self] currentVersion in
                 guard let self else { return }
-                layoutView.update(currentVersion: version.current)
+                layoutView.update(currentVersion: currentVersion)
             }
             .store(in: &cancellables)
     }

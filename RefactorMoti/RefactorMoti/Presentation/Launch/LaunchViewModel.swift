@@ -50,7 +50,7 @@ private extension LaunchViewModel {
     func viewDidLoad() {
         Task {
             let version = await fetchVersionUseCase.execute()
-            output.version.send(version)
+            output.currentVersion.send(version.current)
             
             let compareResult = version.current.compare(version.forced, options: .numeric)
             if compareResult == .orderedDescending {
