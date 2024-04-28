@@ -149,4 +149,4 @@ custom_rules:
     regex: '(?-s)(class|struct|enum|protocol)\s(?!func|var).*\{\n.*[^\s]+'
     message: "Class, Struct, Enum, Protocol must be followed by a single line."
     severity: error
-  
+
