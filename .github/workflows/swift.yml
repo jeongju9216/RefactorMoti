@@ -22,7 +22,7 @@ jobs:
       uses: actions/cache@v3
       id: spm-cache
       with:
-        path: .build
+        path: ~/Library/Developer/Xcode/DerivedData/RefactorMoti-*/SourcePackages/checkouts
         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
         restore-keys: |
           ${{ runner.os }}-spm-
