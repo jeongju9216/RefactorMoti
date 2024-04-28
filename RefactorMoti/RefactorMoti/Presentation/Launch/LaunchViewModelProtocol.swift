@@ -17,6 +17,7 @@ extension LaunchViewModel {
     
     struct Output {
         
+        let currentVersion: PassthroughSubject<String, Never> = .init()
         let canLaunch: PassthroughSubject<Void, Never> = .init()
         let isNeedForcedUpdate: PassthroughSubject<Void, Never> = .init()
     }

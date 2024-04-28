@@ -18,13 +18,39 @@ final class LaunchViewModelTests: XCTestCase {
     // MARK: - Life Cycle
     
     override func tearDown() {
-        super.tearDown()
         cancellables.forEach { $0.cancel() }
         cancellables = []
+        super.tearDown()
     }
     
     
     // MARK: - Test
+    
+    func test_viewDidLoad가_send될_때_버전_정보를_가져오면_nil이_아니다() throws {
+        // given
+        let expectation = XCTestExpectation()
+        let usecase = FetchVersionUseCaseStub(current: "1.0.0")
+        let viewModel = LaunchViewModel(fetchVersionUseCase: usecase)
+        let input = LaunchViewModel.Input()
+        viewModel.bind(input: input)
+        input.viewDidLoad.send()
+        
+        // when
+        var version: String? = nil
+        viewModel.output.currentVersion
+            .receive(on: RunLoop.main)
+            .sink { currentVersion in
+                version = currentVersion
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+
+        // then
+        wait(for: [expectation], timeout: 5)
+        
+        XCTAssertNotNil(version)
+        XCTAssertEqual(version, "1.0.0")
+    }
     
     // MARK: 현재 버전과 강제 업데이트 버전 비교 결과
     
