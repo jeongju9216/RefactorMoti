@@ -23,7 +23,11 @@ final class LaunchView: BaseView {
         view.image = UIImage(resource: .appIconRound)
         return view
     }()
-    private let versionLabel: UILabel = UILabel()
+    private let versionLabel: UILabel = {
+        let label = UILabel()
+        label.text = Text.waitingVersion
+        return label
+    }()
     
     
     // MARK: - Setup
@@ -64,5 +68,10 @@ private extension LaunchView {
     enum Size {
         
         static let appIconRound = CGSize(width: 120, height: 120)
+    }
+    
+    enum Text {
+        
+        static let waitingVersion = "버전을 가져오는 중"
     }
 }
