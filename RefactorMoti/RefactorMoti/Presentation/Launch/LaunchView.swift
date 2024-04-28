@@ -9,6 +9,13 @@ import UIKit
 
 final class LaunchView: BaseView {
     
+    // MARK: - Interface
+    
+    func update(currentVersion: String) {
+        versionLabel.text = currentVersion
+    }
+    
+    
     // MARK: - UI
     
     private let motiIconImageView: UIImageView = {
@@ -16,11 +23,7 @@ final class LaunchView: BaseView {
         view.image = UIImage(resource: .appIconRound)
         return view
     }()
-    private let versionLabel: UILabel = {
-        let view = UILabel()
-        view.text = "version"
-        return view
-    }()
+    private let versionLabel: UILabel = UILabel()
     
     
     // MARK: - Setup
