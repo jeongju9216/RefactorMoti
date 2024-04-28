@@ -14,6 +14,7 @@ final class LaunchViewController: LayoutViewController<LaunchView> {
     
     private let viewModel = LaunchViewModel()
     private let input = LaunchViewModel.Input()
+    private var output: LaunchViewModel.Output { viewModel.output }
     private var cancellables: Set<AnyCancellable> = []
     
     
@@ -39,7 +40,7 @@ final class LaunchViewController: LayoutViewController<LaunchView> {
 private extension LaunchViewController {
     
     func setUpViewModelBinding() {
-        viewModel.output.version
+        output.version
             .receive(on: RunLoop.main)
             .sink { [weak self] version in
                 guard let self else { return }
