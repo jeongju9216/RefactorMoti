@@ -1,20 +1,13 @@
 //
-//  LaunchView.swift
+//  LoginView.swift
 //  RefactorMoti
 //
-//  Created by 유정주 on 4/27/24.
+//  Created by 유정주 on 4/28/24.
 //
 
 import UIKit
 
-final class LaunchView: BaseView {
-    
-    // MARK: - Interface
-    
-    func update(currentVersion: String) {
-        versionLabel.text = currentVersion
-    }
-    
+final class LoginView: BaseView {
     
     // MARK: - UI
     
@@ -23,10 +16,13 @@ final class LaunchView: BaseView {
         view.image = UIImage(resource: .appIconRound)
         return view
     }()
-    private let versionLabel: UILabel = {
-        let label = UILabel()
-        label.text = Text.waitingVersion
-        return label
+    private let loginButton: UIButton = {
+        let button = UIButton()
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = Text.login
+        configuration.baseBackgroundColor = .lightGray
+        button.configuration = configuration
+        return button
     }()
     
     
@@ -38,30 +34,30 @@ final class LaunchView: BaseView {
     
     override func setUpSubview() {
         addSubview(motiIconImageView)
-        addSubview(versionLabel)
+        addSubview(loginButton)
     }
     
     override func setUpConstraint() {
         motiIconImageView.atl
             .size(Size.appIconRound)
             .center(equalTo: safeAreaLayoutGuide)
-        
-        versionLabel.atl
+        loginButton.atl
             .centerX(equalTo: safeAreaLayoutGuide.centerXAnchor)
-            .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.VersionLabel.bottomOffset)
+            .horizontal(equalTo: safeAreaLayoutGuide, constant: Metric.LoginButton.offset)
+            .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.LoginButton.offset)
     }
 }
 
 
 // MARK: - Constant
 
-private extension LaunchView {
+private extension LoginView {
     
     enum Metric {
         
-        enum VersionLabel {
+        enum LoginButton {
             
-            static let bottomOffset: CGFloat = 20
+            static let offset: CGFloat = 20
         }
     }
     
@@ -72,6 +68,6 @@ private extension LaunchView {
     
     enum Text {
         
-        static let waitingVersion = "버전을 가져오는 중"
+        static let login = "로그인"
     }
 }
