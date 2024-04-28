@@ -47,6 +47,26 @@ private extension LaunchViewController {
                 layoutView.update(currentVersion: currentVersion)
             }
             .store(in: &cancellables)
+        output.canLaunch
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in
+                guard let self else { return }
+                moveToLoginViewController()
+            }
+            .store(in: &cancellables)
+    }
+}
+
+
+// MARK: - Move To LoginViewController
+
+private extension LaunchViewController {
+    
+    func moveToLoginViewController() {
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        dismiss(animated: false)
+        present(loginVC, animated: false)
     }
 }
 
