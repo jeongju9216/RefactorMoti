@@ -24,6 +24,8 @@ jobs:
       with:
         path: .build
         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
     - if: steps.spm-cache.outputs.cache-hit == 'true'
       run: echo 'spm cache hit!'
     - if: steps.spm-cache.outputs.cache-hit != 'true'
