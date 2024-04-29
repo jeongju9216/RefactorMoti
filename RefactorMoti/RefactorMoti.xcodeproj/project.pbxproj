@@ -27,6 +27,8 @@
 		9B411CB62BDFC38100A50B78 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB52BDFC38100A50B78 /* ViewModelable.swift */; };
 		9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */; };
 		9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CBB2BDFCB9F00A50B78 /* UIView+Combine.swift */; };
+		9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CBE2BDFD0A700A50B78 /* HomeViewController.swift */; };
+		9B411CC12BDFD0AC00A50B78 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CC02BDFD0AC00A50B78 /* HomeView.swift */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -81,6 +83,8 @@
 		9B411CB52BDFC38100A50B78 /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 		9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		9B411CBB2BDFCB9F00A50B78 /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
+		9B411CBE2BDFD0A700A50B78 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B411CC02BDFD0AC00A50B78 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,15 @@
 			path = Combine;
 			sourceTree = "<group>";
 		};
+		9B411CBD2BDFD09D00A50B78 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9B411CBE2BDFD0A700A50B78 /* HomeViewController.swift */,
+				9B411CC02BDFD0AC00A50B78 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		9B4581152BD52EB7002A32DC = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +287,7 @@
 				9B289C712BDCDDB5000813C1 /* Base */,
 				9B4581872BD936BE002A32DC /* Launch */,
 				9B289C892BDE466B000813C1 /* Login */,
+				9B411CBD2BDFD09D00A50B78 /* Home */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -511,6 +525,7 @@
 				9B289C7E2BDD34B7000813C1 /* AutoLayoutWrapper.swift in Sources */,
 				9B411CB62BDFC38100A50B78 /* ViewModelable.swift in Sources */,
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
+				9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
 				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
 				9B289C792BDCED2C000813C1 /* LaunchView.swift in Sources */,
@@ -521,6 +536,7 @@
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
+				9B411CC12BDFD0AC00A50B78 /* HomeView.swift in Sources */,
 				9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */,
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
