@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JeongDesignSystem
 
 final class LoginView: BaseView {
     
@@ -34,10 +35,6 @@ final class LoginView: BaseView {
     
     
     // MARK: - Setup
-    
-    override func setUpAttribute() {
-        backgroundColor = .systemBackground
-    }
     
     override func setUpSubview() {
         addSubview(motiIconImageView)

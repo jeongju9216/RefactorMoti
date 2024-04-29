@@ -7,11 +7,4 @@
 
 import UIKit
 
-final class HomeView: BaseView {
-    
-    // MARK: - Setup
-    
-    override func setUpAttribute() {
-        backgroundColor = .blue
-    }
-}
+final class HomeView: BaseView { }

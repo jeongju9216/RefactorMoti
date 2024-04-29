@@ -50,6 +50,7 @@
 		9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */; };
 		9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */; };
 		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
+		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */,
+				9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +409,7 @@
 			name = RefactorMoti;
 			packageProductDependencies = (
 				9B4581732BD7EC40002A32DC /* FirebaseDatabase */,
+				9BA895862BDFDB5B0080D400 /* JeongDesignSystem */,
 			);
 			productName = RefactorMoti;
 			productReference = 9B45811E2BD52EB7002A32DC /* RefactorMoti.app */;
@@ -461,7 +464,7 @@
 			mainGroup = 9B4581152BD52EB7002A32DC;
 			packageReferences = (
 				9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				9B411CC22BDFD65700A50B78 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */,
+				9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */,
 			);
 			productRefGroup = 9B45811F2BD52EB7002A32DC /* Products */;
 			projectDirPath = "";
@@ -850,20 +853,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9B411CC22BDFD65700A50B78 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jeongju9216/JeongDesignSystem.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 10.24.0;
+			};
+		};
+		9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jeongju9216/JeongDesignSystem.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -873,6 +876,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		9BA895862BDFDB5B0080D400 /* JeongDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */;
+			productName = JeongDesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 
