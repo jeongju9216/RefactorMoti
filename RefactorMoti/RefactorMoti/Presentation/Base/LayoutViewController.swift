@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JeongDesignSystem
 
 class LayoutViewController<LayoutView: BaseView>: BaseViewController {
     
@@ -20,5 +21,13 @@ class LayoutViewController<LayoutView: BaseView>: BaseViewController {
     
     override func loadView() {
         view = LayoutView()
+    }
+    
+    
+    // MARK: - Setup
+    
+    override func setUpAttribute() {
+        super.setUpAttribute()
+        view.backgroundColor = JDColor.background.color
     }
 }

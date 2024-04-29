@@ -32,10 +32,6 @@ final class LaunchView: BaseView {
     
     // MARK: - Setup
     
-    override func setUpAttribute() {
-        backgroundColor = .systemBackground
-    }
-    
     override func setUpSubview() {
         addSubview(motiIconImageView)
         addSubview(versionLabel)
