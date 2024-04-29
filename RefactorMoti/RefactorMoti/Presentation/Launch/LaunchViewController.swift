@@ -49,9 +49,11 @@ private extension LaunchViewController {
             .store(in: &cancellables)
         output.canLaunch
             .receive(on: RunLoop.main)
-            .sink { [weak self] in
+            .sink { [weak self] canLaunch in
                 guard let self else { return }
-                moveToLoginViewController()
+                if canLaunch {
+                    moveToLoginViewController()
+                }
             }
             .store(in: &cancellables)
     }

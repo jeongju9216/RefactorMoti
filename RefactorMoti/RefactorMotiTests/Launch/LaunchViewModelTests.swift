@@ -15,6 +15,7 @@ final class LaunchViewModelTests: XCTestCase {
     
     private var cancellables: Set<AnyCancellable> = []
     
+    
     // MARK: - Life Cycle
     
     override func tearDown() {
@@ -33,20 +34,21 @@ final class LaunchViewModelTests: XCTestCase {
         let viewModel = LaunchViewModel(fetchVersionUseCase: usecase)
         let input = LaunchViewModel.Input()
         viewModel.bind(input: input)
-        input.viewDidLoad.send()
         
         // when
         var version: String? = nil
+        input.viewDidLoad.send()
         viewModel.output.currentVersion
-            .receive(on: RunLoop.main)
-            .sink { currentVersion in
-                version = currentVersion
+            .sink(receiveCompletion: { completion in
                 expectation.fulfill()
-            }
+            }, receiveValue: { value in
+                version = value
+                expectation.fulfill()
+            })
             .store(in: &cancellables)
-
+        
         // then
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 10)
         
         XCTAssertNotNil(version)
         XCTAssertEqual(version, "1.0.0")
@@ -66,8 +68,8 @@ final class LaunchViewModelTests: XCTestCase {
         var isNeedForcedUpdate = false
         input.viewDidLoad.send()
         viewModel.output.isNeedForcedUpdate
-            .sink {
-                isNeedForcedUpdate = true
+            .sink { value in
+                isNeedForcedUpdate = value
                 expectation.fulfill()
             }
             .store(in: &cancellables)
@@ -77,7 +79,7 @@ final class LaunchViewModelTests: XCTestCase {
         XCTAssertTrue(isNeedForcedUpdate)
     }
     
-    func test_given_현재버전과_강제업데이트버전이_존재할_때_when_현재버전이_강제업데이트버전과_같다면_then_업데이트가_필요하다() throws {
+    func test_given_현재버전과_강제업데이트버전이_존재할_때_when_현재버전이_강제업데이트버전과_같다면_then_true_launch가_가능하다() throws {
         // given
         let expectation = XCTestExpectation()
         let usecase = FetchVersionUseCaseStub(current: "1.0.0", forced: "1.0.0")
@@ -86,18 +88,18 @@ final class LaunchViewModelTests: XCTestCase {
         viewModel.bind(input: input)
         
         // when
-        var isNeedForcedUpdate = false
         input.viewDidLoad.send()
-        viewModel.output.isNeedForcedUpdate
-            .sink {
-                isNeedForcedUpdate = true
+        var canLaunch = false
+        viewModel.output.canLaunch
+            .sink { value in
+                canLaunch = value
                 expectation.fulfill()
             }
             .store(in: &cancellables)
 
         // then
         wait(for: [expectation], timeout: 5)
-        XCTAssertTrue(isNeedForcedUpdate)
+        XCTAssertTrue(canLaunch)
     }
     
     func test_given_현재버전과_강제업데이트버전이_존재할_때_when_현재버전이_강제업데이트버전_초과라면_then_true_launch가_가능하다() throws {
@@ -107,13 +109,13 @@ final class LaunchViewModelTests: XCTestCase {
         let viewModel = LaunchViewModel(fetchVersionUseCase: usecase)
         let input = LaunchViewModel.Input()
         viewModel.bind(input: input)
-        
+
         // when
-        var canLaunch = false
         input.viewDidLoad.send()
+        var canLaunch = false
         viewModel.output.canLaunch
-            .sink {
-                canLaunch = true
+            .sink { value in
+                canLaunch = value
                 expectation.fulfill()
             }
             .store(in: &cancellables)
