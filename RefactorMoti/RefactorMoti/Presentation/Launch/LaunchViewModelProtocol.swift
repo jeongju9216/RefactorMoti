@@ -22,13 +22,3 @@ extension LaunchViewModel {
         let isNeedForcedUpdate: PassthroughSubject<Bool, Never> = .init()
     }
 }
-
-protocol LaunchViewModelProtocol {
-    
-    associatedtype Input
-    associatedtype Output
-    
-    var output: Output { get }
-    
-    func bind(input: Input)
-}
