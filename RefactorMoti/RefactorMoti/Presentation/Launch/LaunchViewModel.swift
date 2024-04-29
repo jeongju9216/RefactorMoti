@@ -53,11 +53,12 @@ private extension LaunchViewModel {
             output.currentVersion.send(version.current)
             
             let compareResult = version.current.compare(version.forced, options: .numeric)
-            if compareResult == .orderedDescending {
-                try? await Task.sleep(nanoseconds: UInt64(1 * 1_000_000_000))
-                output.canLaunch.send()
+            let isNeedForcedUpdate = (compareResult == .orderedAscending)
+            if isNeedForcedUpdate {
+                output.isNeedForcedUpdate.send(true)
             } else {
-                output.isNeedForcedUpdate.send()
+                try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
+                output.canLaunch.send(true)
             }
         }
     }
