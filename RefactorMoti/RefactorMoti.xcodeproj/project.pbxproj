@@ -21,6 +21,7 @@
 		9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C872BDD3C03000813C1 /* AutoLayoutWrapper+All.swift */; };
 		9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C8A2BDE4682000813C1 /* LoginView.swift */; };
 		9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C8C2BDE4687000813C1 /* LoginViewController.swift */; };
+		9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -69,6 +70,7 @@
 		9B289C872BDD3C03000813C1 /* AutoLayoutWrapper+All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayoutWrapper+All.swift"; sourceTree = "<group>"; };
 		9B289C8A2BDE4682000813C1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9B289C8C2BDE4687000813C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9B411CAD2BDFBF8700A50B78 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		9B4581152BD52EB7002A32DC = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +197,7 @@
 		9B45813A2BD52EB9002A32DC /* RefactorMotiTests */ = {
 			isa = PBXGroup;
 			children = (
+				9B411CAD2BDFBF8700A50B78 /* Login */,
 				9B289C6A2BDBD4D0000813C1 /* Auth */,
 				9B4581592BD7E3A9002A32DC /* Launch */,
 			);
@@ -500,6 +511,7 @@
 				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
 				9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
+				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
