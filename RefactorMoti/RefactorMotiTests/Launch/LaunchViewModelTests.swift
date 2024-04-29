@@ -37,18 +37,17 @@ final class LaunchViewModelTests: XCTestCase {
         
         // when
         var version: String? = nil
-        input.viewDidLoad.send()
         viewModel.output.currentVersion
-            .sink(receiveCompletion: { completion in
-                expectation.fulfill()
-            }, receiveValue: { value in
+            .sink { value in
                 version = value
                 expectation.fulfill()
-            })
+            }
             .store(in: &cancellables)
-        
+
+        input.viewDidLoad.send()
+
         // then
-        wait(for: [expectation], timeout: 10)
+        wait(for: [expectation], timeout: 5)
         
         XCTAssertNotNil(version)
         XCTAssertEqual(version, "1.0.0")
@@ -66,13 +65,14 @@ final class LaunchViewModelTests: XCTestCase {
         
         // when
         var isNeedForcedUpdate = false
-        input.viewDidLoad.send()
         viewModel.output.isNeedForcedUpdate
             .sink { value in
                 isNeedForcedUpdate = value
                 expectation.fulfill()
             }
             .store(in: &cancellables)
+
+        input.viewDidLoad.send()
 
         // then
         wait(for: [expectation], timeout: 5)
@@ -88,7 +88,6 @@ final class LaunchViewModelTests: XCTestCase {
         viewModel.bind(input: input)
         
         // when
-        input.viewDidLoad.send()
         var canLaunch = false
         viewModel.output.canLaunch
             .sink { value in
@@ -97,6 +96,8 @@ final class LaunchViewModelTests: XCTestCase {
             }
             .store(in: &cancellables)
 
+        input.viewDidLoad.send()
+        
         // then
         wait(for: [expectation], timeout: 5)
         XCTAssertTrue(canLaunch)
@@ -111,7 +112,6 @@ final class LaunchViewModelTests: XCTestCase {
         viewModel.bind(input: input)
 
         // when
-        input.viewDidLoad.send()
         var canLaunch = false
         viewModel.output.canLaunch
             .sink { value in
@@ -119,6 +119,8 @@ final class LaunchViewModelTests: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancellables)
+        
+        input.viewDidLoad.send()
         
         // then
         wait(for: [expectation], timeout: 5)
