@@ -15,6 +15,7 @@ final class LaunchViewModelTests: XCTestCase {
     
     private var cancellables: Set<AnyCancellable> = []
     
+    
     // MARK: - Life Cycle
     
     override func tearDown() {
@@ -33,18 +34,19 @@ final class LaunchViewModelTests: XCTestCase {
         let viewModel = LaunchViewModel(fetchVersionUseCase: usecase)
         let input = LaunchViewModel.Input()
         viewModel.bind(input: input)
-        input.viewDidLoad.send()
         
         // when
         var version: String? = nil
+        input.viewDidLoad.send()
         viewModel.output.currentVersion
-            .receive(on: RunLoop.main)
-            .sink { currentVersion in
-                version = currentVersion
+            .sink(receiveCompletion: { completion in
                 expectation.fulfill()
-            }
+            }, receiveValue: { value in
+                version = value
+                expectation.fulfill()
+            })
             .store(in: &cancellables)
-
+        
         // then
         wait(for: [expectation], timeout: 10)
         
