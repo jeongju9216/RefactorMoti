@@ -25,6 +25,8 @@
 		9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */; };
 		9B411CB32BDFC31F00A50B78 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB22BDFC31F00A50B78 /* LoginViewModel.swift */; };
 		9B411CB62BDFC38100A50B78 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB52BDFC38100A50B78 /* ViewModelable.swift */; };
+		9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */; };
+		9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CBB2BDFCB9F00A50B78 /* UIView+Combine.swift */; };
 		9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581212BD52EB7002A32DC /* AppDelegate.swift */; };
 		9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581232BD52EB7002A32DC /* SceneDelegate.swift */; };
 		9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B45812A2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld */; };
@@ -77,6 +79,8 @@
 		9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		9B411CB22BDFC31F00A50B78 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9B411CB52BDFC38100A50B78 /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		9B411CBB2BDFCB9F00A50B78 /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
 		9B45811E2BD52EB7002A32DC /* RefactorMoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactorMoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4581212BD52EB7002A32DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4581232BD52EB7002A32DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +176,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9B411CB72BDFCB7900A50B78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B411CB82BDFCB8A00A50B78 /* Combine */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B411CB82BDFCB8A00A50B78 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */,
+				9B411CBB2BDFCB9F00A50B78 /* UIView+Combine.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
 		9B4581152BD52EB7002A32DC = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +219,7 @@
 				9B45815F2BD7EA26002A32DC /* Presentation */,
 				9B45815D2BD7EA1E002A32DC /* Domain */,
 				9B45815E2BD7EA23002A32DC /* Data */,
+				9B411CB72BDFCB7900A50B78 /* Extensions */,
 				9B4581612BD7EA3C002A32DC /* Resource */,
 			);
 			path = RefactorMoti;
@@ -497,6 +519,7 @@
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
+				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
 				9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */,
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
@@ -509,6 +532,7 @@
 				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
+				9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */,
 				9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 			);
