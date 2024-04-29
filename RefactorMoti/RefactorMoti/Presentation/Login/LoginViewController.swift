@@ -41,12 +41,24 @@ final class LoginViewController: LayoutViewController<LoginView> {
             .sink { [weak self] isSuccessLogin in
                 guard let self else { return }
                 if isSuccessLogin {
-                    // TODO: Home 화면으로 이동
-                    print("Success Login") // swiftlint:disable:this all
+                    moveToHomeViewController()
                 } else {
                     // TODO: Alert 표시
                 }
             }
             .store(in: &cancellables)
+    }
+}
+
+
+// MARK: - Move To HomeViewController
+
+private extension LoginViewController {
+    
+    func moveToHomeViewController() {
+        let homeVC = HomeViewController()
+        let navigationVC = UINavigationController(rootViewController: homeVC)
+        navigationVC.modalPresentationStyle = .fullScreen
+        present(navigationVC, animated: true)
     }
 }
