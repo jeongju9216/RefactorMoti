@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class LaunchViewModel: LaunchViewModelProtocol {
+final class LaunchViewModel: ViewModelable {
     
     // MARK: - Attribute
     
