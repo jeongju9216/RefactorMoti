@@ -9,6 +9,13 @@ import UIKit
 
 final class LoginView: BaseView {
     
+    // MARK: - Interface
+    
+    var loginButtonDidTap: UIControl.ControlEventPublisher {
+        loginButton.publisher(for: .touchUpInside)
+    }
+    
+    
     // MARK: - UI
     
     private let motiIconImageView: UIImageView = {

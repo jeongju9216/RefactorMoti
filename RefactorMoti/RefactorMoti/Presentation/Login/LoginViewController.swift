@@ -6,5 +6,26 @@
 //
 
 import UIKit
+import Combine
 
-final class LoginViewController: LayoutViewController<LoginView> { }
+final class LoginViewController: LayoutViewController<LoginView> {
+    
+    // MARK: - Attribute
+    
+    private let viewModel = LoginViewModel()
+    private let input = LoginViewModel.Input()
+    private var output: LoginViewModel.Output { viewModel.output }
+    private var cancellables: Set<AnyCancellable> = []
+    
+    
+    // MARK: - Binding
+    
+    override func setUpBinding() {
+        layoutView.loginButtonDidTap
+            .sink { [weak self] in
+                guard let self else { return }
+                input.login.send()
+            }
+            .store(in: &cancellables)
+    }
+}
