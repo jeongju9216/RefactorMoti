@@ -461,6 +461,7 @@
 			mainGroup = 9B4581152BD52EB7002A32DC;
 			packageReferences = (
 				9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9B411CC22BDFD65700A50B78 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */,
 			);
 			productRefGroup = 9B45811F2BD52EB7002A32DC /* Products */;
 			projectDirPath = "";
@@ -849,6 +850,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9B411CC22BDFD65700A50B78 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jeongju9216/JeongDesignSystem.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
