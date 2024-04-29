@@ -1,5 +1,5 @@
 {
-  "originHash" : "a1569f9895aa2be8e24832f98525d5da4eb90b5d158a82691c15b47eb72a13d7",
+  "originHash" : "59e8c81e5694323c19977ab4c000b68c3f03168d85de677c18abc8eb93bd942a",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -80,6 +80,15 @@
       "state" : {
         "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
         "version" : "100.0.0"
+      }
+    },
+    {
+      "identity" : "jeongdesignsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeongju9216/JeongDesignSystem.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "b891007c101b85d1c66528f836faf71ea79efeab"
       }
     },
     {
