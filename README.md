@@ -44,6 +44,3 @@
 - Swift, UIKit
 - Combine
 - Swift Concurrency
-- 편의성 라이브러리
-  - Snapkit
-  - Then
