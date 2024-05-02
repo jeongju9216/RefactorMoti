@@ -37,7 +37,7 @@
 
 
 # moti 2.0 구조
-![moti2 drawio](https://github.com/jeongju9216/moti-2.0/assets/89075274/94a0c40a-b147-4e8f-b853-5628f6064601)
+![moti2-2](https://github.com/jeongju9216/moti-2.0/assets/89075274/0f2a2785-23f8-4aed-ad1d-4f01cf7d76d7)
 
 
 # 기술 스택
