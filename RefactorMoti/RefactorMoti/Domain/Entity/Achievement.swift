@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Achievement {
+struct Achievement: Equatable {
     
     let id: Int
-    let userID: String
+    let userID: Int
     let imageURL: URL?
     var categoryID: Int
     var title: String

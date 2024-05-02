@@ -56,6 +56,7 @@
 		9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */; };
 		9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */; };
 		9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959E2BE38D6A0080D400 /* Achievement.swift */; };
+		9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
 		9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9BA8959E2BE38D6A0080D400 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +433,7 @@
 		9BA895952BE383A60080D400 /* Stub */ = {
 			isa = PBXGroup;
 			children = (
+				9BA895A02BE390EE0080D400 /* Repository */,
 				9BA895972BE383B50080D400 /* UseCase */,
 				9BA895962BE383B30080D400 /* Storage */,
 			);
@@ -451,6 +454,14 @@
 				9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		9BA895A02BE390EE0080D400 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +644,7 @@
 				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
 				9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */,
 				9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */,
+				9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
