@@ -10,6 +10,15 @@ import Foundation
 struct AchievementRepository: AchievementRepositoryProtocol { 
     
     func fetchAchievements() async throws -> [Achievement] {
-        return []
+        return (0..<10).map {
+            Achievement(
+                id: $0,
+                userID: $0,
+                imageURL: URL(string: "https://picsum.photos/500"),
+                categoryID: $0,
+                title: "제목\($0)",
+                createdAt: Date()
+            )
+        }
     }
 }
