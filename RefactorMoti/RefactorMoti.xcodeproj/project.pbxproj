@@ -53,6 +53,10 @@
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
+		9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */; };
+		9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */; };
+		9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959E2BE38D6A0080D400 /* Achievement.swift */; };
+		9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,10 @@
 		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
+		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
+		9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9BA8959E2BE38D6A0080D400 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				9B4581692BD7EAE7002A32DC /* VersionRepositoryProtocol.swift */,
+				9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */,
 			);
 			path = RepositoryProtocol;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				9B45816B2BD7EAED002A32DC /* VersionRepository.swift */,
+				9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -329,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				9B4581772BD7EF2F002A32DC /* Version.swift */,
+				9BA8959E2BE38D6A0080D400 /* Achievement.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -422,6 +433,7 @@
 		9BA895952BE383A60080D400 /* Stub */ = {
 			isa = PBXGroup;
 			children = (
+				9BA895A02BE390EE0080D400 /* Repository */,
 				9BA895972BE383B50080D400 /* UseCase */,
 				9BA895962BE383B30080D400 /* Storage */,
 			);
@@ -442,6 +454,14 @@
 				9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		9BA895A02BE390EE0080D400 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +603,7 @@
 				9B289C7E2BDD34B7000813C1 /* AutoLayoutWrapper.swift in Sources */,
 				9B411CB62BDFC38100A50B78 /* ViewModelable.swift in Sources */,
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
+				9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */,
 				9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
 				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
@@ -591,6 +612,7 @@
 				9B411CB32BDFC31F00A50B78 /* LoginViewModel.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
+				9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */,
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
@@ -609,6 +631,7 @@
 				9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */,
 				9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
+				9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +644,7 @@
 				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
 				9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */,
 				9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */,
+				9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
