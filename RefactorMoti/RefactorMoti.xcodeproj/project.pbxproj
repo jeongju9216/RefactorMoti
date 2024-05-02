@@ -53,6 +53,7 @@
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
+		9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959E2BE38D6A0080D400 /* Achievement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
+		9BA8959E2BE38D6A0080D400 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				9B4581772BD7EF2F002A32DC /* Version.swift */,
+				9BA8959E2BE38D6A0080D400 /* Achievement.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				9B289C7E2BDD34B7000813C1 /* AutoLayoutWrapper.swift in Sources */,
 				9B411CB62BDFC38100A50B78 /* ViewModelable.swift in Sources */,
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
+				9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */,
 				9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
 				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
