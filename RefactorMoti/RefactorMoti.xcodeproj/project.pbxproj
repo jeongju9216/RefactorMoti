@@ -52,6 +52,7 @@
 		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
+		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCaseStub.swift; sourceTree = "<group>"; };
 		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,14 +135,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B289C6A2BDBD4D0000813C1 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		9B289C712BDCDDB5000813C1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,14 +166,6 @@
 				9B289C8C2BDE4687000813C1 /* LoginViewController.swift */,
 				9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */,
 				9B411CB22BDFC31F00A50B78 /* LoginViewModel.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		9B411CAD2BDFBF8700A50B78 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -245,23 +231,13 @@
 		9B45813A2BD52EB9002A32DC /* RefactorMotiTests */ = {
 			isa = PBXGroup;
 			children = (
-				9BA8958A2BE11BFC0080D400 /* Home */,
-				9B411CAD2BDFBF8700A50B78 /* Login */,
-				9B289C6A2BDBD4D0000813C1 /* Auth */,
-				9B4581592BD7E3A9002A32DC /* Launch */,
+				9BA895952BE383A60080D400 /* Stub */,
+				9BA895942BE3839D0080D400 /* Network */,
+				9BA8958F2BE3836C0080D400 /* Presentation */,
+				9BA8958D2BE3835C0080D400 /* Domain */,
+				9BA8958E2BE383630080D400 /* Data */,
 			);
 			path = RefactorMotiTests;
-			sourceTree = "<group>";
-		};
-		9B4581592BD7E3A9002A32DC /* Launch */ = {
-			isa = PBXGroup;
-			children = (
-				9B4581842BD9344A002A32DC /* Stub */,
-				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
-				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
-				9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */,
-			);
-			path = Launch;
 			sourceTree = "<group>";
 		};
 		9B45815D2BD7EA1E002A32DC /* Domain */ = {
@@ -373,15 +349,6 @@
 			path = StorageProtocol;
 			sourceTree = "<group>";
 		};
-		9B4581842BD9344A002A32DC /* Stub */ = {
-			isa = PBXGroup;
-			children = (
-				9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */,
-				9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */,
-			);
-			path = Stub;
-			sourceTree = "<group>";
-		};
 		9B4581872BD936BE002A32DC /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,12 +360,88 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		9BA8958A2BE11BFC0080D400 /* Home */ = {
+		9BA8958D2BE3835C0080D400 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9BA895922BE383840080D400 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9BA8958E2BE383630080D400 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895912BE3837F0080D400 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9BA8958F2BE3836C0080D400 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895932BE383870080D400 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9BA895912BE3837F0080D400 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
+				9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		9BA895922BE383840080D400 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
+				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		9BA895932BE383870080D400 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */,
 				9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */,
 			);
-			path = Home;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9BA895942BE3839D0080D400 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9B45817C2BD7F231002A32DC /* LaunchNetworkTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9BA895952BE383A60080D400 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895972BE383B50080D400 /* UseCase */,
+				9BA895962BE383B30080D400 /* Storage */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		9BA895962BE383B30080D400 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		9BA895972BE383B50080D400 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +624,7 @@
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
+				9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
