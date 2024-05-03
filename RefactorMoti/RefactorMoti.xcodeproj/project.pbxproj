@@ -57,6 +57,7 @@
 		9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */; };
 		9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959E2BE38D6A0080D400 /* Achievement.swift */; };
 		9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */; };
+		9BA895A42BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9BA8959E2BE38D6A0080D400 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryStub.swift; sourceTree = "<group>"; };
+		9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +411,7 @@
 			children = (
 				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
 				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
+				9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B289C6C2BDBD4E1000813C1 /* AuthUseCaseTests.swift in Sources */,
+				9BA895A42BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift in Sources */,
 				9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */,
 				9B45817D2BD7F231002A32DC /* LaunchNetworkTests.swift in Sources */,
 				9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */,
