@@ -10,7 +10,7 @@ import Foundation
 struct AchievementRepository: AchievementRepositoryProtocol { 
     
     func fetchAchievements() async throws -> [Achievement] {
-        return (0..<10).map {
+        (0..<10).map {
             Achievement(
                 id: $0,
                 userID: $0,
