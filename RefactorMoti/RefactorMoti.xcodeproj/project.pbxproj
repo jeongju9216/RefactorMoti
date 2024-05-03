@@ -58,6 +58,7 @@
 		9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8959E2BE38D6A0080D400 /* Achievement.swift */; };
 		9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */; };
 		9BA895A42BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */; };
+		9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		9BA8959E2BE38D6A0080D400 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryStub.swift; sourceTree = "<group>"; };
 		9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCaseTests.swift; sourceTree = "<group>"; };
+		9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */,
+				9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */,
 				9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
+				9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */,
 				9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
