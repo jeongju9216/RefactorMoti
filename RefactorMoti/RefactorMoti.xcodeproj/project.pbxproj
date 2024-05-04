@@ -60,6 +60,7 @@
 		9BA895A42BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */; };
 		9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */; };
 		9BA895AC2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */; };
+		9BA895B22BE5F42A0080D400 /* CategoryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B12BE5F42A0080D400 /* CategoryRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCaseTests.swift; sourceTree = "<group>"; };
 		9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCase.swift; sourceTree = "<group>"; };
 		9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoriesUseCaseTests.swift; sourceTree = "<group>"; };
+		9BA895B12BE5F42A0080D400 /* CategoryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +409,7 @@
 			children = (
 				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
 				9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */,
+				9BA895B12BE5F42A0080D400 /* CategoryRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				9BA895AC2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
+				9BA895B22BE5F42A0080D400 /* CategoryRepositoryTests.swift in Sources */,
 				9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
