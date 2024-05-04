@@ -65,6 +65,8 @@
 		9BA895B62BE5F6E80080D400 /* CategoryRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */; };
 		9BA895B82BE5F87D0080D400 /* CategoryRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */; };
 		9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */; };
+		9BA895C02BE604DA0080D400 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895BF2BE604DA0080D400 /* HomeViewModel.swift */; };
+		9BA895C22BE604E90080D400 /* HomeViewModelInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895C12BE604E90080D400 /* HomeViewModelInputOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,8 @@
 		9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryStub.swift; sourceTree = "<group>"; };
 		9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoriesUseCase.swift; sourceTree = "<group>"; };
+		9BA895BF2BE604DA0080D400 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9BA895C12BE604E90080D400 /* HomeViewModelInputOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelInputOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 			children = (
 				9B411CBE2BDFD0A700A50B78 /* HomeViewController.swift */,
 				9B411CC02BDFD0AC00A50B78 /* HomeView.swift */,
+				9BA895BF2BE604DA0080D400 /* HomeViewModel.swift */,
+				9BA895C12BE604E90080D400 /* HomeViewModelInputOutput.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -656,10 +662,12 @@
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */,
 				9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */,
+				9BA895C02BE604DA0080D400 /* HomeViewModel.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 				9BA895B42BE5F6E10080D400 /* CategoryRepository.swift in Sources */,
 				9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */,
 				9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */,
+				9BA895C22BE604E90080D400 /* HomeViewModelInputOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
