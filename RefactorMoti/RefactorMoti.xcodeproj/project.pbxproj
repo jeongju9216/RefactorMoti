@@ -435,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
-				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
 				9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */,
 				9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */,
 			);
@@ -445,6 +444,7 @@
 		9BA895932BE383870080D400 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
 				9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */,
 				9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */,
 			);
