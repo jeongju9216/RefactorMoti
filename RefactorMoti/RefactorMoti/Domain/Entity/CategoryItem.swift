@@ -11,6 +11,16 @@ struct CategoryItem: Equatable {
     
     let id: Int
     let name: String
-    var continued: Int
-    var lastChallenged: Date?
+    var continued: Int = 0
+    var lastChallenged: Date? = nil
+}
+
+
+// MARK: - Equatable
+
+extension CategoryItem {
+    
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
 }

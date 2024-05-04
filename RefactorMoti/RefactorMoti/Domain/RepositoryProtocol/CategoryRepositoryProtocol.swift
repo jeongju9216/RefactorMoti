@@ -9,5 +9,5 @@ import Foundation
 
 protocol CategoryRepositoryProtocol {
     
-    func fetchCategories() async throws -> [String]
+    func fetchCategories() async throws -> [CategoryItem]
 }

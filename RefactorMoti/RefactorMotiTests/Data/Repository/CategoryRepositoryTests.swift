@@ -6,11 +6,12 @@
 //
 
 import XCTest
+@testable import RefactorMoti
 
 final class CategoryRepositoryTests: XCTestCase {
     
-    private let defaultCategories = ["전체", "미설정"]
-    private let customCategory = "음식"
+    private let defaultCategories = [CategoryItem(id: 0, name: "전체"), CategoryItem(id: 1, name: "미설정")]
+    private let customCategory = CategoryItem(id: 2, name: "음식")
     
     func test_기본_카테고리만_있을_때_fetchCategories_수행에_성공하면_기본_category_리스트를_반환한다() async throws {
         // given

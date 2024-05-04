@@ -16,7 +16,7 @@ final class HomeViewModelTests: XCTestCase {
     private let fetchCategoriesUseCase = FetchCategoriesUseCase(repository: DefaultCategoryRepositoryStub())
     private let fetchAchievementsUseCase = FetchAchievementsUseCase(repository: AchievementRepositoryStub())
     
-    private var targetCategories: [String]!
+    private var targetCategories: [CategoryItem]!
     private var targetAchievements: [Achievement]!
 
     private var viewModel: HomeViewModel!
@@ -54,10 +54,9 @@ final class HomeViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         
         // when
-        var source: [String]?
+        var source: [CategoryItem]?
         output.categories
-            .sink { [weak self] categories in
-                guard let self else { return }
+            .sink { categories in
                 source = categories
                 expectation.fulfill()
             }
@@ -77,10 +76,9 @@ final class HomeViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         
         // when
-        var source: String?
+        var source: CategoryItem?
         output.currentCategory
-            .sink { [weak self] currentCategory in
-                guard let self else { return }
+            .sink { currentCategory in
                 source = currentCategory
                 expectation.fulfill()
             }
