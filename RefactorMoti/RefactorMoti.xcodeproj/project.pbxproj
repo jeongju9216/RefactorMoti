@@ -63,6 +63,7 @@
 		9BA895B22BE5F42A0080D400 /* CategoryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B12BE5F42A0080D400 /* CategoryRepositoryTests.swift */; };
 		9BA895B42BE5F6E10080D400 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B32BE5F6E10080D400 /* CategoryRepository.swift */; };
 		9BA895B62BE5F6E80080D400 /* CategoryRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */; };
+		9BA895B82BE5F87D0080D400 /* CategoryRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		9BA895B12BE5F42A0080D400 /* CategoryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA895B32BE5F6E10080D400 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */,
+				9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				9BA895AC2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
+				9BA895B82BE5F87D0080D400 /* CategoryRepositoryStub.swift in Sources */,
 				9BA895B22BE5F42A0080D400 /* CategoryRepositoryTests.swift in Sources */,
 				9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */,
 			);
