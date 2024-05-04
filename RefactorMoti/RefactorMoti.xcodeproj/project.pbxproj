@@ -59,6 +59,7 @@
 		9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */; };
 		9BA895A42BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */; };
 		9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */; };
+		9BA895AC2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		9BA895A12BE390F90080D400 /* AchievementRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryStub.swift; sourceTree = "<group>"; };
 		9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCaseTests.swift; sourceTree = "<group>"; };
 		9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAchievementsUseCase.swift; sourceTree = "<group>"; };
+		9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoriesUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +417,7 @@
 				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
 				9B4581572BD7DF17002A32DC /* LaunchViewModelTests.swift */,
 				9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */,
+				9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */,
 				9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
+				9BA895AC2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
 				9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */,
