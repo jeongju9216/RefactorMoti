@@ -67,6 +67,7 @@
 		9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */; };
 		9BA895C02BE604DA0080D400 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895BF2BE604DA0080D400 /* HomeViewModel.swift */; };
 		9BA895C22BE604E90080D400 /* HomeViewModelInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895C12BE604E90080D400 /* HomeViewModelInputOutput.swift */; };
+		9BA895C92BE673120080D400 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895C82BE673120080D400 /* CategoryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoriesUseCase.swift; sourceTree = "<group>"; };
 		9BA895BF2BE604DA0080D400 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9BA895C12BE604E90080D400 /* HomeViewModelInputOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelInputOutput.swift; sourceTree = "<group>"; };
+		9BA895C82BE673120080D400 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,7 @@
 			children = (
 				9B4581772BD7EF2F002A32DC /* Version.swift */,
 				9BA8959E2BE38D6A0080D400 /* Achievement.swift */,
+				9BA895C82BE673120080D400 /* CategoryItem.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
 				9B289C822BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift in Sources */,
+				9BA895C92BE673120080D400 /* CategoryItem.swift in Sources */,
 				9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */,
 				9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */,
 				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
