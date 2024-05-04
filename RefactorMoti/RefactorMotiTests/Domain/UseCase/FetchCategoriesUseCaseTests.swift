@@ -6,12 +6,36 @@
 //
 
 import XCTest
+@testable import RefactorMoti
 
 final class FetchCategoriesUseCaseTests: XCTestCase {
 
-    func test_데이터가_있을_때_fetchCategories_수행이_성공하면_category_리스트를_반환한다() async throws { }
+    private let defaultCategories = ["전체", "미설정"]
+    private let customCategory = "음식"
     
-    func test_데이터가_없을_때_fetchCategories_수행이_성공하면_빈_리스트를_반환한다() async throws { }
+    func test_기본_카테고리만_있을_때_fetchCategories_수행이_성공하면_기본_리스트를_반환한다() async throws { 
+        // given
+        let usecase = FetchCategoriesUseCase(repository: DefaultCategoryRepositoryStub())
+        
+        // when
+        let categories = try? await usecase.execute()
+        
+        // then
+        XCTAssertNotNil(categories)
+        XCTAssertEqual(categories, defaultCategories)
+    }
+    
+    func test_사용자가_추가한_카테고리가_있을_때_fetchCategories_수행에_성공하면_category_리스트를_반환한다() async throws {
+        // given
+        let usecase = FetchCategoriesUseCase(repository: CustomCategoryRepositoryStub())
+        
+        // when
+        let categories = try? await usecase.execute()
+        
+        // then
+        XCTAssertNotNil(categories)
+        XCTAssertEqual(categories, defaultCategories + [customCategory])
+    }
     
     func test_fetchCategories_수행에_실패하면_에러를_발생시킨다() async throws { }
 }
