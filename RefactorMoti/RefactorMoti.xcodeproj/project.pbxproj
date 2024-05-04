@@ -64,6 +64,7 @@
 		9BA895B42BE5F6E10080D400 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B32BE5F6E10080D400 /* CategoryRepository.swift */; };
 		9BA895B62BE5F6E80080D400 /* CategoryRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */; };
 		9BA895B82BE5F87D0080D400 /* CategoryRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */; };
+		9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		9BA895B32BE5F6E10080D400 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9BA895B72BE5F87D0080D400 /* CategoryRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryStub.swift; sourceTree = "<group>"; };
+		9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoriesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +367,7 @@
 			children = (
 				9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */,
 				9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */,
+				9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
 				9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */,
 				9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */,
+				9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
 				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
 				9B289C792BDCED2C000813C1 /* LaunchView.swift in Sources */,
