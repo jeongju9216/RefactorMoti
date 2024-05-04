@@ -12,7 +12,7 @@ struct Achievement: Equatable {
     let id: Int
     let userID: Int
     let imageURL: URL?
-    var categoryID: Int
+    var category: CategoryItem
     var title: String
     var body: String?
     let createdAt: Date?

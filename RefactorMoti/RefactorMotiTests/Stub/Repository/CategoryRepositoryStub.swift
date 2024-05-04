@@ -10,14 +10,21 @@ import Foundation
 
 struct DefaultCategoryRepositoryStub: CategoryRepositoryProtocol {
     
-    func fetchCategories() async throws -> [String] {
-        ["전체", "미설정"]
+    func fetchCategories() async throws -> [CategoryItem] {
+        [
+            CategoryItem(id: 0, name: "전체"), 
+            CategoryItem(id: 1, name: "미설정")
+        ]
     }
 }
 
 struct CustomCategoryRepositoryStub: CategoryRepositoryProtocol {
     
-    func fetchCategories() async throws -> [String] {
-        ["전체", "미설정", "음식"]
+    func fetchCategories() async throws -> [CategoryItem] {
+        [
+            CategoryItem(id: 0, name: "전체"),
+            CategoryItem(id: 1, name: "미설정"),
+            CategoryItem(id: 2, name: "음식")
+        ]
     }
 }

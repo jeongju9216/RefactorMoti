@@ -19,8 +19,8 @@ extension HomeViewModel {
         
         // MARK: Category
         
-        let categories: PassthroughSubject<[String], Never> = .init()
-        let currentCategory: PassthroughSubject<String, Never> = .init()
+        let categories: PassthroughSubject<[CategoryItem], Never> = .init()
+        let currentCategory: PassthroughSubject<CategoryItem, Never> = .init()
         
         // MARK: Achievement
         

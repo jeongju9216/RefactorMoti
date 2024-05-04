@@ -9,14 +9,14 @@ import Foundation
 
 protocol FetchCategoriesUseCaseProtocol {
     
-    func execute() async throws -> [String]
+    func execute() async throws -> [CategoryItem]
 }
 
 struct FetchCategoriesUseCase: FetchCategoriesUseCaseProtocol {
     
     // MARK: - Interface
     
-    func execute() async throws -> [String] {
+    func execute() async throws -> [CategoryItem] {
         try await repository.fetchCategories()
     }
     
