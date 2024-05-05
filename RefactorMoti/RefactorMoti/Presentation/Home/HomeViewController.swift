@@ -70,7 +70,9 @@ private extension HomeViewController {
         .init(
             collectionView: layoutView.categoriesCollectionView,
             cellProvider: { collectionView, indexPath, item in
-                UICollectionViewCell()
+                let cell = collectionView.dequeueReusableCell(CategoryCollectionViewCell.self, for: indexPath)
+                cell.configure(with: item)
+                return cell
             }
         )
     }

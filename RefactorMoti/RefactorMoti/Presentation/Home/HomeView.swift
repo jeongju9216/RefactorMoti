@@ -16,6 +16,7 @@ final class HomeView: BaseView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout())
         collectionView.alwaysBounceVertical = false
         collectionView.backgroundColor = .red
+        collectionView.register(CategoryCollectionViewCell.self)
         return collectionView
     }()
     
