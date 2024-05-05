@@ -20,6 +20,13 @@ final class HomeView: BaseView {
         return collectionView
     }()
     
+    private(set) lazy var achievementCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeAchievementCompositionalLayout())
+        collectionView.backgroundColor = .blue
+        collectionView.register(AchievementCollectionViewCell.self)
+        return collectionView
+    }()
+    
     
     // MARK: - Setup
     
@@ -58,12 +65,40 @@ private extension HomeView {
             section: section
         )
     }
+    
+    func makeAchievementCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0 / Metric.Achievement.itemCount),
+            heightDimension: .fractionalHeight(1)
+        )
+        let inset = Metric.Achievement.itemEdgeInset
+        let item = CompositionalLayoutItem(
+            size: itemSize,
+            contentInsets: NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        )
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: itemSize.widthDimension
+        )
+        let group = CompositionalLayoutGroup(size: groupSize, count: 3)
+        let section = CompositionalLayoutSection(orthogonalScrollingBehavior: .continuous)
+        return CompositionalLayout.horizontal.configure(
+            item: item,
+            group: group,
+            section: section
+        )
+    }
 }
 
 
 // MARK: - Constant
 
 private extension HomeView {
+    
+    enum Constant {
+        
+        static let isPhone = UIDevice.current.userInterfaceIdiom == .phone
+    }
     
     enum Metric {
         
@@ -77,6 +112,12 @@ private extension HomeView {
             
             static let topOffset = 10.0
             static let height = 37.0
+        }
+        
+        enum Achievement {
+            
+            static let itemEdgeInset = 1.0
+            static let itemCount: CGFloat = Constant.isPhone ? 3 : 7
         }
     }
 }
