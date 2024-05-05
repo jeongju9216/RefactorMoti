@@ -73,6 +73,8 @@
 		9BA895D42BE74F880080D400 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D32BE74F880080D400 /* CategoryCollectionViewCell.swift */; };
 		9BA895D72BE750A60080D400 /* UICollectionReusableView+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */; };
 		9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */; };
+		9BA895DC2BE7AF820080D400 /* Jeongfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895DB2BE7AF820080D400 /* Jeongfisher */; };
+		9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,7 @@
 		9BA895D32BE74F880080D400 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+identifier.swift"; sourceTree = "<group>"; };
 		9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
+		9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,7 @@
 			files = (
 				9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */,
 				9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */,
+				9BA895DC2BE7AF820080D400 /* Jeongfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				9BA895D32BE74F880080D400 /* CategoryCollectionViewCell.swift */,
+				9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 			packageProductDependencies = (
 				9B4581732BD7EC40002A32DC /* FirebaseDatabase */,
 				9BA895862BDFDB5B0080D400 /* JeongDesignSystem */,
+				9BA895DB2BE7AF820080D400 /* Jeongfisher */,
 			);
 			productName = RefactorMoti;
 			productReference = 9B45811E2BD52EB7002A32DC /* RefactorMoti.app */;
@@ -611,6 +617,7 @@
 			packageReferences = (
 				9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */,
+				9BA895DA2BE7AF820080D400 /* XCRemoteSwiftPackageReference "Jeongfisher" */,
 			);
 			productRefGroup = 9B45811F2BD52EB7002A32DC /* Products */;
 			projectDirPath = "";
@@ -701,6 +708,7 @@
 				9B289C822BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift in Sources */,
 				9BA895C92BE673120080D400 /* CategoryItem.swift in Sources */,
 				9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */,
+				9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */,
 				9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */,
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,
 				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
@@ -1037,6 +1045,14 @@
 				kind = branch;
 			};
 		};
+		9BA895DA2BE7AF820080D400 /* XCRemoteSwiftPackageReference "Jeongfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jeongju9216/Jeongfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1049,6 +1065,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */;
 			productName = JeongDesignSystem;
+		};
+		9BA895DB2BE7AF820080D400 /* Jeongfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BA895DA2BE7AF820080D400 /* XCRemoteSwiftPackageReference "Jeongfisher" */;
+			productName = Jeongfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

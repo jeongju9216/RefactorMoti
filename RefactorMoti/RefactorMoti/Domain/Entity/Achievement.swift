@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Achievement: Equatable {
+struct Achievement: Hashable {
     
     let id: Int
     let userID: Int
