@@ -70,6 +70,9 @@
 		9BA895C92BE673120080D400 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895C82BE673120080D400 /* CategoryItem.swift */; };
 		9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895CD2BE725B00080D400 /* SingleDiffableDataSource.swift */; };
 		9BA895D12BE725D60080D400 /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D02BE725D60080D400 /* CompositionalLayout.swift */; };
+		9BA895D42BE74F880080D400 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D32BE74F880080D400 /* CategoryCollectionViewCell.swift */; };
+		9BA895D72BE750A60080D400 /* UICollectionReusableView+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */; };
+		9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +150,9 @@
 		9BA895C82BE673120080D400 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		9BA895CD2BE725B00080D400 /* SingleDiffableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDiffableDataSource.swift; sourceTree = "<group>"; };
 		9BA895D02BE725D60080D400 /* CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
+		9BA895D32BE74F880080D400 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+identifier.swift"; sourceTree = "<group>"; };
+		9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,7 @@
 		9B411CBD2BDFD09D00A50B78 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9BA895D22BE74F7A0080D400 /* Cell */,
 				9B411CBE2BDFD0A700A50B78 /* HomeViewController.swift */,
 				9B411CC02BDFD0AC00A50B78 /* HomeView.swift */,
 				9BA895BF2BE604DA0080D400 /* HomeViewModel.swift */,
@@ -301,6 +308,7 @@
 		9B45815F2BD7EA26002A32DC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9BA895D52BE7509C0080D400 /* Extension */,
 				9B289C7C2BDD3368000813C1 /* AutoLayout */,
 				9B289C712BDCDDB5000813C1 /* Base */,
 				9B4581872BD936BE002A32DC /* Launch */,
@@ -511,6 +519,23 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		9BA895D22BE74F7A0080D400 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895D32BE74F880080D400 /* CategoryCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9BA895D52BE7509C0080D400 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */,
+				9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -653,6 +678,7 @@
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
 				9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */,
 				9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */,
+				9BA895D42BE74F880080D400 /* CategoryCollectionViewCell.swift in Sources */,
 				9BA895D12BE725D60080D400 /* CompositionalLayout.swift in Sources */,
 				9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
@@ -667,6 +693,7 @@
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
 				9B411CC12BDFD0AC00A50B78 /* HomeView.swift in Sources */,
+				9BA895D72BE750A60080D400 /* UICollectionReusableView+identifier.swift in Sources */,
 				9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */,
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
@@ -678,6 +705,7 @@
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,
 				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
 				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
+				9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */,
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */,

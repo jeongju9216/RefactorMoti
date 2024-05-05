@@ -7,7 +7,6 @@
 
 import UIKit
 
-@MainActor
 struct SingleDiffableDataSource<T: Hashable> {
 
     // MARK: - Interface
@@ -21,16 +20,20 @@ struct SingleDiffableDataSource<T: Hashable> {
     }
 
     func reset() {
-        var snapshot = SnapShot()
-        snapshot.appendSections([.main])
-        dataSource.apply(snapshot)
+        DispatchQueue.main.async {
+            var snapshot = SnapShot()
+            snapshot.appendSections([.main])
+            dataSource.apply(snapshot)
+        }
     }
 
     func update(data: [T], animate: Bool = true) {
-        var snapshot = SnapShot()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(data, toSection: .main)
-        dataSource.apply(snapshot, animatingDifferences: animate)
+        DispatchQueue.main.async {
+            var snapshot = SnapShot()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(data, toSection: .main)
+            dataSource.apply(snapshot, animatingDifferences: animate)
+        }
     }
     
     
