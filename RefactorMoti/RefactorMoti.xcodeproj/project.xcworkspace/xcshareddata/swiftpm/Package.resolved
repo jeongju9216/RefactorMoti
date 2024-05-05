@@ -1,5 +1,5 @@
 {
-  "originHash" : "59e8c81e5694323c19977ab4c000b68c3f03168d85de677c18abc8eb93bd942a",
+  "originHash" : "b7ea6d6c899f0e373f6e39eab685a90cdb17f6af110e8f955c6bf1cef6466db5",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -89,6 +89,15 @@
       "state" : {
         "branch" : "develop",
         "revision" : "b891007c101b85d1c66528f836faf71ea79efeab"
+      }
+    },
+    {
+      "identity" : "jeongfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jeongju9216/Jeongfisher",
+      "state" : {
+        "revision" : "9bb229f8f920dae270eda153681a8d1cca9645db",
+        "version" : "2.5.0"
       }
     },
     {
