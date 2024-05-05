@@ -13,15 +13,21 @@ final class HomeViewModel {
     // MARK: - Interface
     
     typealias CategoryDataSource = SingleDiffableDataSource<CategoryItem>
+    typealias AchievementDataSource = SingleDiffableDataSource<Achievement>
     
-    func setupCategoryDataSource(_ dataSource: CategoryDataSource) {
+    func setUpCategoryDataSource(_ dataSource: CategoryDataSource) {
         self.categoryDataSource = dataSource
+    }
+    
+    func setUpAchievementDataSource(_ dataSource: AchievementDataSource) {
+        self.achievementDataSource = dataSource
     }
     
     
     // MARK: - Attribute
     
     private var categoryDataSource: CategoryDataSource?
+    private var achievementDataSource: AchievementDataSource?
     
     // MARK: UseCase
     
@@ -72,6 +78,8 @@ private extension HomeViewModel {
         Task {
             let achievements = (try? await fetchAchievementsUseCase.execute()) ?? []
             output.achievements.send(achievements)
+            
+            achievementDataSource?.update(data: achievements)
         }
     }
     

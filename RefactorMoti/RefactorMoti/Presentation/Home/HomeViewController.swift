@@ -31,6 +31,7 @@ final class HomeViewController: LayoutViewController<HomeView> {
     override func setUpAttribute() {
         super.setUpAttribute()
         setUpCategoriesCollectionView()
+        setUpAchievementCollectionView()
     }
     
     override func setUpBinding() {
@@ -52,6 +53,13 @@ private extension HomeViewController {
                 print("categories: \(categories)") // swiftlint:disable:this all
             }
             .store(in: &cancellables)
+        
+        output.achievements
+            .sink { [weak self] achievements in
+                guard let self else { return }
+                print("achievements: \(achievements)") // swiftlint:disable:this all
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -63,7 +71,7 @@ private extension HomeViewController {
     func setUpCategoriesCollectionView() {
         layoutView.categoriesCollectionView.delegate = self
         let categoryDataSource = HomeViewModel.CategoryDataSource(dataSource: makeCategoryDataSource())
-        viewModel.setupCategoryDataSource(categoryDataSource)
+        viewModel.setUpCategoryDataSource(categoryDataSource)
     }
     
     func makeCategoryDataSource() -> HomeViewModel.CategoryDataSource.DataSource {
@@ -71,6 +79,23 @@ private extension HomeViewController {
             collectionView: layoutView.categoriesCollectionView,
             cellProvider: { collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(CategoryCollectionViewCell.self, for: indexPath)
+                cell.configure(with: item)
+                return cell
+            }
+        )
+    }
+    
+    func setUpAchievementCollectionView() {
+        layoutView.achievementCollectionView.delegate = self
+        let achievementDataSource = HomeViewModel.AchievementDataSource(dataSource: makeAchievementDataSource())
+        viewModel.setUpAchievementDataSource(achievementDataSource)
+    }
+    
+    func makeAchievementDataSource() -> HomeViewModel.AchievementDataSource.DataSource {
+        .init(
+            collectionView: layoutView.achievementCollectionView,
+            cellProvider: { collectionView, indexPath, item in
+                let cell = collectionView.dequeueReusableCell(AchievementCollectionViewCell.self, for: indexPath)
                 cell.configure(with: item)
                 return cell
             }

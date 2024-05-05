@@ -32,12 +32,17 @@ final class HomeView: BaseView {
     
     override func setUpSubview() {
         addSubview(categoriesCollectionView)
+        addSubview(achievementCollectionView)
     }
     
     override func setUpConstraint() {
         categoriesCollectionView.atl
             .height(Metric.CategoryList.height)
             .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
+            .horizontal(equalTo: safeAreaLayoutGuide)
+        achievementCollectionView.atl
+            .top(equalTo: categoriesCollectionView.bottomAnchor)
+            .bottom(equalTo: self.bottomAnchor)
             .horizontal(equalTo: safeAreaLayoutGuide)
     }
 }
