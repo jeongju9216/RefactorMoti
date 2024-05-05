@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Combine
+import JeongDesignSystem
 
 final class CategoryCollectionViewCell: UICollectionViewCell {
     
@@ -31,6 +31,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUpAttribute()
         setUpSubview()
         setUpConstraint()
     }
@@ -41,6 +42,13 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     
     
     // MARK: - Setup
+    
+    private func setUpAttribute() {
+        clipsToBounds = true
+        layer.cornerRadius = Metric.cornerRadius
+        layer.borderWidth = Metric.borderWidth
+        layer.borderColor = JDColor.primary.color.cgColor
+    }
     
     private func setUpSubview() {
         addSubview(label)
@@ -61,5 +69,7 @@ private extension CategoryCollectionViewCell {
     enum Metric {
         
         static let horizontalOffset = 10.0
+        static let cornerRadius = 10.0
+        static let borderWidth = 1.0
     }
 }

@@ -15,14 +15,12 @@ final class HomeView: BaseView {
     private(set) lazy var categoriesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout())
         collectionView.alwaysBounceVertical = false
-        collectionView.backgroundColor = .red
         collectionView.register(CategoryCollectionViewCell.self)
         return collectionView
     }()
     
     private(set) lazy var achievementCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeAchievementCompositionalLayout())
-        collectionView.backgroundColor = .blue
         collectionView.register(AchievementCollectionViewCell.self)
         return collectionView
     }()
@@ -41,7 +39,7 @@ final class HomeView: BaseView {
             .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
             .horizontal(equalTo: safeAreaLayoutGuide)
         achievementCollectionView.atl
-            .top(equalTo: categoriesCollectionView.bottomAnchor)
+            .top(equalTo: categoriesCollectionView.bottomAnchor, constant: Metric.Achievement.topOffset)
             .bottom(equalTo: self.bottomAnchor)
             .horizontal(equalTo: safeAreaLayoutGuide)
     }
@@ -123,6 +121,7 @@ private extension HomeView {
             
             static let itemEdgeInset = 1.0
             static let itemCount: CGFloat = Constant.isPhone ? 3 : 7
+            static let topOffset = 10.0
         }
     }
 }
