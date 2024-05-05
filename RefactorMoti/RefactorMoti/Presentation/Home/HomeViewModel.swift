@@ -24,8 +24,8 @@ final class HomeViewModel {
     // MARK: - Initializer
     
     init(
-        fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol,
-        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
+        fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = FetchCategoriesUseCase(),
+        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase()
     ) {
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
