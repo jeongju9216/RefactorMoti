@@ -28,6 +28,11 @@ final class HomeViewController: LayoutViewController<HomeView> {
     
     // MARK: - Setup
     
+    override func setUpAttribute() {
+        super.setUpAttribute()
+        setUpCategoriesCollectionView()
+    }
+    
     override func setUpBinding() {
         super.setUpBinding()
         viewModel.bind(input: input)
@@ -50,3 +55,33 @@ private extension HomeViewController {
     }
 }
 
+
+// MARK: - ViewModel DataSource
+
+private extension HomeViewController {
+
+    func setUpCategoriesCollectionView() {
+        layoutView.categoriesCollectionView.delegate = self
+        let categoryDataSource = HomeViewModel.CategoryDataSource(dataSource: makeCategoryDataSource())
+        viewModel.setupCategoryDataSource(categoryDataSource)
+    }
+    
+    func makeCategoryDataSource() -> HomeViewModel.CategoryDataSource.DataSource {
+        .init(
+            collectionView: layoutView.categoriesCollectionView,
+            cellProvider: { collectionView, indexPath, item in
+                UICollectionViewCell()
+            }
+        )
+    }
+}
+
+
+// MARK: - UICollectionViewDelegate
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected: \(indexPath.row)") // swiftlint:disable:this all
+    }
+}

@@ -10,7 +10,20 @@ import Combine
 
 final class HomeViewModel {
     
+    // MARK: - Interface
+    
+    typealias CategoryDataSource = SingleDiffableDataSource<CategoryItem>
+    
+    func setupCategoryDataSource(_ dataSource: CategoryDataSource) {
+        self.categoryDataSource = dataSource
+    }
+    
+    
     // MARK: - Attribute
+    
+    private var categoryDataSource: CategoryDataSource?
+    
+    // MARK: UseCase
     
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
@@ -72,6 +85,8 @@ private extension HomeViewModel {
             
             output.categories.send(categories)
             output.currentCategory.send(firstCategory)
+            
+            categoryDataSource?.update(data: categories)
         }
     }
 }

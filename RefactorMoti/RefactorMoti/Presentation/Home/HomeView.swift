@@ -12,7 +12,7 @@ final class HomeView: BaseView {
     
     // MARK: - UI
     
-    private lazy var categoriesCollectionView: UICollectionView = {
+    private(set) lazy var categoriesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout())
         collectionView.alwaysBounceVertical = false
         collectionView.backgroundColor = .red
