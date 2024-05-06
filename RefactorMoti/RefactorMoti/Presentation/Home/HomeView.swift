@@ -10,6 +10,13 @@ import JeongDesignSystem
 
 final class HomeView: BaseView { 
     
+    // MARK: - Interface
+    
+    var addCategoryButtonDidTap: UIControl.ControlEventPublisher {
+        addCategoryButton.publisher(for: .touchUpInside)
+    }
+    
+    
     // MARK: - UI
     
     private(set) lazy var categoriesCollectionView: UICollectionView = {

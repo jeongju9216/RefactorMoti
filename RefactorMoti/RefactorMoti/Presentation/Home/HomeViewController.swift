@@ -38,6 +38,7 @@ final class HomeViewController: LayoutViewController<HomeView> {
         super.setUpBinding()
         viewModel.bind(input: input)
         setUpViewModelBinding()
+        setUpUIControlBinding()
     }
 }
 
@@ -58,6 +59,15 @@ private extension HomeViewController {
             .sink { [weak self] achievements in
                 guard let self else { return }
                 print("achievements: \(achievements)") // swiftlint:disable:this all
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func setUpUIControlBinding() {
+        layoutView.addCategoryButtonDidTap
+            .sink { [weak self] in
+                guard let self else { return }
+                input.addCategory.send(CategoryItem(id: UUID().hashValue, name: "임시"))
             }
             .store(in: &cancellables)
     }
