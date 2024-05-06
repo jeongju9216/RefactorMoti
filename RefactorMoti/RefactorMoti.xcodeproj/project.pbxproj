@@ -75,6 +75,7 @@
 		9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */; };
 		9BA895DC2BE7AF820080D400 /* Jeongfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895DB2BE7AF820080D400 /* Jeongfisher */; };
 		9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */; };
+		9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+identifier.swift"; sourceTree = "<group>"; };
 		9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 				9B45817F2BD92FED002A32DC /* FetchVersionUseCase.swift */,
 				9BA895A52BE519420080D400 /* FetchAchievementsUseCase.swift */,
 				9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */,
+				9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */,
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,
 				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
+				9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */,
 				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
 				9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */,
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
