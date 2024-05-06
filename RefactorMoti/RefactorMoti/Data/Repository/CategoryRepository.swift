@@ -13,9 +13,9 @@ struct CategoryRepository: CategoryRepositoryProtocol {
         [
             CategoryItem(id: 0, name: "전체"),
             CategoryItem(id: 1, name: "미설정"),
-            CategoryItem(id: 2, name: "음식"),
-            CategoryItem(id: 3, name: "운동"),
-            CategoryItem(id: 4, name: "개발")
+            CategoryItem(id: 2, name: "맛있는 음식"),
+            CategoryItem(id: 3, name: "힘든 운동"),
+            CategoryItem(id: 4, name: "재밌는 개발")
         ]
     }
     

@@ -10,6 +10,13 @@ import JeongDesignSystem
 
 final class HomeView: BaseView { 
     
+    // MARK: - Interface
+    
+    var addCategoryButtonDidTap: UIControl.ControlEventPublisher {
+        addCategoryButton.publisher(for: .touchUpInside)
+    }
+    
+    
     // MARK: - UI
     
     private(set) lazy var categoriesCollectionView: UICollectionView = {
@@ -18,26 +25,48 @@ final class HomeView: BaseView {
         collectionView.register(CategoryCollectionViewCell.self)
         return collectionView
     }()
-    
     private(set) lazy var achievementCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeAchievementCompositionalLayout())
         collectionView.register(AchievementCollectionViewCell.self)
         return collectionView
+    }()
+    private let addCategoryButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = JDColor.primary.color
+        button.setTitle(Text.AddCategoryButton.title, for: .normal)
+        return button
+    }()
+    private let separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = JDColor.primary.color
+        return view
     }()
     
     
     // MARK: - Setup
     
     override func setUpSubview() {
+        addSubview(addCategoryButton)
+        addSubview(separatorView)
         addSubview(categoriesCollectionView)
         addSubview(achievementCollectionView)
     }
     
     override func setUpConstraint() {
+        addCategoryButton.atl
+            .height(Metric.CategoryList.height)
+            .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
+            .left(equalTo: safeAreaLayoutGuide.leftAnchor, constant: Metric.AddCategoryButton.horizontalOffset)
+            .right(equalTo: separatorView.leftAnchor, constant: -Metric.AddCategoryButton.horizontalOffset)
+        separatorView.atl
+            .width(1)
+            .height(Metric.CategoryList.height)
+            .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
+            .right(equalTo: categoriesCollectionView.leftAnchor)
         categoriesCollectionView.atl
             .height(Metric.CategoryList.height)
             .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
-            .horizontal(equalTo: safeAreaLayoutGuide)
+            .right(equalTo: safeAreaLayoutGuide.rightAnchor)
         achievementCollectionView.atl
             .top(equalTo: categoriesCollectionView.bottomAnchor, constant: Metric.Achievement.topOffset)
             .bottom(equalTo: self.bottomAnchor)
@@ -122,6 +151,19 @@ private extension HomeView {
             static let itemEdgeInset = 1.0
             static let itemCount: CGFloat = Constant.isPhone ? 3 : 7
             static let topOffset = 10.0
+        }
+        
+        enum AddCategoryButton {
+            
+            static let horizontalOffset = 5.0
+        }
+    }
+    
+    enum Text {
+        
+        enum AddCategoryButton {
+            
+            static let title = "+"
         }
     }
 }
