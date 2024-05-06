@@ -93,7 +93,42 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(source, targetCategories.first)
     }
     
-    func test_addCategory가_input될_때_카테고리_추가에_성공하면_output은_true() throws { }
+    func test_addCategory가_input될_때_카테고리_추가에_성공하면_output은_새로운_카테고리_리스트() throws {
+        // given
+        let expectation = XCTestExpectation()
+        let expectation2 = XCTestExpectation()
+        let newCategory = CategoryItem(id: 99, name: "Test")
+        let targetNewCategories = targetCategories + [newCategory]
+        
+        // when
+        var source: Bool?
+        var source2: [CategoryItem]?
+        output.isAddedCategorySuccess
+            .sink { isSuccessAddCategory in
+                source = isSuccessAddCategory
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        output.categories
+            .dropFirst()
+            .sink { categories in
+                source2 = categories
+                expectation2.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        input.viewDidLoad.send()
+        input.addCategory.send(newCategory)
+        
+        // then
+        wait(for: [expectation, expectation2], timeout: 5)
+        
+        XCTAssertNotNil(source)
+        XCTAssertTrue(source!)
+        XCTAssertNotNil(source2)
+        XCTAssertEqual(source2, targetNewCategories)
+    }
     
     func test_addCategory가_input될_때_카테고리_추가에_실패하면_output은_false() throws { }
     

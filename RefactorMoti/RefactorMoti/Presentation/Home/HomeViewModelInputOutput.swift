@@ -13,14 +13,16 @@ extension HomeViewModel {
     struct Input {
         
         let viewDidLoad: PassthroughSubject<Void, Never> = .init()
+        let addCategory: PassthroughSubject<CategoryItem, Never> = .init()
     }
     
     struct Output {
         
         // MARK: Category
         
-        let categories: PassthroughSubject<[CategoryItem], Never> = .init()
+        let categories: CurrentValueSubject<[CategoryItem], Never> = .init([])
         let currentCategory: PassthroughSubject<CategoryItem, Never> = .init()
+        let isAddedCategorySuccess: PassthroughSubject<Bool, Never> = .init()
         
         // MARK: Achievement
         

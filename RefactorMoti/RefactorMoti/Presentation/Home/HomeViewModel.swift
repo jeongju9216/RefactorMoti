@@ -33,6 +33,7 @@ final class HomeViewModel {
     
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
+    private let addCategoryUseCase: AddCategoryUseCaseProtocol
     
     // MARK: Output
     
@@ -44,10 +45,12 @@ final class HomeViewModel {
     
     init(
         fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = FetchCategoriesUseCase(),
-        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase()
+        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase(),
+        addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase()
     ) {
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
+        self.addCategoryUseCase = addCategoryUseCase
     }
 }
 
@@ -60,6 +63,13 @@ extension HomeViewModel {
             .sink { [weak self] in
                 guard let self else { return }
                 viewDidLoad()
+            }
+            .store(in: &cancellables)
+        
+        input.addCategory
+            .sink { [weak self] category in
+                guard let self else { return }
+                addCategory(category: category)
             }
             .store(in: &cancellables)
     }
@@ -95,6 +105,19 @@ private extension HomeViewModel {
             output.currentCategory.send(firstCategory)
             
             categoryDataSource?.update(data: categories)
+        }
+    }
+    
+    func addCategory(category: CategoryItem) {
+        Task {
+            let isSuccess = await addCategoryUseCase.execute(with: category)
+            output.isAddedCategorySuccess.send(isSuccess)
+            
+            if isSuccess {
+                let newCategories = output.categories.value + [category]
+                output.categories.send(newCategories)
+                categoryDataSource?.update(data: newCategories)
+            }
         }
     }
 }
