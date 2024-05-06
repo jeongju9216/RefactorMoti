@@ -76,6 +76,7 @@
 		9BA895DC2BE7AF820080D400 /* Jeongfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895DB2BE7AF820080D400 /* Jeongfisher */; };
 		9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */; };
 		9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */; };
+		9BA895E22BE875360080D400 /* AddCategoryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
 		9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryUseCase.swift; sourceTree = "<group>"; };
+		9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +462,7 @@
 				9B289C6B2BDBD4E1000813C1 /* AuthUseCaseTests.swift */,
 				9BA895A32BE5131D0080D400 /* FetchAchievementsUseCaseTests.swift */,
 				9BA895AB2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift */,
+				9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				9B4581582BD7DF17002A32DC /* LaunchViewModelTests.swift in Sources */,
 				9BA895B82BE5F87D0080D400 /* CategoryRepositoryStub.swift in Sources */,
 				9BA895B22BE5F42A0080D400 /* CategoryRepositoryTests.swift in Sources */,
+				9BA895E22BE875360080D400 /* AddCategoryUseCaseTests.swift in Sources */,
 				9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
