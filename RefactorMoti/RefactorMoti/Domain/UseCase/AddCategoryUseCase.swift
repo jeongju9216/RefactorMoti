@@ -9,5 +9,26 @@ import Foundation
 
 protocol AddCategoryUseCaseProtocol {
     
-    func execute() async -> Bool
+    func execute(with category: CategoryItem) async -> Bool
+}
+
+struct AddCategoryUseCase: AddCategoryUseCaseProtocol {
+    
+    // MARK: - Interface
+    
+    func execute(with category: CategoryItem) async -> Bool {
+        await repository.addCategory(category)
+    }
+    
+    
+    // MARK: - Attribute
+    
+    private let repository: CategoryRepositoryProtocol
+    
+    
+    // MARK: - Initializer
+    
+    init(repository: CategoryRepositoryProtocol = CategoryRepository()) {
+        self.repository = repository
+    }
 }
