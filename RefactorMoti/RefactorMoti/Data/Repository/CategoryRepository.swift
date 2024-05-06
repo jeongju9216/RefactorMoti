@@ -18,4 +18,8 @@ struct CategoryRepository: CategoryRepositoryProtocol {
             CategoryItem(id: 4, name: "개발")
         ]
     }
+    
+    func addCategory(_ category: CategoryItem) async -> Bool {
+        true
+    }
 }
