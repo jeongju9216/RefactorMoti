@@ -219,14 +219,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		9B411CB72BDFCB7900A50B78 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9B411CB82BDFCB8A00A50B78 /* Combine */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		9B411CB82BDFCB8A00A50B78 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +266,6 @@
 				9B45815F2BD7EA26002A32DC /* Presentation */,
 				9B45815D2BD7EA1E002A32DC /* Domain */,
 				9B45815E2BD7EA23002A32DC /* Data */,
-				9B411CB72BDFCB7900A50B78 /* Extensions */,
 				9B4581612BD7EA3C002A32DC /* Resource */,
 			);
 			path = RefactorMoti;
@@ -541,10 +532,19 @@
 		9BA895D52BE7509C0080D400 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9B411CB82BDFCB8A00A50B78 /* Combine */,
+				9BA895E32BE9079C0080D400 /* CollectionView */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9BA895E32BE9079C0080D400 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
 				9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */,
 				9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */,
 			);
-			path = Extension;
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
