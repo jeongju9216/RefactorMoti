@@ -37,10 +37,13 @@
 
 
 # moti 2.0 구조
-![moti2-2](https://github.com/jeongju9216/moti-2.0/assets/89075274/0f2a2785-23f8-4aed-ad1d-4f01cf7d76d7)
+![moti2-3](https://github.com/jeongju9216/moti-2.0/assets/89075274/1a67cac1-9f68-4626-bb99-e183aec432db)
 
 
 # 기술 스택
 - Swift, UIKit
 - Combine
 - Swift Concurrency
+- 라이브러리
+  - Firebase
+
