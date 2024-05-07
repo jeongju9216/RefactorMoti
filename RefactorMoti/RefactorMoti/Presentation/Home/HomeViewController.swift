@@ -55,10 +55,11 @@ private extension HomeViewController {
             }
             .store(in: &cancellables)
         
-        output.currentCategory
-            .sink { [weak self] category in
+        output.selectedCategoryIndex
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] indexPath in
                 guard let self else { return }
-                print("category: \(category)") // swiftlint:disable:this all
+                layoutView.selectCategory(indexPath: indexPath)
             }
             .store(in: &cancellables)
         

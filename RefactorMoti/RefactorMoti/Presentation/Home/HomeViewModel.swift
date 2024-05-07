@@ -44,6 +44,7 @@ final class HomeViewModel {
         output.categories.value
     }
     
+    
     // MARK: - Initializer
     
     init(
@@ -108,7 +109,7 @@ private extension HomeViewModel {
     }
     
     func selectCategory(at indexPath: IndexPath) {
-        guard indexPath.row < categories.count else {
+        guard indexPath.item < categories.count else {
             return
         }
         
@@ -133,7 +134,7 @@ private extension HomeViewModel {
     func fetchCategories() {
         Task {
             guard let categories = try? await fetchCategoriesUseCase.execute(),
-                  let firstCategory = categories.first else {
+                !categories.isEmpty else {
                 // TODO: 에러 발생
                 return
             }
@@ -141,9 +142,7 @@ private extension HomeViewModel {
             output.categories.send(categories)
             categoryDataSource?.update(data: categories)
 
-            if !categories.isEmpty {
-                output.selectedCategoryIndex.send(IndexPath(row: 0, section: 0))
-            }
+            selectCategory(at: IndexPath(item: 0, section: 0))
         }
     }
 }

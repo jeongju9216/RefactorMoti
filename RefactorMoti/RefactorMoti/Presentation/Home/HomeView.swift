@@ -16,6 +16,10 @@ final class HomeView: BaseView {
         addCategoryButton.publisher(for: .touchUpInside)
     }
     
+    func selectCategory(indexPath: IndexPath) {
+        categoriesCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+    }
+    
     
     // MARK: - UI
     
