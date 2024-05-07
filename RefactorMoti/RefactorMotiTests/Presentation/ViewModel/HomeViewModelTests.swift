@@ -140,6 +140,30 @@ final class HomeViewModelTests: XCTestCase {
     
     func test_deleteCategory가_input될_때_카테고리_삭제에_실패하면_output은_false() throws { }
     
+    func test_selectCategory가_input될_때_유효한_index면_currentCategory_output은_선택한_카테고리() throws {
+        // given
+        let expectation = XCTestExpectation()
+        let target = targetCategories[0]
+        
+        // when
+        var source: CategoryItem?
+        output.currentCategory
+            .sink { currentCategory in
+                source = currentCategory
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        input.viewDidLoad.send()
+        input.selectCategoryCell.send(IndexPath(row: 0, section: 0))
+        
+        // then
+        wait(for: [expectation], timeout: 5)
+        
+        XCTAssertNotNil(source)
+        XCTAssertEqual(source, target)
+    }
+    
     
     // MARK: - Achievement
     
