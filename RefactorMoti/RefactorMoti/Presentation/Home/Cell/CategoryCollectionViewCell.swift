@@ -61,7 +61,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         clipsToBounds = true
         layer.cornerRadius = Metric.cornerRadius
         layer.borderWidth = Metric.borderWidth
-        layer.borderColor = JDColor.primary.color.cgColor
         deselected()
     }
     
@@ -76,13 +75,15 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     private func selected() {
-        backgroundColor = JDColor.primary.color
-        label.textColor = JDColor.background.color
+        backgroundColor = Color.Selected.background
+        layer.borderColor = Color.Selected.border.cgColor
+        label.textColor = Color.Selected.label
     }
     
     private func deselected() {
-        backgroundColor = JDColor.background.color
-        label.textColor = JDColor.primary.color
+        backgroundColor = Color.Deselected.background
+        layer.borderColor = Color.Deselected.border.cgColor
+        label.textColor = Color.Deselected.label
     }
 }
 
@@ -96,5 +97,22 @@ private extension CategoryCollectionViewCell {
         static let horizontalOffset = 10.0
         static let cornerRadius = 10.0
         static let borderWidth = 1.0
+    }
+    
+    enum Color {
+        
+        enum Selected {
+        
+            static let background = JDColor.primary
+            static let border = JDColor.primary
+            static let label = UIColor.white
+        }
+        
+        enum Deselected {
+            
+            static let background = JDColor.lightGray
+            static let border = JDColor.gray
+            static let label = UIColor.black
+        }
     }
 }
