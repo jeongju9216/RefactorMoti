@@ -55,6 +55,13 @@ private extension HomeViewController {
             }
             .store(in: &cancellables)
         
+        output.currentCategory
+            .sink { [weak self] category in
+                guard let self else { return }
+                print("category: \(category)") // swiftlint:disable:this all
+            }
+            .store(in: &cancellables)
+        
         output.achievements
             .sink { [weak self] achievements in
                 guard let self else { return }
@@ -119,6 +126,12 @@ private extension HomeViewController {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected: \(indexPath.row)") // swiftlint:disable:this all
+        if collectionView == layoutView.categoriesCollectionView {
+            didSelectCategoryCollectionView(indexPath: indexPath)
+        }
+    }
+    
+    private func didSelectCategoryCollectionView(indexPath: IndexPath) {
+        input.selectCategoryCell.send(indexPath)
     }
 }
