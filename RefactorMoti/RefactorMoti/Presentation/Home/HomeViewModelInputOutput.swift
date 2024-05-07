@@ -22,7 +22,7 @@ extension HomeViewModel {
         // MARK: Category
         
         let categories: CurrentValueSubject<[CategoryItem], Never> = .init([])
-        let currentCategory: PassthroughSubject<CategoryItem, Never> = .init()
+        let selectedCategoryIndex: PassthroughSubject<IndexPath, Never> = .init()
         let isAddedCategorySuccess: PassthroughSubject<Bool, Never> = .init()
         
         // MARK: Achievement

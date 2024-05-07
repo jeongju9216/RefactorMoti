@@ -112,8 +112,7 @@ private extension HomeViewModel {
             return
         }
         
-        let selectedCategory = categories[indexPath.row]
-        output.currentCategory.send(selectedCategory)
+        output.selectedCategoryIndex.send(indexPath)
     }
 }
 
@@ -140,9 +139,11 @@ private extension HomeViewModel {
             }
             
             output.categories.send(categories)
-            output.currentCategory.send(firstCategory)
-            
             categoryDataSource?.update(data: categories)
+
+            if !categories.isEmpty {
+                output.selectedCategoryIndex.send(IndexPath(row: 0, section: 0))
+            }
         }
     }
 }
