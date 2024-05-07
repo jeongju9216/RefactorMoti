@@ -12,6 +12,12 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Interface
     
+    override var isSelected: Bool {
+        didSet {
+            isSelected ? selected() : deselected()
+        }
+    }
+    
     func configure(with category: CategoryItem) {
         label.text = category.name
     }
@@ -41,6 +47,14 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     
+    // MARK: - Life Cycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        deselected()
+    }
+    
+    
     // MARK: - Setup
     
     private func setUpAttribute() {
@@ -48,6 +62,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = Metric.cornerRadius
         layer.borderWidth = Metric.borderWidth
         layer.borderColor = JDColor.primary.color.cgColor
+        deselected()
     }
     
     private func setUpSubview() {
@@ -58,6 +73,16 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         label.atl
             .centerY(equalTo: self.centerYAnchor)
             .horizontal(equalTo: self, constant: Metric.horizontalOffset)
+    }
+    
+    private func selected() {
+        backgroundColor = JDColor.primary.color
+        label.textColor = JDColor.background.color
+    }
+    
+    private func deselected() {
+        backgroundColor = JDColor.background.color
+        label.textColor = JDColor.primary.color
     }
 }
 

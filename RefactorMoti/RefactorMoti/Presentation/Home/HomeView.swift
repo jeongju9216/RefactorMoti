@@ -8,7 +8,7 @@
 import UIKit
 import JeongDesignSystem
 
-final class HomeView: BaseView { 
+final class HomeView: BaseView {
     
     // MARK: - Interface
     
