@@ -40,6 +40,10 @@ final class HomeViewModel {
     let output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
+    private var categories: [CategoryItem] {
+        output.categories.value
+    }
+    
     
     // MARK: - Initializer
     
@@ -72,6 +76,13 @@ extension HomeViewModel {
                 addCategory(category: category)
             }
             .store(in: &cancellables)
+        
+        input.selectCategoryCell
+            .sink { [weak self] indexPath in
+                guard let self else { return }
+                selectCategory(at: indexPath)
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -83,6 +94,33 @@ private extension HomeViewModel {
         fetchCategories()
         fetchAllAchievements()
     }
+    
+    func addCategory(category: CategoryItem) {
+        Task {
+            let isSuccess = await addCategoryUseCase.execute(with: category)
+            output.isAddedCategorySuccess.send(isSuccess)
+            
+            if isSuccess {
+                let newCategories = categories + [category]
+                output.categories.send(newCategories)
+                categoryDataSource?.update(data: newCategories)
+            }
+        }
+    }
+    
+    func selectCategory(at indexPath: IndexPath) {
+        guard indexPath.item < categories.count else {
+            return
+        }
+        
+        output.selectedCategoryIndex.send(indexPath)
+    }
+}
+
+
+// MARK: - Action Method
+
+private extension HomeViewModel {
     
     func fetchAllAchievements() {
         Task {
@@ -96,28 +134,15 @@ private extension HomeViewModel {
     func fetchCategories() {
         Task {
             guard let categories = try? await fetchCategoriesUseCase.execute(),
-                  let firstCategory = categories.first else {
+                !categories.isEmpty else {
                 // TODO: 에러 발생
                 return
             }
             
             output.categories.send(categories)
-            output.currentCategory.send(firstCategory)
-            
             categoryDataSource?.update(data: categories)
-        }
-    }
-    
-    func addCategory(category: CategoryItem) {
-        Task {
-            let isSuccess = await addCategoryUseCase.execute(with: category)
-            output.isAddedCategorySuccess.send(isSuccess)
-            
-            if isSuccess {
-                let newCategories = output.categories.value + [category]
-                output.categories.send(newCategories)
-                categoryDataSource?.update(data: newCategories)
-            }
+
+            selectCategory(at: IndexPath(item: 0, section: 0))
         }
     }
 }

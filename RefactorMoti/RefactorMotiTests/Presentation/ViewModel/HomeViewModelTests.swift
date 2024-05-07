@@ -71,15 +71,15 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(source, targetCategories)
     }
     
-    func test_viewDidLoad가_input되면_현재_카테고리에_첫_번째_카테고리를_output() throws {
+    func test_viewDidLoad가_input되면_첫_번째_카테고리를_output() throws {
         // given
         let expectation = XCTestExpectation()
         
         // when
-        var source: CategoryItem?
-        output.currentCategory
-            .sink { currentCategory in
-                source = currentCategory
+        var source: IndexPath?
+        output.selectedCategoryIndex
+            .sink { indexPath in
+                source = indexPath
                 expectation.fulfill()
             }
             .store(in: &cancellables)
@@ -90,7 +90,7 @@ final class HomeViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
         
         XCTAssertNotNil(source)
-        XCTAssertEqual(source, targetCategories.first)
+        XCTAssertEqual(source, IndexPath(row: 0, section: 0))
     }
     
     func test_addCategory가_input될_때_카테고리_추가에_성공하면_output은_새로운_카테고리_리스트() throws {
@@ -139,6 +139,40 @@ final class HomeViewModelTests: XCTestCase {
     func test_deleteCategory가_input될_때_카테고리_삭제에_성공하면_삭제된_카테고리의_게시글은_미설정_카테고리가_된다() throws { }
     
     func test_deleteCategory가_input될_때_카테고리_삭제에_실패하면_output은_false() throws { }
+    
+    func test_selectCategory가_input될_때_유효한_index면_currentCategory_output은_선택한_카테고리() throws {
+        // given
+        let expectation1 = XCTestExpectation()
+        let expectation2 = XCTestExpectation()
+        let targetIndex = 1
+        let targetIndexPath = IndexPath(row: targetIndex, section: 0)
+        let target = targetCategories[targetIndex]
+        
+        // when
+        var source: IndexPath?
+        output.categories
+            .sink { _ in
+                expectation1.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        output.selectedCategoryIndex
+            .sink { indexPath in
+                source = indexPath
+                expectation2.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        input.viewDidLoad.send()
+        wait(for: [expectation1], timeout: 5)
+        input.selectCategoryCell.send(targetIndexPath)
+        
+        // then
+        wait(for: [expectation2], timeout: 5)
+        
+        XCTAssertNotNil(source)
+        XCTAssertEqual(source, targetIndexPath)
+    }
     
     
     // MARK: - Achievement

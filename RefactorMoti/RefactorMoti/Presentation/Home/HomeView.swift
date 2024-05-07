@@ -8,12 +8,16 @@
 import UIKit
 import JeongDesignSystem
 
-final class HomeView: BaseView { 
+final class HomeView: BaseView {
     
     // MARK: - Interface
     
     var addCategoryButtonDidTap: UIControl.ControlEventPublisher {
         addCategoryButton.publisher(for: .touchUpInside)
+    }
+    
+    func selectCategory(indexPath: IndexPath) {
+        categoriesCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     
     
