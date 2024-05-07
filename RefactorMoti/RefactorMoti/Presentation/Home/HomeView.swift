@@ -36,13 +36,13 @@ final class HomeView: BaseView {
     }()
     private let addCategoryButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = JDColor.primary.color
+        button.backgroundColor = JDColor.primary
         button.setTitle(Text.AddCategoryButton.title, for: .normal)
         return button
     }()
     private let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = JDColor.primary.color
+        view.backgroundColor = JDColor.primary
         return view
     }()
     

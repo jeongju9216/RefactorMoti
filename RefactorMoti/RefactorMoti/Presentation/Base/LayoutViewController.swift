@@ -28,6 +28,6 @@ class LayoutViewController<LayoutView: BaseView>: BaseViewController {
     
     override func setUpAttribute() {
         super.setUpAttribute()
-        view.backgroundColor = JDColor.background.color
+        view.backgroundColor = JDColor.background
     }
 }
