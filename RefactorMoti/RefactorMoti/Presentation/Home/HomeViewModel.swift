@@ -108,7 +108,7 @@ private extension HomeViewModel {
     }
     
     func selectCategory(at indexPath: IndexPath) {
-        guard categories.count < indexPath.row else {
+        guard indexPath.row < categories.count else {
             return
         }
         

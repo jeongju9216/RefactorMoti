@@ -142,23 +142,32 @@ final class HomeViewModelTests: XCTestCase {
     
     func test_selectCategory가_input될_때_유효한_index면_currentCategory_output은_선택한_카테고리() throws {
         // given
-        let expectation = XCTestExpectation()
-        let target = targetCategories[0]
+        let expectation1 = XCTestExpectation()
+        let expectation2 = XCTestExpectation()
+        let targetIndex = 1
+        let target = targetCategories[targetIndex]
         
         // when
         var source: CategoryItem?
+        output.categories
+            .sink { _ in
+                expectation1.fulfill()
+            }
+            .store(in: &cancellables)
+        
         output.currentCategory
             .sink { currentCategory in
                 source = currentCategory
-                expectation.fulfill()
+                expectation2.fulfill()
             }
             .store(in: &cancellables)
         
         input.viewDidLoad.send()
-        input.selectCategoryCell.send(IndexPath(row: 0, section: 0))
+        wait(for: [expectation1], timeout: 5)
+        input.selectCategoryCell.send(IndexPath(row: targetIndex, section: 0))
         
         // then
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation2], timeout: 5)
         
         XCTAssertNotNil(source)
         XCTAssertEqual(source, target)
