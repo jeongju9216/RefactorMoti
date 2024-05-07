@@ -14,6 +14,7 @@ extension HomeViewModel {
         
         let viewDidLoad: PassthroughSubject<Void, Never> = .init()
         let addCategory: PassthroughSubject<CategoryItem, Never> = .init()
+        let selectCategoryCell: PassthroughSubject<IndexPath, Never> = .init()
     }
     
     struct Output {
