@@ -36,13 +36,13 @@ final class HomeView: BaseView {
     }()
     private let addCategoryButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = JDColor.primary
+        button.backgroundColor = Color.AddCategoryButton.background
         button.setTitle(Text.AddCategoryButton.title, for: .normal)
         return button
     }()
     private let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = JDColor.primary
+        view.backgroundColor = Color.AddCategoryButton.separator
         return view
     }()
     
@@ -168,6 +168,15 @@ private extension HomeView {
         enum AddCategoryButton {
             
             static let title = "+"
+        }
+    }
+    
+    enum Color {
+        
+        enum AddCategoryButton {
+            
+            static let background = JDColor.primary
+            static let separator = JDColor.gray
         }
     }
 }
