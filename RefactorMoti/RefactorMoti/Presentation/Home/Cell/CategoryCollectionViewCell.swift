@@ -58,8 +58,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     // MARK: - Setup
     
     private func setUpAttribute() {
-        clipsToBounds = true
-        layer.cornerRadius = Metric.cornerRadius
+        jd.cornerRadius(.small)
         layer.borderWidth = Metric.borderWidth
         deselected()
     }
@@ -95,7 +94,6 @@ private extension CategoryCollectionViewCell {
     enum Metric {
         
         static let horizontalOffset = 10.0
-        static let cornerRadius = 10.0
         static let borderWidth = 1.0
     }
     

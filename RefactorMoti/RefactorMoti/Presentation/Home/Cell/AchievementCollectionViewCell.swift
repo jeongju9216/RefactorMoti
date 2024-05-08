@@ -29,7 +29,7 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
     private let imageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
+        imageView.jd.cornerRadius(.small)
         return imageView
     }()
     

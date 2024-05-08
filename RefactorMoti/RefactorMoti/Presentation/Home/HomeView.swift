@@ -38,6 +38,7 @@ final class HomeView: BaseView {
         let button = UIButton()
         button.backgroundColor = Color.AddCategoryButton.background
         button.setTitle(Text.AddCategoryButton.title, for: .normal)
+        button.jd.cornerRadius(.small)
         return button
     }()
     private let separatorView: UIView = {
