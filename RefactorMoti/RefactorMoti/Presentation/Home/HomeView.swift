@@ -59,6 +59,7 @@ final class HomeView: BaseView {
     
     override func setUpConstraint() {
         addCategoryButton.atl
+            .width(equalTo: addCategoryButton.heightAnchor)
             .height(Metric.CategoryList.height)
             .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
             .left(equalTo: safeAreaLayoutGuide.leftAnchor, constant: Metric.AddCategoryButton.horizontalOffset)
