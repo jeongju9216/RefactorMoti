@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 import JeongDesignSystem
 
 final class LoginView: BaseView {
@@ -24,14 +25,7 @@ final class LoginView: BaseView {
         view.image = UIImage(resource: .appIconRound)
         return view
     }()
-    private let loginButton: UIButton = {
-        let button = UIButton()
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = Text.login
-        configuration.baseBackgroundColor = .lightGray
-        button.configuration = configuration
-        return button
-    }()
+    private let loginButton = ASAuthorizationAppleIDButton(type: .default, style: .whiteOutline)
     
     
     // MARK: - Setup
@@ -46,8 +40,8 @@ final class LoginView: BaseView {
             .size(Size.appIconRound)
             .center(equalTo: safeAreaLayoutGuide)
         loginButton.atl
+            .size(Metric.LoginButton.size)
             .centerX(equalTo: safeAreaLayoutGuide.centerXAnchor)
-            .horizontal(equalTo: safeAreaLayoutGuide, constant: Metric.LoginButton.offset)
             .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.LoginButton.offset)
     }
 }
@@ -61,6 +55,7 @@ private extension LoginView {
         
         enum LoginButton {
             
+            static let size = CGSize(width: 48 * 6.8, height: 48)
             static let offset: CGFloat = 20
         }
     }
