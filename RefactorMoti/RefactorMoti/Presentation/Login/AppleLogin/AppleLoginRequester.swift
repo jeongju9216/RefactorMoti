@@ -21,6 +21,7 @@ enum LoginError: Error {
     case invalidCredential
     case invalidNonce
     case invalidIdentityToken
+    case invalidUserID
 }
 
 final class AppleLoginRequester: NSObject {
@@ -108,8 +109,12 @@ extension AppleLoginRequester: ASAuthorizationControllerDelegate {
                 delegate?.appleLoginRequester(self, didLoginFailed: error!)
                 return
             }
+            guard let userUID = authResult?.user.uid else {
+                delegate?.appleLoginRequester(self, didLoginFailed: LoginError.invalidUserID)
+                return
+            }
             
-            delegate?.appleLoginRequester(self, didLoginSuccess: authResult?.user.uid)
+            delegate?.appleLoginRequester(self, didLoginSuccess: userUID)
         }
     }
 }
