@@ -7,18 +7,34 @@
 
 import UIKit
 import Combine
+import CryptoKit
+import AuthenticationServices
 
 final class LoginViewController: LayoutViewController<LoginView> {
     
     // MARK: - Attribute
+    
+    // MARK: ViewModel
     
     private let viewModel = LoginViewModel()
     private let input = LoginViewModel.Input()
     private var output: LoginViewModel.Output { viewModel.output }
     private var cancellables: Set<AnyCancellable> = []
     
+    // MARK: Apple Login
     
-    // MARK: - Binding
+    private lazy var appleLoginRequester: AppleLoginRequester? = {
+        guard let window = view.window else {
+            return nil
+        }
+        
+        let appleLoginRequester = AppleLoginRequester(window: window)
+        appleLoginRequester.delegate = self
+        return appleLoginRequester
+    }()
+    
+    
+    // MARK: - Setup
     
     override func setUpBinding() {
         viewModel.bind(input: input)
@@ -30,7 +46,7 @@ final class LoginViewController: LayoutViewController<LoginView> {
         layoutView.loginButtonDidTap
             .sink { [weak self] in
                 guard let self else { return }
-                input.login.send()
+                appleLoginRequester?.request()
             }
             .store(in: &cancellables)
     }
@@ -62,3 +78,18 @@ private extension LoginViewController {
         present(navigationVC, animated: true)
     }
 }
+
+
+// MARK: - AppleLoginRequesterDelegate
+
+extension LoginViewController: AppleLoginRequester.Delegate {
+    
+    func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginSuccess token: String) {
+        input.login.send()
+    }
+    
+    func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginFailed error: any Error) {
+        // TODO: Alert 표시
+    }
+}
+

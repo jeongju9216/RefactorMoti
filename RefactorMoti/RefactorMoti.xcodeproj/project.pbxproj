@@ -50,6 +50,9 @@
 		9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */; };
 		9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */; };
 		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
+		9B95D91B2BEF0E12003BFDC3 /* AppleLoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */; };
+		9B95D91D2BEF146A003BFDC3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */; };
+		9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -135,6 +138,9 @@
 		9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCaseStub.swift; sourceTree = "<group>"; };
 		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
+		9B95D9182BEF0D12003BFDC3 /* RefactorMoti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RefactorMoti.entitlements; sourceTree = "<group>"; };
+		9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequester.swift; sourceTree = "<group>"; };
+		9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginError.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 				9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */,
 				9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */,
 				9BA895DC2BE7AF820080D400 /* Jeongfisher in Frameworks */,
+				9B95D91D2BEF146A003BFDC3 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +218,7 @@
 		9B289C892BDE466B000813C1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9B95D9192BEF0E0B003BFDC3 /* AppleLogin */,
 				9B289C8A2BDE4682000813C1 /* LoginView.swift */,
 				9B289C8C2BDE4687000813C1 /* LoginViewController.swift */,
 				9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */,
@@ -262,6 +270,7 @@
 		9B4581202BD52EB7002A32DC /* RefactorMoti */ = {
 			isa = PBXGroup;
 			children = (
+				9B95D9182BEF0D12003BFDC3 /* RefactorMoti.entitlements */,
 				9B4581602BD7EA34002A32DC /* Application */,
 				9B45815F2BD7EA26002A32DC /* Presentation */,
 				9B45815D2BD7EA1E002A32DC /* Domain */,
@@ -411,6 +420,15 @@
 				9B289C782BDCED2C000813C1 /* LaunchView.swift */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		9B95D9192BEF0E0B003BFDC3 /* AppleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */,
+				9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */,
+			);
+			path = AppleLogin;
 			sourceTree = "<group>";
 		};
 		9BA8958D2BE3835C0080D400 /* Domain */ = {
@@ -568,6 +586,7 @@
 				9B4581732BD7EC40002A32DC /* FirebaseDatabase */,
 				9BA895862BDFDB5B0080D400 /* JeongDesignSystem */,
 				9BA895DB2BE7AF820080D400 /* Jeongfisher */,
+				9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */,
 			);
 			productName = RefactorMoti;
 			productReference = 9B45811E2BD52EB7002A32DC /* RefactorMoti.app */;
@@ -694,8 +713,10 @@
 				9BA895D42BE74F880080D400 /* CategoryCollectionViewCell.swift in Sources */,
 				9BA895D12BE725D60080D400 /* CompositionalLayout.swift in Sources */,
 				9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */,
+				9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
 				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
+				9B95D91B2BEF0E12003BFDC3 /* AppleLoginRequester.swift in Sources */,
 				9B289C792BDCED2C000813C1 /* LaunchView.swift in Sources */,
 				9B45816C2BD7EAED002A32DC /* VersionRepository.swift in Sources */,
 				9B411CB32BDFC31F00A50B78 /* LoginViewModel.swift in Sources */,
@@ -902,6 +923,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RefactorMoti/RefactorMoti.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -932,6 +954,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RefactorMoti/RefactorMoti.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1068,6 +1091,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		9BA895862BDFDB5B0080D400 /* JeongDesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
