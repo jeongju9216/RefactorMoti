@@ -28,9 +28,24 @@ struct CategoryItem: Hashable {
 }
 
 
-// MARK: - Dictionary
+// MARK: - Information
 
 extension CategoryItem {
+    
+    init?(information: [String: Any]) {
+        guard let id = information[Key.id] as? Int,
+              let name = information[Key.name] as? String,
+              let continued = information[Key.continued] as? Int
+        else {
+            return nil
+        }
+        let lastChallenged = information[Key.lastChallenged] as? Date
+        
+        self.id = id
+        self.name = name
+        self.continued = continued
+        self.lastChallenged = lastChallenged
+    }
     
     func toInformation() -> [String: Any] {
         var information: [String: Any] = [

@@ -15,6 +15,8 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     
     static let shared = FirebaseStorage()
     
+    // MARK: Configure
+    
     func configure() {
         guard firebaseRef == nil else {
             return
@@ -23,6 +25,8 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         FirebaseApp.configure()
         firebaseRef = Database.database().reference()
     }
+    
+    // MARK: Version
     
     func fetchVersion() async -> (latest: String, forced: String)? {
         guard let snapshot = try? await firebaseRef?.child("version").getData(),
@@ -36,6 +40,8 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         return (latest, forced)
     }
     
+    // MARK: Category
+    
     func createDefaultCategories() async -> Bool {
         guard await isNeedCreateDefaultCategories() else {
             return true
@@ -43,13 +49,24 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         
         do {
             for category in Constant.defaultCategories {
-                let dict = CategoryItem(name: category).toDictionary()
+                let dict = CategoryItem(name: category).toInformation()
                 try await userRef?.child(Path.category).child(category).setValue(dict)
             }
         } catch {
             return false
         }
         return true
+    }
+    
+    func fetchCategories() async throws -> [CategoryItem] {
+        let categorySnapshot = try await fetchData(from: Path.category)
+        return categorySnapshot.children.compactMap { child in
+            guard let snapshot = child as? DataSnapshot,
+                  let information = snapshot.value as? [String: Any] else {
+                return nil
+            }
+            return CategoryItem(information: information)
+        }
     }
     
     
@@ -74,6 +91,21 @@ final class FirebaseStorage: FirebaseStorageProtocol {
             return true
         }
         return isExistData.childrenCount < 2
+    }
+    
+    private func fetchData(from path: String) async throws -> DataSnapshot {
+        guard let userRef else {
+            throw FirebaseStorageError.nonexistUserReference
+        }
+        
+        let ref = userRef.child(path)
+        return try await withCheckedThrowingContinuation { continuation in
+            ref.observeSingleEvent(of: .value, with: { snapshot in
+                continuation.resume(returning: snapshot)
+            }) { error in
+                continuation.resume(throwing: error)
+            }
+        }
     }
 }
 
