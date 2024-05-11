@@ -9,22 +9,10 @@ import Foundation
 
 struct CategoryItem: Hashable {
     
-    let id: Int
+    let id: String
     let name: String
     var continued: Int = 0
     var lastChallenged: Date? = nil
-    
-    init(
-        id: Int = UUID().hashValue,
-        name: String,
-        continued: Int = 0,
-        lastChallenged: Date? = nil
-    ) {
-        self.id = id
-        self.name = name
-        self.continued = continued
-        self.lastChallenged = lastChallenged
-    }
 }
 
 
@@ -33,7 +21,7 @@ struct CategoryItem: Hashable {
 extension CategoryItem {
     
     init?(information: [String: Any]) {
-        guard let id = information[Key.id] as? Int,
+        guard let id = information[Key.id] as? String,
               let name = information[Key.name] as? String,
               let continued = information[Key.continued] as? Int
         else {
@@ -51,7 +39,8 @@ extension CategoryItem {
         var information: [String: Any] = [
             Key.id: id,
             Key.name: name,
-            Key.continued: continued
+            Key.continued: continued,
+            Key.createdAt: Date()
         ]
         if let lastChallenged {
             information[Key.lastChallenged] = lastChallenged
@@ -81,6 +70,7 @@ private extension CategoryItem {
         static let name = "name"
         static let continued = "continued"
         static let lastChallenged = "lastChallenged"
+        static let createdAt = "createdAt"
     }
 }
 
