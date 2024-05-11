@@ -97,7 +97,7 @@ final class HomeViewModelTests: XCTestCase {
         // given
         let expectation = XCTestExpectation()
         let expectation2 = XCTestExpectation()
-        let newCategory = CategoryItem(id: 99, name: "Test")
+        let newCategory = CategoryItem(id: "99", name: "Test")
         let targetNewCategories = targetCategories + [newCategory]
         
         // when

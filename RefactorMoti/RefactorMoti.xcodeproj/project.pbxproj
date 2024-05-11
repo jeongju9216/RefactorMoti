@@ -54,6 +54,7 @@
 		9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */; };
 		9B95D9232BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9222BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift */; };
 		9B95D9252BEF5A8B003BFDC3 /* CreateDefaultCategoriesUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9242BEF5A8B003BFDC3 /* CreateDefaultCategoriesUseCaseStub.swift */; };
+		9B95D9272BEFBB7F003BFDC3 /* FirebaseStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9262BEFBB7F003BFDC3 /* FirebaseStorageError.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -143,6 +144,7 @@
 		9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginError.swift; sourceTree = "<group>"; };
 		9B95D9222BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDefaultCategoriesUseCase.swift; sourceTree = "<group>"; };
 		9B95D9242BEF5A8B003BFDC3 /* CreateDefaultCategoriesUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDefaultCategoriesUseCaseStub.swift; sourceTree = "<group>"; };
+		9B95D9262BEFBB7F003BFDC3 /* FirebaseStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageError.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				9B45816F2BD7EB37002A32DC /* FirebaseStorage.swift */,
+				9B95D9262BEFBB7F003BFDC3 /* FirebaseStorageError.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				9B289C822BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift in Sources */,
 				9BA895C92BE673120080D400 /* CategoryItem.swift in Sources */,
 				9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */,
+				9B95D9272BEFBB7F003BFDC3 /* FirebaseStorageError.swift in Sources */,
 				9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */,
 				9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */,
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,

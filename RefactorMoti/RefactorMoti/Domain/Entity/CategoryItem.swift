@@ -9,39 +9,43 @@ import Foundation
 
 struct CategoryItem: Hashable {
     
-    let id: Int
+    let id: String
     let name: String
     var continued: Int = 0
     var lastChallenged: Date? = nil
+}
+
+
+// MARK: - Information
+
+extension CategoryItem {
     
-    init(
-        id: Int = UUID().hashValue,
-        name: String,
-        continued: Int = 0,
-        lastChallenged: Date? = nil
-    ) {
+    init?(information: [String: Any]) {
+        guard let id = information[Key.id] as? String,
+              let name = information[Key.name] as? String,
+              let continued = information[Key.continued] as? Int
+        else {
+            return nil
+        }
+        let lastChallenged = information[Key.lastChallenged] as? Date
+        
         self.id = id
         self.name = name
         self.continued = continued
         self.lastChallenged = lastChallenged
     }
-}
-
-
-// MARK: - Dictionary
-
-extension CategoryItem {
     
-    func toDictionary() -> [String: Any] {
-        var dict: [String: Any] = [
-            "id": id,
-            "name": name,
-            "continued": continued
+    func toInformation() -> [String: Any] {
+        var information: [String: Any] = [
+            Key.id: id,
+            Key.name: name,
+            Key.continued: continued,
+            Key.createdAt: Date().timeIntervalSince1970
         ]
         if let lastChallenged {
-            dict["lastChallenged"] = lastChallenged
+            information[Key.lastChallenged] = lastChallenged
         }
-        return dict
+        return information
     }
 }
 
@@ -54,3 +58,19 @@ extension CategoryItem {
         lhs.id == rhs.id
     }
 }
+
+
+// MARK: - Constant
+
+private extension CategoryItem {
+    
+    enum Key {
+        
+        static let id = "id"
+        static let name = "name"
+        static let continued = "continued"
+        static let lastChallenged = "lastChallenged"
+        static let createdAt = "createdAt"
+    }
+}
+

@@ -9,7 +9,13 @@ import Foundation
 
 protocol FirebaseStorageProtocol {
     
+    // Configure
     func configure()
+    
+    // Version
     func fetchVersion() async -> (latest: String, forced: String)?
+    
+    // Category
     func createDefaultCategories() async -> Bool
+    func fetchCategories() async throws -> [CategoryItem]
 }

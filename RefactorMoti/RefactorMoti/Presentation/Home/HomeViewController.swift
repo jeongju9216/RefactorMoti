@@ -75,7 +75,7 @@ private extension HomeViewController {
         layoutView.addCategoryButtonDidTap
             .sink { [weak self] in
                 guard let self else { return }
-                input.addCategory.send(CategoryItem(id: UUID().hashValue, name: "임시"))
+                input.addCategory.send(CategoryItem(id: UUID().uuidString, name: "임시"))
             }
             .store(in: &cancellables)
     }

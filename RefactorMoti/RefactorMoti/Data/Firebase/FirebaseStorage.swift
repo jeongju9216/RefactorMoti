@@ -15,6 +15,8 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     
     static let shared = FirebaseStorage()
     
+    // MARK: Configure
+    
     func configure() {
         guard firebaseRef == nil else {
             return
@@ -23,6 +25,8 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         FirebaseApp.configure()
         firebaseRef = Database.database().reference()
     }
+    
+    // MARK: Version
     
     func fetchVersion() async -> (latest: String, forced: String)? {
         guard let snapshot = try? await firebaseRef?.child("version").getData(),
@@ -36,20 +40,41 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         return (latest, forced)
     }
     
+    // MARK: Category
+    
     func createDefaultCategories() async -> Bool {
         guard await isNeedCreateDefaultCategories() else {
             return true
         }
         
+        guard let categoryRef = userRef?.child(Path.category) else {
+            return false
+        }
+        
         do {
             for category in Constant.defaultCategories {
-                let dict = CategoryItem(name: category).toDictionary()
-                try await userRef?.child(Path.category).child(category).setValue(dict)
+                guard let autoID = categoryRef.childByAutoId().key else {
+                    continue
+                }
+                
+                let information = CategoryItem(id: autoID, name: category).toInformation()
+                try await categoryRef.child(autoID).setValue(information)
             }
         } catch {
             return false
         }
         return true
+    }
+    
+    func fetchCategories() async throws -> [CategoryItem] {
+        let categorySnapshot = try await fetchSortedData(from: Path.category)
+        return categorySnapshot.children.compactMap { child in
+            guard let snapshot = child as? DataSnapshot,
+                  let information = snapshot.value as? [String: Any] else {
+                return nil
+            }
+            return CategoryItem(information: information)
+        }
     }
     
     
@@ -75,6 +100,39 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         }
         return isExistData.childrenCount < 2
     }
+    
+    private func fetchData(from path: String) async throws -> DataSnapshot {
+        guard let userRef else {
+            throw FirebaseStorageError.nonexistUserReference
+        }
+        
+        let ref = userRef.child(path)
+        return try await withCheckedThrowingContinuation { continuation in
+            ref.observeSingleEvent(of: .value, with: { snapshot in
+                continuation.resume(returning: snapshot)
+            }) { error in
+                continuation.resume(throwing: error)
+            }
+        }
+    }
+    
+    private func fetchSortedData(
+        from path: String,
+        sortBy key: String = Path.createdAt
+    ) async throws -> DataSnapshot {
+        guard let userRef else {
+            throw FirebaseStorageError.nonexistUserReference
+        }
+        
+        let ref = userRef.child(path).queryOrdered(byChild: key)
+        return try await withCheckedThrowingContinuation { continuation in
+            ref.observeSingleEvent(of: .value, with: { snapshot in
+                continuation.resume(returning: snapshot)
+            }) { error in
+                continuation.resume(throwing: error)
+            }
+        }
+    }
 }
 
 
@@ -91,6 +149,7 @@ private extension FirebaseStorage {
     enum Path {
         
         static let category = "category"
+        static let createdAt = "createdAt"
     }
 }
 
