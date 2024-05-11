@@ -51,9 +51,9 @@ final class CategoryRepositoryTests: XCTestCase {
         let categoryName = "카테고리"
         
         // when
-        let isSuccess = await repository.addCategory(name: categoryName)
+        let addedCategoryItem = await repository.addCategory(name: categoryName)
         
         // then
-        XCTAssertTrue(isSuccess)
+        XCTAssertNotNil(addedCategoryItem)
     }
 }

@@ -15,18 +15,19 @@ struct DefaultCategoryRepositoryStub: CategoryRepositoryProtocol {
         CategoryItem(id: "1", name: "미설정")
     ]
     
-    func fetchCategories() async throws -> [CategoryItem] {
-        categories
-    }
-    
-    func addCategory(name: String) async -> Bool {
-        var mutable = categories
-        mutable.append(CategoryItem(id: "99", name: name))
-        return true
-    }
-    
     func createDefaultCategories() async -> Bool {
         true
+    }
+    
+    func addCategory(name: String) async -> CategoryItem? {
+        let newCategoryItem = CategoryItem(id: "99", name: name)
+        var mutable = categories
+        mutable.append(newCategoryItem)
+        return newCategoryItem
+    }
+    
+    func fetchCategories() async throws -> [CategoryItem] {
+        categories
     }
 }
 
@@ -38,17 +39,18 @@ struct CustomCategoryRepositoryStub: CategoryRepositoryProtocol {
         CategoryItem(id: "2", name: "음식")
     ]
     
-    func fetchCategories() async throws -> [CategoryItem] {
-        categories
-    }
-    
-    func addCategory(name: String) async -> Bool {
-        var mutable = categories
-        mutable.append(CategoryItem(id: "99", name: name))
-        return true
-    }
-    
     func createDefaultCategories() async -> Bool {
         true
+    }
+    
+    func addCategory(name: String) async -> CategoryItem? {
+        let newCategoryItem = CategoryItem(id: "99", name: name)
+        var mutable = categories
+        mutable.append(newCategoryItem)
+        return newCategoryItem
+    }
+    
+    func fetchCategories() async throws -> [CategoryItem] {
+        categories
     }
 }

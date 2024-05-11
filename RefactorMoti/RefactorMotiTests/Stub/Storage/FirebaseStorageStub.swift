@@ -20,8 +20,8 @@ struct FirebaseStorageStub: FirebaseStorageProtocol {
         true
     }
     
-    func addCategory(name: String) async -> Bool {
-        true
+    func addCategory(name: String) async -> CategoryItem? {
+        CategoryItem(id: "", name: name)
     }
     
     func fetchCategories() async throws -> [CategoryItem] {
