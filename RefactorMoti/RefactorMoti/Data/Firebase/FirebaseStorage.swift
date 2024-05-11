@@ -47,10 +47,18 @@ final class FirebaseStorage: FirebaseStorageProtocol {
             return true
         }
         
+        guard let categoryRef = userRef?.child(Path.category) else {
+            return false
+        }
+        
         do {
             for category in Constant.defaultCategories {
-                let dict = CategoryItem(name: category).toInformation()
-                try await userRef?.child(Path.category).child(category).setValue(dict)
+                guard let autoID = categoryRef.childByAutoId().key else {
+                    continue
+                }
+                
+                let information = CategoryItem(id: autoID, name: category).toInformation()
+                try await categoryRef.child(autoID).setValue(information)
             }
         } catch {
             return false
