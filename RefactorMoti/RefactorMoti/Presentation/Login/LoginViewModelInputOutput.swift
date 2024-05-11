@@ -1,5 +1,5 @@
 //
-//  LoginViewModelProtocol.swift
+//  LoginViewModelInputOutput.swift
 //  RefactorMoti
 //
 //  Created by 유정주 on 4/29/24.

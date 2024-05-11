@@ -21,7 +21,7 @@
 		9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C8A2BDE4682000813C1 /* LoginView.swift */; };
 		9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C8C2BDE4687000813C1 /* LoginViewController.swift */; };
 		9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */; };
-		9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */; };
+		9B411CB12BDFC31D00A50B78 /* LoginViewModelInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB02BDFC31D00A50B78 /* LoginViewModelInputOutput.swift */; };
 		9B411CB32BDFC31F00A50B78 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB22BDFC31F00A50B78 /* LoginViewModel.swift */; };
 		9B411CB62BDFC38100A50B78 /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB52BDFC38100A50B78 /* ViewModelable.swift */; };
 		9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */; };
@@ -107,7 +107,7 @@
 		9B289C8A2BDE4682000813C1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9B289C8C2BDE4687000813C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B411CAE2BDFBF9400A50B78 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
-		9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		9B411CB02BDFC31D00A50B78 /* LoginViewModelInputOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelInputOutput.swift; sourceTree = "<group>"; };
 		9B411CB22BDFC31F00A50B78 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9B411CB52BDFC38100A50B78 /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
 		9B411CB92BDFCB9900A50B78 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 				9B95D9192BEF0E0B003BFDC3 /* AppleLogin */,
 				9B289C8A2BDE4682000813C1 /* LoginView.swift */,
 				9B289C8C2BDE4687000813C1 /* LoginViewController.swift */,
-				9B411CB02BDFC31D00A50B78 /* LoginViewModelProtocol.swift */,
+				9B411CB02BDFC31D00A50B78 /* LoginViewModelInputOutput.swift */,
 				9B411CB22BDFC31F00A50B78 /* LoginViewModel.swift */,
 			);
 			path = Login;
@@ -746,7 +746,7 @@
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,
 				9B411CBA2BDFCB9900A50B78 /* UIControl+Combine.swift in Sources */,
-				9B411CB12BDFC31D00A50B78 /* LoginViewModelProtocol.swift in Sources */,
+				9B411CB12BDFC31D00A50B78 /* LoginViewModelInputOutput.swift in Sources */,
 				9BA895C02BE604DA0080D400 /* HomeViewModel.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 				9BA895B42BE5F6E10080D400 /* CategoryRepository.swift in Sources */,
