@@ -13,6 +13,7 @@ final class HomeViewModelTests: XCTestCase {
  
     // MARK: - Attribute
     
+    private let addCategoryUseCase = AddCategoryUseCase(repository: DefaultCategoryRepositoryStub())
     private let fetchCategoriesUseCase = FetchCategoriesUseCase(repository: DefaultCategoryRepositoryStub())
     private let fetchAchievementsUseCase = FetchAchievementsUseCase(repository: AchievementRepositoryStub())
     
@@ -29,6 +30,7 @@ final class HomeViewModelTests: XCTestCase {
     
     override func setUp() async throws {
         viewModel = HomeViewModel(
+            addCategoryUseCase: addCategoryUseCase,
             fetchCategoriesUseCase: fetchCategoriesUseCase,
             fetchAchievementsUseCase: fetchAchievementsUseCase
         )

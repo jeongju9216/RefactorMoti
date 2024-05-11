@@ -29,14 +29,12 @@ final class HomeViewModel {
     private var categoryDataSource: CategoryDataSource?
     private var achievementDataSource: AchievementDataSource?
     
-    // MARK: UseCase
-    
+    // UseCase
+    private let addCategoryUseCase: AddCategoryUseCaseProtocol
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
-    private let addCategoryUseCase: AddCategoryUseCaseProtocol
     
-    // MARK: Output
-    
+    // Output
     let output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
@@ -48,13 +46,13 @@ final class HomeViewModel {
     // MARK: - Initializer
     
     init(
+        addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase(),
         fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = FetchCategoriesUseCase(),
-        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase(),
-        addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase()
+        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase()
     ) {
+        self.addCategoryUseCase = addCategoryUseCase
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
-        self.addCategoryUseCase = addCategoryUseCase
     }
 }
 
