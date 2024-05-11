@@ -13,7 +13,7 @@ extension HomeViewModel {
     struct Input {
         
         let viewDidLoad: PassthroughSubject<Void, Never> = .init()
-        let addCategory: PassthroughSubject<CategoryItem, Never> = .init()
+        let addCategory: PassthroughSubject<String, Never> = .init()
         let selectCategoryCell: PassthroughSubject<IndexPath, Never> = .init()
     }
     
