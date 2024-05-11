@@ -42,7 +42,10 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         }
         
         do {
-            try await userRef?.child(Path.category).setValue(Constant.defaultCategories)
+            for category in Constant.defaultCategories {
+                let dict = CategoryItem(name: category).toDictionary()
+                try await userRef?.child(Path.category).child(category).setValue(dict)
+            }
         } catch {
             return false
         }
