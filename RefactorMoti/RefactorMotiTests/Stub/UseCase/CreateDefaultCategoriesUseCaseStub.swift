@@ -14,3 +14,10 @@ struct CreateDefaultCategoriesUseCaseStub: CreateDefaultCategoriesUseCaseProtoco
         true
     }
 }
+
+struct FailedCreateDefaultCategoriesUseCaseStub: CreateDefaultCategoriesUseCaseProtocol {
+    
+    func execute() async -> Bool {
+        false
+    }
+}

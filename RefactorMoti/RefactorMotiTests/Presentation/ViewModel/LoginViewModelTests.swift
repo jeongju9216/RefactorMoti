@@ -22,9 +22,7 @@ final class LoginViewModelTests: XCTestCase {
     // MARK: - Life Cycle
     
     override func setUp() {
-        viewModel = LoginViewModel(createDefaultCategoriesUseCase: CreateDefaultCategoriesUseCaseStub())
         input = .init()
-        viewModel.bind(input: input)
         cancellables = []
         super.setUp()
     }
@@ -37,12 +35,37 @@ final class LoginViewModelTests: XCTestCase {
     
     // MARK: - Test
     
-    func test_input으로_로그인_시도가_들어오면_output은_항상_true() throws {
+    func test_login_input이_들어오고_기본_카테고리_생성이_성공하면_isSuccessLogin_output은_true() throws {
         // given
+        viewModel = LoginViewModel(createDefaultCategoriesUseCase: CreateDefaultCategoriesUseCaseStub())
+        viewModel.bind(input: input)
         let expectation = XCTestExpectation()
         
         // when
-        var source: Bool = false
+        var source: Bool?
+        viewModel.output.isSuccessLogin
+            .sink { isSuccessLogin in
+                source = isSuccessLogin
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        input.login.send()
+        
+        // then
+        wait(for: [expectation], timeout: 5)
+        XCTAssertNotNil(source)
+        XCTAssertTrue(source!)
+    }
+    
+    func test_login_input이_들어오고_기본_카테고리_생성이_실패하면_isSuccessLogin_output은_false() throws {
+        // given
+        viewModel = LoginViewModel(createDefaultCategoriesUseCase: FailedCreateDefaultCategoriesUseCaseStub())
+        viewModel.bind(input: input)
+        let expectation = XCTestExpectation()
+        
+        // when
+        var source: Bool?
         viewModel.output.isSuccessLogin
             .sink { isSuccessLogin in
                 source = isSuccessLogin
@@ -54,6 +77,7 @@ final class LoginViewModelTests: XCTestCase {
 
         // then
         wait(for: [expectation], timeout: 5)
-        XCTAssertTrue(source)
+        XCTAssertNotNil(source)
+        XCTAssertFalse(source!)
     }
 }
