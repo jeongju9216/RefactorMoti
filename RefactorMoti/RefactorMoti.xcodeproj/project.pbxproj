@@ -52,6 +52,7 @@
 		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
 		9B95D91B2BEF0E12003BFDC3 /* AppleLoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */; };
 		9B95D91D2BEF146A003BFDC3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */; };
+		9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -139,6 +140,7 @@
 		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
 		9B95D9182BEF0D12003BFDC3 /* RefactorMoti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RefactorMoti.entitlements; sourceTree = "<group>"; };
 		9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequester.swift; sourceTree = "<group>"; };
+		9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginError.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */,
+				9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */,
 			);
 			path = AppleLogin;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				9BA895D42BE74F880080D400 /* CategoryCollectionViewCell.swift in Sources */,
 				9BA895D12BE725D60080D400 /* CompositionalLayout.swift in Sources */,
 				9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */,
+				9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */,
 				9B289C8B2BDE4682000813C1 /* LoginView.swift in Sources */,
 				9B289C842BDD3B9F000813C1 /* AutoLayoutWrapper+Vertical.swift in Sources */,
 				9B95D91B2BEF0E12003BFDC3 /* AppleLoginRequester.swift in Sources */,

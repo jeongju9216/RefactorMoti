@@ -10,25 +10,17 @@ import AuthenticationServices
 import CryptoKit
 import FirebaseAuth
 
-protocol AppleLoginRequesterDelegate: AnyObject {
-
-    func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginSuccess token: String)
-    func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginFailed error: Error)
-}
-
-enum LoginError: Error {
-    
-    case invalidCredential
-    case invalidNonce
-    case invalidIdentityToken
-    case invalidUserID
-}
-
 final class AppleLoginRequester: NSObject {
     
     // MARK: - Interface
+    
+    protocol Delegate: AnyObject {
+        
+        func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginSuccess token: String)
+        func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginFailed error: Error)
+    }
 
-    weak var delegate: AppleLoginRequesterDelegate?
+    weak var delegate: Delegate?
     
     func request() {
         let nonce = randomNonceString()
@@ -68,19 +60,19 @@ extension AppleLoginRequester: ASAuthorizationControllerDelegate {
         didCompleteWithAuthorization authorization: ASAuthorization
     ) {
         guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
-            delegate?.appleLoginRequester(self, didLoginFailed: LoginError.invalidCredential)
+            delegate?.appleLoginRequester(self, didLoginFailed: AppleLoginError.invalidCredential)
             return
         }
         
         guard let nonce = currentNonce else {
-            delegate?.appleLoginRequester(self, didLoginFailed: LoginError.invalidNonce)
+            delegate?.appleLoginRequester(self, didLoginFailed: AppleLoginError.invalidNonce)
             return
         }
         
         guard let identityTokenData = appleIDCredential.identityToken,
               let identityToken = String(data: identityTokenData, encoding: .utf8)
         else {
-            delegate?.appleLoginRequester(self, didLoginFailed: LoginError.invalidIdentityToken)
+            delegate?.appleLoginRequester(self, didLoginFailed: AppleLoginError.invalidIdentityToken)
             return
         }
         
@@ -110,7 +102,7 @@ extension AppleLoginRequester: ASAuthorizationControllerDelegate {
                 return
             }
             guard let userUID = authResult?.user.uid else {
-                delegate?.appleLoginRequester(self, didLoginFailed: LoginError.invalidUserID)
+                delegate?.appleLoginRequester(self, didLoginFailed: AppleLoginError.invalidUserID)
                 return
             }
             

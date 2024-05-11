@@ -82,7 +82,7 @@ private extension LoginViewController {
 
 // MARK: - AppleLoginRequesterDelegate
 
-extension LoginViewController: AppleLoginRequesterDelegate {
+extension LoginViewController: AppleLoginRequester.Delegate {
     
     func appleLoginRequester(_ loginRequester: AppleLoginRequester, didLoginSuccess token: String) {
         input.login.send()
