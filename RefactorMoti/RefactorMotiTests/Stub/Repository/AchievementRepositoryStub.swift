@@ -23,7 +23,7 @@ struct AchievementRepositoryStub: AchievementRepositoryProtocol {
                 id: $0,
                 userID: $0,
                 imageURL: URL(string: "https://picsum.photos/500"),
-                category: CategoryItem(id: $0, name: "카테고리\($0)"),
+                category: CategoryItem(id: "\($0)", name: "카테고리\($0)"),
                 title: "제목\($0)",
                 createdAt: Date()
             )
