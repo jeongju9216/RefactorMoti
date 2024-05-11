@@ -95,8 +95,15 @@ private extension HomeViewModel {
     
     func addCategory(name: String) {
         Task {
-            let isSuccess = await addCategoryUseCase.execute(with: name)
-            output.isAddedCategorySuccess.send(isSuccess)
+            guard let addedCategoryItem = await addCategoryUseCase.execute(with: name) else {
+                output.isAddedCategorySuccess.send(false)
+                return
+            }
+            output.isAddedCategorySuccess.send(true)
+            
+            let newCategories = categories + [addedCategoryItem]
+            categoryDataSource?.update(data: newCategories)
+            output.categories.send(newCategories)
         }
     }
     
