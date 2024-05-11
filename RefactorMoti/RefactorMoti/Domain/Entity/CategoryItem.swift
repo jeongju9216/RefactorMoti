@@ -13,6 +13,36 @@ struct CategoryItem: Hashable {
     let name: String
     var continued: Int = 0
     var lastChallenged: Date? = nil
+    
+    init(
+        id: Int = UUID().hashValue,
+        name: String,
+        continued: Int = 0,
+        lastChallenged: Date? = nil
+    ) {
+        self.id = id
+        self.name = name
+        self.continued = continued
+        self.lastChallenged = lastChallenged
+    }
+}
+
+
+// MARK: - Dictionary
+
+extension CategoryItem {
+    
+    func toDictionary() -> [String: Any] {
+        var dict: [String: Any] = [
+            "id": id,
+            "name": name,
+            "continued": continued
+        ]
+        if let lastChallenged {
+            dict["lastChallenged"] = lastChallenged
+        }
+        return dict
+    }
 }
 
 
