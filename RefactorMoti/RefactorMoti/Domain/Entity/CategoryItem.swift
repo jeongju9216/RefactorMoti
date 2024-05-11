@@ -40,7 +40,7 @@ extension CategoryItem {
             Key.id: id,
             Key.name: name,
             Key.continued: continued,
-            Key.createdAt: Date()
+            Key.createdAt: Date().timeIntervalSince1970
         ]
         if let lastChallenged {
             information[Key.lastChallenged] = lastChallenged
