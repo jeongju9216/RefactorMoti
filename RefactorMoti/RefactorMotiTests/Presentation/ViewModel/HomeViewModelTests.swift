@@ -119,7 +119,7 @@ final class HomeViewModelTests: XCTestCase {
             .store(in: &cancellables)
         
         input.viewDidLoad.send()
-        input.addCategory.send(newCategory)
+        input.addCategory.send("Test")
         
         // then
         wait(for: [expectation, expectation2], timeout: 5)

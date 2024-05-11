@@ -48,10 +48,10 @@ final class CategoryRepositoryTests: XCTestCase {
     func test_addCategory에_성공하면_true를_반환한다() async throws {
         // given
         let repository = DefaultCategoryRepositoryStub()
-        let category = CategoryItem(id: "3", name: "카테고리")
+        let categoryName = "카테고리"
         
         // when
-        let isSuccess = await repository.addCategory(category)
+        let isSuccess = await repository.addCategory(name: categoryName)
         
         // then
         XCTAssertTrue(isSuccess)
