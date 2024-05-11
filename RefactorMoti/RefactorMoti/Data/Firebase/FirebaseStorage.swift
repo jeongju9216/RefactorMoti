@@ -75,7 +75,7 @@ private extension FirebaseStorage {
     enum Constant {
         
         // TODO: 로컬라이징
-        static let defaultCategories = ["전체": [], "미설정": []]
+        static let defaultCategories = ["전체", "미설정"]
     }
     
     enum Path {

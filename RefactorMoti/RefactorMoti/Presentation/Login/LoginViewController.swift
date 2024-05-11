@@ -40,6 +40,7 @@ final class LoginViewController: LayoutViewController<LoginView> {
     
     private func setUpControlBinding() {
         layoutView.loginButtonDidTap
+            .receive(on: RunLoop.main)
             .sink { [weak self] in
                 guard let self else { return }
                 appleLoginRequester?.request()
@@ -50,6 +51,7 @@ final class LoginViewController: LayoutViewController<LoginView> {
     private func setUpViewModelBinding() {
         let output = viewModel.output
         output.isSuccessLogin
+            .receive(on: RunLoop.main)
             .sink { [weak self] isSuccessLogin in
                 guard let self else { return }
                 if isSuccessLogin {
