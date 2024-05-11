@@ -37,12 +37,12 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     }
     
     func createDefaultCategories() async -> Bool {
-        guard let userRef else {
-            return false
+        guard await isNeedCreateDefaultCategories() else {
+            return true
         }
         
         do {
-            try await userRef.child(Path.category).setValue(Constant.defaultCategories)
+            try await userRef?.child(Path.category).setValue(Constant.defaultCategories)
         } catch {
             return false
         }
@@ -65,6 +65,13 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     // MARK: - Initializer
     
     private init() { }
+    
+    private func isNeedCreateDefaultCategories() async -> Bool {
+        guard let isExistData = try? await userRef?.child(Path.category).getData() else {
+            return true
+        }
+        return isExistData.childrenCount < 2
+    }
 }
 
 
@@ -75,7 +82,7 @@ private extension FirebaseStorage {
     enum Constant {
         
         // TODO: 로컬라이징
-        static let defaultCategories = ["전체": [], "미설정": []]
+        static let defaultCategories = ["전체", "미설정"]
     }
     
     enum Path {

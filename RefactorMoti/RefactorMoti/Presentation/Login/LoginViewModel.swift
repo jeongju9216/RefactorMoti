@@ -12,10 +12,19 @@ final class LoginViewModel: ViewModelable {
     
     // MARK: - Attribute
     
+    // UseCase
+    private let createDefaultCategoriesUseCase: CreateDefaultCategoriesUseCaseProtocol
+    
+    // Output
     let output: Output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
-    init() { }
+    
+    // MARK: - Initializer
+    
+    init(createDefaultCategoriesUseCase: CreateDefaultCategoriesUseCaseProtocol = CreateDefaultCategoriesUseCase()) {
+        self.createDefaultCategoriesUseCase = createDefaultCategoriesUseCase
+    }
 }
 
 
@@ -34,12 +43,15 @@ extension LoginViewModel {
 }
 
 
-// MARK: - Bind Action
+// MARK: - Binding Action
 
 private extension LoginViewModel {
     
     func login() {
-        output.isSuccessLogin.send(true)
+        Task {
+            let isSuccess = await createDefaultCategoriesUseCase.execute()
+            output.isSuccessLogin.send(isSuccess)
+        }
     }
 }
 
