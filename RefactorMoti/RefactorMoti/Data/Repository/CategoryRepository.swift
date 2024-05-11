@@ -22,4 +22,20 @@ struct CategoryRepository: CategoryRepositoryProtocol {
     func addCategory(_ category: CategoryItem) async -> Bool {
         true
     }
+    
+    func createDefaultCategories() async -> Bool {
+        await firebaseStorage.createDefaultCategories()
+    }
+    
+    
+    // MARK: - Attribute
+    
+    private let firebaseStorage: FirebaseStorageProtocol
+    
+    
+    // MARK: - Initializer
+    
+    init(firebaseStorage: FirebaseStorageProtocol = FirebaseStorage.shared) {
+        self.firebaseStorage = firebaseStorage
+    }
 }

@@ -17,6 +17,6 @@ struct FirebaseStorageStub: FirebaseStorageProtocol {
     }
     
     func createDefaultCategories() async -> Bool {
-        return true
+        true
     }
 }

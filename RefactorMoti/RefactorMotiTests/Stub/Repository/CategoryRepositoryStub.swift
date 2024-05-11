@@ -26,7 +26,7 @@ struct DefaultCategoryRepositoryStub: CategoryRepositoryProtocol {
     }
     
     func createDefaultCategories() async -> Bool {
-        return true
+        true
     }
 }
 
@@ -49,6 +49,6 @@ struct CustomCategoryRepositoryStub: CategoryRepositoryProtocol {
     }
     
     func createDefaultCategories() async -> Bool {
-        return true
+        true
     }
 }
