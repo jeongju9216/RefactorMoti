@@ -11,4 +11,5 @@ protocol FirebaseStorageProtocol {
     
     func configure()
     func fetchVersion() async -> (latest: String, forced: String)?
+    func createDefaultCategories() async -> Bool
 }

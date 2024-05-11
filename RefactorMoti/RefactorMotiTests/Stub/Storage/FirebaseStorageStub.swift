@@ -15,4 +15,8 @@ struct FirebaseStorageStub: FirebaseStorageProtocol {
     func fetchVersion() async -> (latest: String, forced: String)? {
         ("1.0.0", "1.0.0")
     }
+    
+    func createDefaultCategories() async -> Bool {
+        return true
+    }
 }
