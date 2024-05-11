@@ -24,6 +24,10 @@ struct DefaultCategoryRepositoryStub: CategoryRepositoryProtocol {
         mutable.append(category)
         return true
     }
+    
+    func createDefaultCategories() async -> Bool {
+        true
+    }
 }
 
 struct CustomCategoryRepositoryStub: CategoryRepositoryProtocol {
@@ -42,5 +46,9 @@ struct CustomCategoryRepositoryStub: CategoryRepositoryProtocol {
         var mutable = categories
         mutable.append(category)
         return true
+    }
+    
+    func createDefaultCategories() async -> Bool {
+        true
     }
 }

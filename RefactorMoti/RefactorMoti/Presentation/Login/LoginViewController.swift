@@ -7,22 +7,18 @@
 
 import UIKit
 import Combine
-import CryptoKit
-import AuthenticationServices
 
 final class LoginViewController: LayoutViewController<LoginView> {
     
     // MARK: - Attribute
     
-    // MARK: ViewModel
-    
+    // ViewModel
     private let viewModel = LoginViewModel()
     private let input = LoginViewModel.Input()
     private var output: LoginViewModel.Output { viewModel.output }
     private var cancellables: Set<AnyCancellable> = []
     
-    // MARK: Apple Login
-    
+    // Apple Login
     private lazy var appleLoginRequester: AppleLoginRequester? = {
         guard let window = view.window else {
             return nil
