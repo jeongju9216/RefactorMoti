@@ -32,16 +32,16 @@ struct CategoryItem: Hashable {
 
 extension CategoryItem {
     
-    func toDictionary() -> [String: Any] {
-        var dict: [String: Any] = [
-            "id": id,
-            "name": name,
-            "continued": continued
+    func toInformation() -> [String: Any] {
+        var information: [String: Any] = [
+            Key.id: id,
+            Key.name: name,
+            Key.continued: continued
         ]
         if let lastChallenged {
-            dict["lastChallenged"] = lastChallenged
+            information[Key.lastChallenged] = lastChallenged
         }
-        return dict
+        return information
     }
 }
 
@@ -54,3 +54,18 @@ extension CategoryItem {
         lhs.id == rhs.id
     }
 }
+
+
+// MARK: - Constant
+
+private extension CategoryItem {
+    
+    enum Key {
+        
+        static let id = "id"
+        static let name = "name"
+        static let continued = "continued"
+        static let lastChallenged = "lastChallenged"
+    }
+}
+
