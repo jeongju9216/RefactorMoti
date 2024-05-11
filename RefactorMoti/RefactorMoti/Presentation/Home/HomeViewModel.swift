@@ -71,9 +71,9 @@ extension HomeViewModel {
             .store(in: &cancellables)
         
         input.addCategory
-            .sink { [weak self] category in
+            .sink { [weak self] categoryName in
                 guard let self else { return }
-                addCategory(category: category)
+                addCategory(name: categoryName)
             }
             .store(in: &cancellables)
         
@@ -95,16 +95,10 @@ private extension HomeViewModel {
         fetchAllAchievements()
     }
     
-    func addCategory(category: CategoryItem) {
+    func addCategory(name: String) {
         Task {
-            let isSuccess = await addCategoryUseCase.execute(with: category)
+            let isSuccess = await addCategoryUseCase.execute(with: name)
             output.isAddedCategorySuccess.send(isSuccess)
-            
-            if isSuccess {
-                let newCategories = categories + [category]
-                output.categories.send(newCategories)
-                categoryDataSource?.update(data: newCategories)
-            }
         }
     }
     

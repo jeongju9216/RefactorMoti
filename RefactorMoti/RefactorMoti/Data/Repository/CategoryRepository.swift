@@ -13,8 +13,8 @@ struct CategoryRepository: CategoryRepositoryProtocol {
         try await firebaseStorage.fetchCategories()
     }
     
-    func addCategory(_ category: CategoryItem) async -> Bool {
-        true
+    func addCategory(name: String) async -> Bool {
+        await firebaseStorage.addCategory(name: name)
     }
     
     func createDefaultCategories() async -> Bool {

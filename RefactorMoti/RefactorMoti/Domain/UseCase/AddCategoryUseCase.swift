@@ -9,15 +9,15 @@ import Foundation
 
 protocol AddCategoryUseCaseProtocol {
     
-    func execute(with category: CategoryItem) async -> Bool
+    func execute(with categoryName: String) async -> Bool
 }
 
 struct AddCategoryUseCase: AddCategoryUseCaseProtocol {
     
     // MARK: - Interface
     
-    func execute(with category: CategoryItem) async -> Bool {
-        await repository.addCategory(category)
+    func execute(with categoryName: String) async -> Bool {
+        await repository.addCategory(name: categoryName)
     }
     
     
