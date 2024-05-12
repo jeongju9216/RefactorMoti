@@ -90,12 +90,13 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         for child in dataSnapshot.children {
             guard let snapshot = child as? DataSnapshot,
                   var information = snapshot.value as? [String: Any],
-                  let categoryID = information["categoryID"] as? String,
-                  let category = await fetchCategoryItem(id: categoryID)
+                  let categoryID = information["categoryID"] as? String
             else {
                 continue
             }
-            information["category"] = category
+            
+            async let category = fetchCategoryItem(id: categoryID)
+            await information["category"] = category
             
             if let achievement = Achievement(information: information) {
                 achievements.append(achievement)
