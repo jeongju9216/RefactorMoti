@@ -111,8 +111,14 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         }
         return isExistData.childrenCount < 2
     }
+}
+
+
+// MARK: - Fetch Data
+
+private extension FirebaseStorage {
     
-    private func fetchData(from path: String) async throws -> DataSnapshot {
+    func fetchData(from path: String) async throws -> DataSnapshot {
         guard let userRef else {
             throw FirebaseStorageError.nonexistUserReference
         }
@@ -127,7 +133,7 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         }
     }
     
-    private func fetchSortedData(
+    func fetchSortedData(
         from path: String,
         sortBy key: String = Path.createdAt
     ) async throws -> DataSnapshot {
