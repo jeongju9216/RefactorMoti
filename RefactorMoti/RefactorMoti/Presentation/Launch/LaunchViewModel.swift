@@ -12,18 +12,23 @@ final class LaunchViewModel: ViewModelable {
     
     // MARK: - Attribute
     
+    // UseCase
     private let fetchVersionUseCase: FetchVersionUseCaseProtocol
+    private let autoLoginUseCase: AutoLoginUseCaseProtocol
     
-    // MARK: Output
-    
+    // Output
     let output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
     
     // MARK: - Initializer
     
-    init(fetchVersionUseCase: FetchVersionUseCaseProtocol = FetchVersionUseCase()) {
+    init(
+        fetchVersionUseCase: FetchVersionUseCaseProtocol = FetchVersionUseCase(),
+        autoLoginUseCase: AutoLoginUseCaseProtocol = AutoLoginUseCase()
+    ) {
         self.fetchVersionUseCase = fetchVersionUseCase
+        self.autoLoginUseCase = autoLoginUseCase
     }
 }
 
@@ -37,6 +42,13 @@ extension LaunchViewModel {
             .sink { [weak self] in
                 guard let self else { return }
                 viewDidLoad()
+            }
+            .store(in: &cancellables)
+        
+        input.tryAutoLogin
+            .sink { [weak self] in
+                guard let self else { return }
+                tryAutoLogin()
             }
             .store(in: &cancellables)
     }
@@ -57,9 +69,15 @@ private extension LaunchViewModel {
             if isNeedForcedUpdate {
                 output.isNeedForcedUpdate.send(true)
             } else {
-                try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
                 output.canLaunch.send(true)
             }
+        }
+    }
+    
+    func tryAutoLogin() {
+        Task {
+            let isAutoLoginSuccess = await autoLoginUseCase.execute()
+            output.isAutoLoginSuccess.send(isAutoLoginSuccess)
         }
     }
 }

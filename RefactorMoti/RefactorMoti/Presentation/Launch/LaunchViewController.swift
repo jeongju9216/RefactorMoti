@@ -47,11 +47,24 @@ private extension LaunchViewController {
                 layoutView.update(currentVersion: currentVersion)
             }
             .store(in: &cancellables)
+        
         output.canLaunch
             .receive(on: RunLoop.main)
             .sink { [weak self] canLaunch in
                 guard let self else { return }
                 if canLaunch {
+                    input.tryAutoLogin.send()
+                }
+            }
+            .store(in: &cancellables)
+        
+        output.isAutoLoginSuccess
+            .receive(on: RunLoop.main)
+            .sink { [weak self] isAutoLoginSuccess in
+                guard let self else { return }
+                if isAutoLoginSuccess {
+                    moveToHomeViewController()
+                } else {
                     moveToLoginViewController()
                 }
             }
@@ -60,7 +73,7 @@ private extension LaunchViewController {
 }
 
 
-// MARK: - Move To LoginViewController
+// MARK: - Move To Next ViewController
 
 private extension LaunchViewController {
     
@@ -70,5 +83,11 @@ private extension LaunchViewController {
         dismiss(animated: false)
         present(loginVC, animated: false)
     }
+    
+    func moveToHomeViewController() {
+        let homeVC = HomeViewController()
+        homeVC.modalPresentationStyle = .fullScreen
+        dismiss(animated: false)
+        present(homeVC, animated: false)
+    }
 }
-

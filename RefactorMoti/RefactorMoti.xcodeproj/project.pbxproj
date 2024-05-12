@@ -48,7 +48,7 @@
 		9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */; };
 		9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */; };
 		9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */; };
-		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
+		9B4581902BD93D3F002A32DC /* LaunchViewModelInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelInputOutput.swift */; };
 		9B95D91B2BEF0E12003BFDC3 /* AppleLoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */; };
 		9B95D91D2BEF146A003BFDC3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */; };
 		9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */; };
@@ -142,7 +142,7 @@
 		9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageStub.swift; sourceTree = "<group>"; };
 		9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCaseStub.swift; sourceTree = "<group>"; };
-		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
+		9B45818F2BD93D3F002A32DC /* LaunchViewModelInputOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelInputOutput.swift; sourceTree = "<group>"; };
 		9B95D9182BEF0D12003BFDC3 /* RefactorMoti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RefactorMoti.entitlements; sourceTree = "<group>"; };
 		9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequester.swift; sourceTree = "<group>"; };
 		9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginError.swift; sourceTree = "<group>"; };
@@ -432,7 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */,
-				9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */,
+				9B45818F2BD93D3F002A32DC /* LaunchViewModelInputOutput.swift */,
 				9B289C762BDCED27000813C1 /* LaunchViewController.swift */,
 				9B289C782BDCED2C000813C1 /* LaunchView.swift */,
 			);
@@ -761,7 +761,7 @@
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,
 				9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */,
 				9B95D9232BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift in Sources */,
-				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
+				9B4581902BD93D3F002A32DC /* LaunchViewModelInputOutput.swift in Sources */,
 				9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */,
 				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
 				9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */,
