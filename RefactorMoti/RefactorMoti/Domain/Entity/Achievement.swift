@@ -25,22 +25,20 @@ extension Achievement {
     init?(information: [String: Any]) {
         guard let id = information[Key.id] as? String,
               let imageURLString = information[Key.imageURL] as? String,
-              let imageURL = URL(string: imageURLString),
-              let categoryInformation = information[Key.category] as? [String: Any],
-              let category = CategoryItem(information: categoryInformation),
+              let category = information[Key.category] as? CategoryItem,
               let title = information[Key.title] as? String,
-              let createdAt = information[Key.createdAt] as? Date
+              let createdAt = information[Key.createdAt] as? TimeInterval
         else {
             return nil
         }
         let body = information[Key.body] as? String
         
         self.id = id
-        self.imageURL = imageURL
+        self.imageURL = URL(string: imageURLString)
         self.category = category
         self.title = title
         self.body = body
-        self.createdAt = createdAt
+        self.createdAt = Date(timeIntervalSince1970: createdAt)
     }
 }
 
