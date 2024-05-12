@@ -148,7 +148,6 @@ final class HomeViewModelTests: XCTestCase {
         let expectation2 = XCTestExpectation()
         let targetIndex = 1
         let targetIndexPath = IndexPath(row: targetIndex, section: 0)
-        let target = targetCategories[targetIndex]
         
         // when
         var source: IndexPath?
@@ -186,8 +185,7 @@ final class HomeViewModelTests: XCTestCase {
         // when
         var source: [Achievement]?
         output.achievements
-            .sink { [weak self] achievements in
-                guard let self else { return }
+            .sink { achievements in
                 source = achievements
                 expectation.fulfill()
             }
