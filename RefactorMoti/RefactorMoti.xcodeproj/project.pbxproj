@@ -48,7 +48,7 @@
 		9B4581862BD93451002A32DC /* FirebaseStorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */; };
 		9B45818C2BD936DB002A32DC /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */; };
 		9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */; };
-		9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */; };
+		9B4581902BD93D3F002A32DC /* LaunchViewModelInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45818F2BD93D3F002A32DC /* LaunchViewModelInputOutput.swift */; };
 		9B95D91B2BEF0E12003BFDC3 /* AppleLoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */; };
 		9B95D91D2BEF146A003BFDC3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */; };
 		9B95D91F2BEF37FF003BFDC3 /* AppleLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */; };
@@ -58,6 +58,7 @@
 		9B95D9292BF0C006003BFDC3 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9282BF0C006003BFDC3 /* UserRepositoryProtocol.swift */; };
 		9B95D92B2BF0C156003BFDC3 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */; };
 		9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */; };
+		9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -141,7 +142,7 @@
 		9B4581852BD93451002A32DC /* FirebaseStorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageStub.swift; sourceTree = "<group>"; };
 		9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		9B45818D2BD93A02002A32DC /* FetchVersionUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVersionUseCaseStub.swift; sourceTree = "<group>"; };
-		9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelProtocol.swift; sourceTree = "<group>"; };
+		9B45818F2BD93D3F002A32DC /* LaunchViewModelInputOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelInputOutput.swift; sourceTree = "<group>"; };
 		9B95D9182BEF0D12003BFDC3 /* RefactorMoti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RefactorMoti.entitlements; sourceTree = "<group>"; };
 		9B95D91A2BEF0E12003BFDC3 /* AppleLoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginRequester.swift; sourceTree = "<group>"; };
 		9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginError.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		9B95D9282BF0C006003BFDC3 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				9BA895B92BE5FBC50080D400 /* FetchCategoriesUseCase.swift */,
 				9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */,
 				9B95D9222BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift */,
+				9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -429,7 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				9B45818B2BD936DB002A32DC /* LaunchViewModel.swift */,
-				9B45818F2BD93D3F002A32DC /* LaunchViewModelProtocol.swift */,
+				9B45818F2BD93D3F002A32DC /* LaunchViewModelInputOutput.swift */,
 				9B289C762BDCED27000813C1 /* LaunchViewController.swift */,
 				9B289C782BDCED2C000813C1 /* LaunchView.swift */,
 			);
@@ -739,6 +742,7 @@
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
 				9B95D9292BF0C006003BFDC3 /* UserRepositoryProtocol.swift in Sources */,
 				9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */,
+				9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */,
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
@@ -757,7 +761,7 @@
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,
 				9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */,
 				9B95D9232BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift in Sources */,
-				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
+				9B4581902BD93D3F002A32DC /* LaunchViewModelInputOutput.swift in Sources */,
 				9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */,
 				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
 				9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */,
