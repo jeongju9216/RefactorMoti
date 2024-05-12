@@ -26,6 +26,12 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         firebaseRef = Database.database().reference()
     }
     
+    // MARK: User
+    
+    func isExistUser() async -> Bool {
+        Auth.auth().currentUser != nil
+    }
+    
     // MARK: Version
     
     func fetchVersion() async -> (latest: String, forced: String)? {
