@@ -82,6 +82,12 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         }
     }
     
+    // MARK: Achievement
+    
+    func fetchAllAchievement() async throws -> [Achievement] {
+        []
+    }
+    
     
     // MARK: - Attribute
     
