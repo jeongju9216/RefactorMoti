@@ -19,4 +19,7 @@ protocol FirebaseStorageProtocol {
     func createDefaultCategories() async -> Bool
     func addCategory(name: String) async -> CategoryItem?
     func fetchCategories() async throws -> [CategoryItem]
+    
+    // Achievement
+    func fetchAllAchievement() async throws -> [Achievement]
 }

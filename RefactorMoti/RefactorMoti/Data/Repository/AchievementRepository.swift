@@ -9,16 +9,21 @@ import Foundation
 
 struct AchievementRepository: AchievementRepositoryProtocol { 
     
+    // MARK: - Interface
+    
     func fetchAchievements() async throws -> [Achievement] {
-        (0..<10).map {
-            Achievement(
-                id: $0,
-                userID: $0,
-                imageURL: URL(string: "https://picsum.photos/500"),
-                category: CategoryItem(id: "\($0)", name: "카테고리\($0)"),
-                title: "제목\($0)",
-                createdAt: Date()
-            )
-        }
+        try await firebaseStorage.fetchAllAchievement()
+    }
+    
+    
+    // MARK: - Attribute
+    
+    private let firebaseStorage: FirebaseStorageProtocol
+    
+    
+    // MARK: - Initializer
+    
+    init(firebaseStorage: FirebaseStorageProtocol = FirebaseStorage.shared) {
+        self.firebaseStorage = firebaseStorage
     }
 }

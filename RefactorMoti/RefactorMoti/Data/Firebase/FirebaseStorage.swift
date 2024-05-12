@@ -72,14 +72,35 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     }
     
     func fetchCategories() async throws -> [CategoryItem] {
-        let categorySnapshot = try await fetchSortedData(from: Path.category)
+        let categorySnapshot = try await fetchSortedDataSnapshot(from: Path.category)
         return categorySnapshot.children.compactMap { child in
-            guard let snapshot = child as? DataSnapshot,
-                  let information = snapshot.value as? [String: Any] else {
+            guard let information = makeInformation(of: child) else {
                 return nil
             }
             return CategoryItem(information: information)
         }
+    }
+    
+    // MARK: Achievement
+    
+    func fetchAllAchievement() async throws -> [Achievement] {
+        let dataSnapshot = try await fetchSortedDataSnapshot(from: Path.achievement)
+        var achievements: [Achievement] = []
+        for child in dataSnapshot.children {
+            guard var information = makeInformation(of: child),
+                  let categoryID = information["categoryID"] as? String
+            else {
+                continue
+            }
+            
+            async let category = fetchCategoryItem(id: categoryID)
+            await information["category"] = category
+            
+            if let achievement = Achievement(information: information) {
+                achievements.append(achievement)
+            }
+        }
+        return achievements
     }
     
     
@@ -106,7 +127,30 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         return isExistData.childrenCount < 2
     }
     
-    private func fetchData(from path: String) async throws -> DataSnapshot {
+    private func fetchCategoryItem(id: String) async -> CategoryItem? {
+        let path = Path.category + "/" + id
+        guard let snapshot = try? await fetchDataSnapshot(from: path),
+              let information = snapshot.value as? [String: Any]
+        else {
+            return nil
+        }
+        return CategoryItem(information: information)
+    }
+}
+
+
+// MARK: - Fetch Data
+
+private extension FirebaseStorage {
+    
+    func makeInformation(of child: NSEnumerator.Element) -> [String: Any]? {
+        guard let snapshot = child as? DataSnapshot else {
+            return nil
+        }
+        return snapshot.value as? [String: Any]
+    }
+    
+    func fetchDataSnapshot(from path: String) async throws -> DataSnapshot {
         guard let userRef else {
             throw FirebaseStorageError.nonexistUserReference
         }
@@ -121,7 +165,7 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         }
     }
     
-    private func fetchSortedData(
+    func fetchSortedDataSnapshot(
         from path: String,
         sortBy key: String = Path.createdAt
     ) async throws -> DataSnapshot {
@@ -155,6 +199,7 @@ private extension FirebaseStorage {
         
         static let category = "category"
         static let createdAt = "createdAt"
+        static let achievement = "achievement"
     }
 }
 

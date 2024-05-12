@@ -48,25 +48,11 @@ final class HomeViewController: LayoutViewController<HomeView> {
 private extension HomeViewController {
 
     private func setUpViewModelBinding() {
-        output.categories
-            .sink { [weak self] categories in
-                guard let self else { return }
-                print("categories: \(categories)") // swiftlint:disable:this all
-            }
-            .store(in: &cancellables)
-        
         output.selectedCategoryIndex
             .receive(on: DispatchQueue.main)
             .sink { [weak self] indexPath in
                 guard let self else { return }
                 layoutView.selectCategory(indexPath: indexPath)
-            }
-            .store(in: &cancellables)
-        
-        output.achievements
-            .sink { [weak self] achievements in
-                guard let self else { return }
-                print("achievements: \(achievements)") // swiftlint:disable:this all
             }
             .store(in: &cancellables)
     }

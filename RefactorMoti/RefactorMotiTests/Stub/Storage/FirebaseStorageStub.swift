@@ -27,4 +27,8 @@ struct FirebaseStorageStub: FirebaseStorageProtocol {
     func fetchCategories() async throws -> [CategoryItem] {
         []
     }
+    
+    func fetchAllAchievement() async throws -> [Achievement] {
+        []
+    }
 }
