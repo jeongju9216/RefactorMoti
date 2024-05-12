@@ -74,8 +74,7 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     func fetchCategories() async throws -> [CategoryItem] {
         let categorySnapshot = try await fetchSortedDataSnapshot(from: Path.category)
         return categorySnapshot.children.compactMap { child in
-            guard let snapshot = child as? DataSnapshot,
-                  let information = snapshot.value as? [String: Any] else {
+            guard let information = makeInformation(of: child) else {
                 return nil
             }
             return CategoryItem(information: information)
@@ -88,8 +87,7 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         let dataSnapshot = try await fetchSortedDataSnapshot(from: Path.achievement)
         var achievements: [Achievement] = []
         for child in dataSnapshot.children {
-            guard let snapshot = child as? DataSnapshot,
-                  var information = snapshot.value as? [String: Any],
+            guard var information = makeInformation(of: child),
                   let categoryID = information["categoryID"] as? String
             else {
                 continue
@@ -144,6 +142,13 @@ final class FirebaseStorage: FirebaseStorageProtocol {
 // MARK: - Fetch Data
 
 private extension FirebaseStorage {
+    
+    func makeInformation(of child: NSEnumerator.Element) -> [String: Any]? {
+        guard let snapshot = child as? DataSnapshot else {
+            return nil
+        }
+        return snapshot.value as? [String: Any]
+    }
     
     func fetchDataSnapshot(from path: String) async throws -> DataSnapshot {
         guard let userRef else {
