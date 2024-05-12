@@ -11,6 +11,7 @@ protocol FirebaseStorageProtocol {
     
     // Configure
     func configure()
+    func isExistUser() async -> Bool
     
     // Version
     func fetchVersion() async -> (latest: String, forced: String)?
