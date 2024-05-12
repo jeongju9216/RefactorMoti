@@ -85,7 +85,23 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     // MARK: Achievement
     
     func fetchAllAchievement() async throws -> [Achievement] {
-        []
+        let dataSnapshot = try await fetchSortedDataSnapshot(from: Path.achievement)
+        var achievements: [Achievement] = []
+        for child in dataSnapshot.children {
+            guard let snapshot = child as? DataSnapshot,
+                  var information = snapshot.value as? [String: Any],
+                  let categoryID = information["categoryID"] as? String,
+                  let category = await fetchCategoryItem(id: categoryID)
+            else {
+                continue
+            }
+            information["category"] = category
+            
+            if let achievement = Achievement(information: information) {
+                achievements.append(achievement)
+            }
+        }
+        return achievements
     }
     
     
@@ -110,6 +126,16 @@ final class FirebaseStorage: FirebaseStorageProtocol {
             return true
         }
         return isExistData.childrenCount < 2
+    }
+    
+    private func fetchCategoryItem(id: String) async -> CategoryItem? {
+        let path = Path.category + "/" + id
+        guard let snapshot = try? await fetchDataSnapshot(from: path),
+              let information = snapshot.value as? [String: Any]
+        else {
+            return nil
+        }
+        return CategoryItem(information: information)
     }
 }
 
