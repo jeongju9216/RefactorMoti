@@ -10,7 +10,18 @@ import Foundation
 
 struct FirebaseStorageStub: FirebaseStorageProtocol {
     
+    // MARK: - Test Value
+    
+    var isExistUser: Bool = false
+    
+    
+    // MARK: - Interface
+    
     func configure() { }
+    
+    func isExistUser() async -> Bool {
+        isExistUser
+    }
     
     func fetchVersion() async -> (latest: String, forced: String)? {
         ("1.0.0", "1.0.0")

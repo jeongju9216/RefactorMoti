@@ -55,6 +55,9 @@
 		9B95D9232BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9222BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift */; };
 		9B95D9252BEF5A8B003BFDC3 /* CreateDefaultCategoriesUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9242BEF5A8B003BFDC3 /* CreateDefaultCategoriesUseCaseStub.swift */; };
 		9B95D9272BEFBB7F003BFDC3 /* FirebaseStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9262BEFBB7F003BFDC3 /* FirebaseStorageError.swift */; };
+		9B95D9292BF0C006003BFDC3 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9282BF0C006003BFDC3 /* UserRepositoryProtocol.swift */; };
+		9B95D92B2BF0C156003BFDC3 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */; };
+		9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -145,6 +148,9 @@
 		9B95D9222BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDefaultCategoriesUseCase.swift; sourceTree = "<group>"; };
 		9B95D9242BEF5A8B003BFDC3 /* CreateDefaultCategoriesUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDefaultCategoriesUseCaseStub.swift; sourceTree = "<group>"; };
 		9B95D9262BEFBB7F003BFDC3 /* FirebaseStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageError.swift; sourceTree = "<group>"; };
+		9B95D9282BF0C006003BFDC3 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
+		9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -364,6 +370,7 @@
 				9B4581692BD7EAE7002A32DC /* VersionRepositoryProtocol.swift */,
 				9BA8959C2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift */,
 				9BA895B52BE5F6E80080D400 /* CategoryRepositoryProtocol.swift */,
+				9B95D9282BF0C006003BFDC3 /* UserRepositoryProtocol.swift */,
 			);
 			path = RepositoryProtocol;
 			sourceTree = "<group>";
@@ -374,6 +381,7 @@
 				9B45816B2BD7EAED002A32DC /* VersionRepository.swift */,
 				9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */,
 				9BA895B32BE5F6E10080D400 /* CategoryRepository.swift */,
+				9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -467,6 +475,7 @@
 				9B45815B2BD7E3C6002A32DC /* LaunchRepositoryTests.swift */,
 				9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */,
 				9BA895B12BE5F42A0080D400 /* CategoryRepositoryTests.swift */,
+				9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -728,6 +737,7 @@
 				9B411CB32BDFC31F00A50B78 /* LoginViewModel.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
+				9B95D9292BF0C006003BFDC3 /* UserRepositoryProtocol.swift in Sources */,
 				9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */,
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
@@ -745,6 +755,7 @@
 				9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */,
 				9B289C862BDD3BA4000813C1 /* AutoLayoutWrapper+Horizontal.swift in Sources */,
 				9BA895CF2BE725B50080D400 /* SingleDiffableDataSource.swift in Sources */,
+				9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */,
 				9B95D9232BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift in Sources */,
 				9B4581902BD93D3F002A32DC /* LaunchViewModelProtocol.swift in Sources */,
 				9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */,
@@ -773,6 +784,7 @@
 				9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */,
 				9B45818E2BD93A02002A32DC /* FetchVersionUseCaseStub.swift in Sources */,
 				9BA895A22BE390F90080D400 /* AchievementRepositoryStub.swift in Sources */,
+				9B95D92B2BF0C156003BFDC3 /* UserRepositoryTests.swift in Sources */,
 				9B45815C2BD7E3C6002A32DC /* LaunchRepositoryTests.swift in Sources */,
 				9BA895AC2BE5EEF20080D400 /* FetchCategoriesUseCaseTests.swift in Sources */,
 				9B411CAF2BDFBF9400A50B78 /* LoginViewModelTests.swift in Sources */,
