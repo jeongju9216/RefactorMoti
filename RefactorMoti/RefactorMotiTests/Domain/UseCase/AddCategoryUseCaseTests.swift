@@ -16,10 +16,10 @@ final class AddCategoryUseCaseTests: XCTestCase {
         let categoryName = "음식"
         
         // when
-        let isSuccess = await useCase.execute(with: categoryName)
+        let addedCategoryItem = await useCase.execute(with: categoryName)
         
         // then
-        XCTAssertTrue(isSuccess)
+        XCTAssertNotNil(addedCategoryItem)
     }
     
     func test_카테고리_추가에_실패하면_false를_반환한다() async throws { }

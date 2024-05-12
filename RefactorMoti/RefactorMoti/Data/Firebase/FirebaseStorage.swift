@@ -47,22 +47,28 @@ final class FirebaseStorage: FirebaseStorageProtocol {
             return true
         }
         
-        var isComplete = true
-        for category in Constant.defaultCategories where isComplete {
-            isComplete = await addCategory(name: category)
+        for category in Constant.defaultCategories {
+            if await addCategory(name: category) == nil {
+                return false
+            }
         }
-        return isComplete
+        return true
     }
     
-    func addCategory(name: String) async -> Bool {
+    func addCategory(name: String) async -> CategoryItem? {
         guard let categoryRef = userRef?.child(Path.category),
               let autoID = categoryRef.childByAutoId().key else {
-            return false
+            return nil
         }
         
-        let information = CategoryItem(id: autoID, name: name).toInformation()
-        let result = try? await categoryRef.child(autoID).setValue(information)
-        return result != nil
+        let newCategoryItem = CategoryItem(id: autoID, name: name)
+        let information = newCategoryItem.toInformation()
+        do {
+            try await categoryRef.child(autoID).setValue(information)
+            return newCategoryItem
+        } catch {
+            return nil
+        }
     }
     
     func fetchCategories() async throws -> [CategoryItem] {

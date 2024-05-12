@@ -29,14 +29,12 @@ final class HomeViewModel {
     private var categoryDataSource: CategoryDataSource?
     private var achievementDataSource: AchievementDataSource?
     
-    // MARK: UseCase
-    
+    // UseCase
+    private let addCategoryUseCase: AddCategoryUseCaseProtocol
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
-    private let addCategoryUseCase: AddCategoryUseCaseProtocol
     
-    // MARK: Output
-    
+    // Output
     let output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
@@ -48,13 +46,13 @@ final class HomeViewModel {
     // MARK: - Initializer
     
     init(
+        addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase(),
         fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = FetchCategoriesUseCase(),
-        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase(),
-        addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase()
+        fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase()
     ) {
+        self.addCategoryUseCase = addCategoryUseCase
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
-        self.addCategoryUseCase = addCategoryUseCase
     }
 }
 
@@ -97,8 +95,15 @@ private extension HomeViewModel {
     
     func addCategory(name: String) {
         Task {
-            let isSuccess = await addCategoryUseCase.execute(with: name)
-            output.isAddedCategorySuccess.send(isSuccess)
+            guard let addedCategoryItem = await addCategoryUseCase.execute(with: name) else {
+                output.isAddedCategorySuccess.send(false)
+                return
+            }
+            output.isAddedCategorySuccess.send(true)
+            
+            let newCategories = categories + [addedCategoryItem]
+            categoryDataSource?.update(data: newCategories)
+            output.categories.send(newCategories)
         }
     }
     

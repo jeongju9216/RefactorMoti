@@ -9,7 +9,7 @@ import Foundation
 
 protocol CategoryRepositoryProtocol {
     
-    func fetchCategories() async throws -> [CategoryItem]
-    func addCategory(name: String) async -> Bool
     func createDefaultCategories() async -> Bool
+    func addCategory(name: String) async -> CategoryItem?
+    func fetchCategories() async throws -> [CategoryItem]
 }

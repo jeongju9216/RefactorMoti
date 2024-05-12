@@ -9,16 +9,16 @@ import Foundation
 
 struct CategoryRepository: CategoryRepositoryProtocol {
     
-    func fetchCategories() async throws -> [CategoryItem] {
-        try await firebaseStorage.fetchCategories()
+    func createDefaultCategories() async -> Bool {
+        await firebaseStorage.createDefaultCategories()
     }
     
-    func addCategory(name: String) async -> Bool {
+    func addCategory(name: String) async -> CategoryItem? {
         await firebaseStorage.addCategory(name: name)
     }
     
-    func createDefaultCategories() async -> Bool {
-        await firebaseStorage.createDefaultCategories()
+    func fetchCategories() async throws -> [CategoryItem] {
+        try await firebaseStorage.fetchCategories()
     }
     
     
