@@ -32,6 +32,7 @@ final class HomeViewModel {
     // UseCase
     private let addCategoryUseCase: AddCategoryUseCaseProtocol
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
+    private let addAchievementUseCase: AddAchievementUseCaseProtocol
     private let fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
     
     // Output
@@ -48,10 +49,12 @@ final class HomeViewModel {
     init(
         addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase(),
         fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = FetchCategoriesUseCase(),
+        addAchievementUseCase: AddAchievementUseCaseProtocol = AddAchievementUseCase(),
         fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase()
     ) {
         self.addCategoryUseCase = addCategoryUseCase
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
+        self.addAchievementUseCase = addAchievementUseCase
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
     }
 }
