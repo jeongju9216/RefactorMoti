@@ -15,6 +15,10 @@ struct AchievementRepository: AchievementRepositoryProtocol {
         try await firebaseStorage.fetchAllAchievement()
     }
     
+    func addAchievement(requestValue: AchievementRequestValue) async -> Achievement? {
+        await firebaseStorage.addAchievement(requestValue: requestValue)
+    }
+    
     
     // MARK: - Attribute
     

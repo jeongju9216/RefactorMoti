@@ -89,6 +89,29 @@ final class FirebaseStorage: FirebaseStorageProtocol {
     
     // MARK: Achievement
     
+    func addAchievement(requestValue: AchievementRequestValue) async -> Achievement? {
+        guard let ref = userRef?.child(Path.achievement),
+              let autoID = ref.childByAutoId().key else {
+            return nil
+        }
+        
+        let newAchievement = Achievement(
+            id: autoID,
+            imageURL: URL(string: requestValue.imageURLString),
+            category: requestValue.category,
+            title: requestValue.title,
+            body: requestValue.body,
+            createdAt: Date()
+        )
+        let information = newAchievement.toInformation()
+        do {
+            try await ref.child(autoID).setValue(information)
+            return newAchievement
+        } catch {
+            return nil
+        }
+    }
+    
     func fetchAllAchievement() async throws -> [Achievement] {
         let dataSnapshot = try await fetchSortedDataSnapshot(from: Path.achievement)
         var achievements: [Achievement] = []
