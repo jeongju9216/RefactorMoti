@@ -59,6 +59,7 @@
 		9B95D92B2BF0C156003BFDC3 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */; };
 		9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */; };
 		9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */; };
+		9B95D9322BF21995003BFDC3 /* AchievementRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -153,6 +154,7 @@
 		9B95D92A2BF0C156003BFDC3 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
+		9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRequestValue.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		9B45815E2BD7EA23002A32DC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9B95D9302BF2197F003BFDC3 /* RequestValue */,
 				9B4581622BD7EA6C002A32DC /* CoreData */,
 				9B45816D2BD7EAF2002A32DC /* Firebase */,
 				9B4581672BD7EAC6002A32DC /* Repository */,
@@ -446,6 +449,14 @@
 				9B95D91E2BEF37FF003BFDC3 /* AppleLoginError.swift */,
 			);
 			path = AppleLogin;
+			sourceTree = "<group>";
+		};
+		9B95D9302BF2197F003BFDC3 /* RequestValue */ = {
+			isa = PBXGroup;
+			children = (
+				9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */,
+			);
+			path = RequestValue;
 			sourceTree = "<group>";
 		};
 		9BA8958D2BE3835C0080D400 /* Domain */ = {
@@ -775,6 +786,7 @@
 				9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */,
 				9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */,
 				9BA895C22BE604E90080D400 /* HomeViewModelInputOutput.swift in Sources */,
+				9B95D9322BF21995003BFDC3 /* AchievementRequestValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
