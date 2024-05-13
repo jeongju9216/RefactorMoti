@@ -42,6 +42,9 @@ final class HomeViewModel {
     private var categories: [CategoryItem] {
         output.categories.value
     }
+    private var achievements: [Achievement] {
+        output.achievements.value
+    }
     
     
     // MARK: - Initializer
@@ -84,6 +87,13 @@ extension HomeViewModel {
                 selectCategory(at: indexPath)
             }
             .store(in: &cancellables)
+        
+        input.addAchievement
+            .sink { [weak self] achievementRequestValue in
+                guard let self else { return }
+                addAchievement(requestValue: achievementRequestValue)
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -102,10 +112,11 @@ private extension HomeViewModel {
                 output.isAddedCategorySuccess.send(false)
                 return
             }
-            output.isAddedCategorySuccess.send(true)
             
             let newCategories = categories + [addedCategoryItem]
             categoryDataSource?.update(data: newCategories)
+            
+            output.isAddedCategorySuccess.send(true)
             output.categories.send(newCategories)
         }
     }
@@ -116,6 +127,21 @@ private extension HomeViewModel {
         }
         
         output.selectedCategoryIndex.send(indexPath)
+    }
+    
+    func addAchievement(requestValue: AchievementRequestValue) {
+        Task {
+            guard let addedAchievement = await addAchievementUseCase.execute(requestValue: requestValue) else {
+                output.isAddedAchievementSuccess.send(false)
+                return
+            }
+            
+            let newAchievements = achievements + [addedAchievement]
+            achievementDataSource?.update(data: newAchievements)
+            
+            output.isAddedAchievementSuccess.send(true)
+            output.achievements.send(newAchievements)
+        }
     }
 }
 

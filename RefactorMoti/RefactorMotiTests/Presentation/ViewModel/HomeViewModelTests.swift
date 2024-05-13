@@ -15,6 +15,7 @@ final class HomeViewModelTests: XCTestCase {
     
     private let addCategoryUseCase = AddCategoryUseCase(repository: DefaultCategoryRepositoryStub())
     private let fetchCategoriesUseCase = FetchCategoriesUseCase(repository: DefaultCategoryRepositoryStub())
+    private let addAchievementUseCase = AddAchievementUseCase(repository: AchievementRepositoryStub())
     private let fetchAchievementsUseCase = FetchAchievementsUseCase(repository: AchievementRepositoryStub())
     
     private var targetCategories: [CategoryItem]!
@@ -32,6 +33,7 @@ final class HomeViewModelTests: XCTestCase {
         viewModel = HomeViewModel(
             addCategoryUseCase: addCategoryUseCase,
             fetchCategoriesUseCase: fetchCategoriesUseCase,
+            addAchievementUseCase: addAchievementUseCase,
             fetchAchievementsUseCase: fetchAchievementsUseCase
         )
         input = .init()
@@ -203,6 +205,12 @@ final class HomeViewModelTests: XCTestCase {
     func test_addAchievement가_input됐을_때_추가에_성공하면_output은_true() async throws {
         // given
         let expectation = XCTestExpectation()
+        let requestValue = AchievementRequestValue(
+            title: "",
+            body: "",
+            category: .init(id: "", name: ""),
+            imageURLString: ""
+        )
         
         // when
         var source: Bool?
@@ -213,7 +221,7 @@ final class HomeViewModelTests: XCTestCase {
             }
             .store(in: &cancellables)
         
-        input.addAchievement.send("")
+        input.addAchievement.send(requestValue)
         
         // then
         wait(for: [expectation], timeout: 5)
@@ -225,6 +233,20 @@ final class HomeViewModelTests: XCTestCase {
     func test_addAchievement가_input됐을_때_추가에_실패하면_output은_false() async throws {
         // given
         let expectation = XCTestExpectation()
+        let addAchievementUseCase = AddAchievementUseCase(repository: EmptyAchievementRepositoryStub())
+        viewModel = HomeViewModel(
+            addCategoryUseCase: addCategoryUseCase,
+            fetchCategoriesUseCase: fetchCategoriesUseCase,
+            addAchievementUseCase: addAchievementUseCase,
+            fetchAchievementsUseCase: fetchAchievementsUseCase
+        )
+        viewModel.bind(input: input)
+        let requestValue = AchievementRequestValue(
+            title: "",
+            body: "",
+            category: .init(id: "", name: ""),
+            imageURLString: ""
+        )
         
         // when
         var source: Bool?
@@ -235,13 +257,13 @@ final class HomeViewModelTests: XCTestCase {
             }
             .store(in: &cancellables)
         
-        input.addAchievement.send("")
+        input.addAchievement.send(requestValue)
         
         // then
         wait(for: [expectation], timeout: 5)
         
         XCTAssertNotNil(source)
-        XCTAssertTrue(source!)
+        XCTAssertFalse(source!)
     }
     
     func test_refresh가_input되면_사진_리스트를_output() throws { }
