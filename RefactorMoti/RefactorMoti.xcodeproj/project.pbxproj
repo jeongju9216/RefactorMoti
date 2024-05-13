@@ -60,6 +60,7 @@
 		9B95D92D2BF0C417003BFDC3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */; };
 		9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */; };
 		9B95D9322BF21995003BFDC3 /* AchievementRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */; };
+		9B95D9342BF22E47003BFDC3 /* AddAchievementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9332BF22E47003BFDC3 /* AddAchievementUseCase.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -155,6 +156,7 @@
 		9B95D92C2BF0C417003BFDC3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
 		9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRequestValue.swift; sourceTree = "<group>"; };
+		9B95D9332BF22E47003BFDC3 /* AddAchievementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAchievementUseCase.swift; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */,
 				9B95D9222BEF44AA003BFDC3 /* CreateDefaultCategoriesUseCase.swift */,
 				9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */,
+				9B95D9332BF22E47003BFDC3 /* AddAchievementUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */,
 				9B4581832BD9341A002A32DC /* FirebaseStorageProtocol.swift in Sources */,
 				9B4581702BD7EB37002A32DC /* FirebaseStorage.swift in Sources */,
+				9B95D9342BF22E47003BFDC3 /* AddAchievementUseCase.swift in Sources */,
 				9B45816A2BD7EAE7002A32DC /* VersionRepositoryProtocol.swift in Sources */,
 				9B289C822BDD3B6C000813C1 /* AutoLayoutWrapper+Center.swift in Sources */,
 				9BA895C92BE673120080D400 /* CategoryItem.swift in Sources */,
