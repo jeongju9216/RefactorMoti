@@ -200,6 +200,50 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertTrue(compareAchievement(source: source!, target: targetAchievements))
     }
     
+    func test_addAchievement가_input됐을_때_추가에_성공하면_output은_true() async throws {
+        // given
+        let expectation = XCTestExpectation()
+        
+        // when
+        var source: Bool?
+        output.isAddedAchievementSuccess
+            .sink { isAddedAchievementSuccess in
+                source = isAddedAchievementSuccess
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        input.addAchievement.send("")
+        
+        // then
+        wait(for: [expectation], timeout: 5)
+        
+        XCTAssertNotNil(source)
+        XCTAssertTrue(source!)
+    }
+    
+    func test_addAchievement가_input됐을_때_추가에_실패하면_output은_false() async throws {
+        // given
+        let expectation = XCTestExpectation()
+        
+        // when
+        var source: Bool?
+        output.isAddedAchievementSuccess
+            .sink { isAddedAchievementSuccess in
+                source = isAddedAchievementSuccess
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        input.addAchievement.send("")
+        
+        // then
+        wait(for: [expectation], timeout: 5)
+        
+        XCTAssertNotNil(source)
+        XCTAssertTrue(source!)
+    }
+    
     func test_refresh가_input되면_사진_리스트를_output() throws { }
     
     func test_deletePhoto가_input될_때_성공하면_output은_true() throws { }
