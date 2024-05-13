@@ -10,12 +10,26 @@ import Foundation
 
 struct EmptyAchievementRepositoryStub: AchievementRepositoryProtocol {
     
+    func addAchievement(requestValue: AchievementRequestValue) async -> Achievement? {
+        nil
+    }
+    
     func fetchAchievements() async throws -> [Achievement] {
         []
     }
 }
 
 struct AchievementRepositoryStub: AchievementRepositoryProtocol {
+    
+    func addAchievement(requestValue: AchievementRequestValue) async -> Achievement? {
+        Achievement(
+            id: "",
+            imageURL: URL(string: "https://picsum.photos/500"),
+            category: CategoryItem(id: "", name: "카테고리"),
+            title: "제목",
+            createdAt: Date()
+        )
+    }
     
     func fetchAchievements() async throws -> [Achievement] {
         (0..<10).map {
