@@ -40,6 +40,17 @@ extension Achievement {
         self.body = body
         self.createdAt = Date(timeIntervalSince1970: createdAt)
     }
+    
+    func toInformation() -> [String: Any] {
+        [
+            Key.id: id,
+            Key.imageURL: imageURL?.absoluteString ?? "",
+            Key.categoryID: category.id,
+            Key.title: title,
+            Key.body: body ?? "",
+            Key.createdAt: (createdAt ?? Date()).timeIntervalSince1970
+        ]
+    }
 }
 
 
@@ -52,6 +63,7 @@ private extension Achievement {
         static let id = "id"
         static let imageURL = "imageURL"
         static let category = "category"
+        static let categoryID = "categoryID"
         static let title = "title"
         static let body = "body"
         static let createdAt = "createdAt"

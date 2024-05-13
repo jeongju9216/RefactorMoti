@@ -24,5 +24,6 @@ protocol FirebaseStorageProtocol {
     func fetchCategories() async throws -> [CategoryItem]
     
     // Achievement
+    func addAchievement(requestValue: AchievementRequestValue) async -> Achievement?
     func fetchAllAchievement() async throws -> [Achievement]
 }

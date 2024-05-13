@@ -9,5 +9,6 @@ import Foundation
 
 protocol AchievementRepositoryProtocol {
     
+    func addAchievement(requestValue: AchievementRequestValue) async -> Achievement?
     func fetchAchievements() async throws -> [Achievement]
 }
