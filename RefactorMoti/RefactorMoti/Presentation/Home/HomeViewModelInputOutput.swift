@@ -12,22 +12,27 @@ extension HomeViewModel {
     
     struct Input {
         
+        // Life Cycle
         let viewDidLoad: PassthroughSubject<Void, Never> = .init()
+        
+        // Category
         let addCategory: PassthroughSubject<String, Never> = .init()
         let selectCategoryCell: PassthroughSubject<IndexPath, Never> = .init()
+        
+        // Achievement
+        let addAchievement: PassthroughSubject<String, Never> = .init()
     }
     
     struct Output {
         
-        // MARK: Category
-        
+        // Category
         let categories: CurrentValueSubject<[CategoryItem], Never> = .init([])
         let selectedCategoryIndex: PassthroughSubject<IndexPath, Never> = .init()
         let isAddedCategorySuccess: PassthroughSubject<Bool, Never> = .init()
         
-        // MARK: Achievement
-        
+        // Achievement
         let achievements: PassthroughSubject<[Achievement], Never> = .init()
+        let isAddedAchievementSuccess: PassthroughSubject<Bool, Never> = .init()
     }
 }
 
