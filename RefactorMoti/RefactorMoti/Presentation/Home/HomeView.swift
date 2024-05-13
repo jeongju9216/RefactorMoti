@@ -47,6 +47,16 @@ final class HomeView: BaseView {
         return view
     }()
     
+    // TODO: 임시 도전기록 추가 버튼입니다.
+    private let addAchievementButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.title = "Achievement 파이어베이스 추가"
+        configuration.baseForegroundColor = .red
+        let button = UIButton(configuration: configuration)
+        button.jd.cornerRadius(.small)
+        return button
+    }()
+    
     
     // MARK: - Setup
     
@@ -55,6 +65,7 @@ final class HomeView: BaseView {
         addSubview(separatorView)
         addSubview(categoriesCollectionView)
         addSubview(achievementCollectionView)
+        addSubview(addAchievementButton)
     }
     
     override func setUpConstraint() {
@@ -77,6 +88,8 @@ final class HomeView: BaseView {
             .top(equalTo: categoriesCollectionView.bottomAnchor, constant: Metric.Achievement.topOffset)
             .bottom(equalTo: self.bottomAnchor)
             .horizontal(equalTo: safeAreaLayoutGuide)
+        addAchievementButton.atl
+            .center(equalTo: self)
     }
 }
 
