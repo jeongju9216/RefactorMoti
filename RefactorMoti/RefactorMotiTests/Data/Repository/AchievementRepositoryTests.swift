@@ -11,7 +11,45 @@ import XCTest
 final class AchievementRepositoryTests: XCTestCase {
 
     var repository: AchievementRepositoryProtocol!
+    let requestValue = AchievementRequestValue(
+        title: "",
+        body: nil,
+        category: CategoryItem(id: "", name: ""),
+        imageURLString: ""
+    )
+    
+    
+    // MARK: - Add Achievement
+    
+    func test_achievement를_추가할_때_파이어베이스_추가가_성공하면_생성된_achievement를_반환한다() async throws {
+        // given
+        var stub = FirebaseStorageStub()
+        stub.isAddedAchievementSuccess = true
+        repository = AchievementRepository(firebaseStorage: stub)
         
+        // when
+        let source = await repository.addAchievement(requestValue: requestValue)
+        
+        // then
+        XCTAssertNotNil(source)
+    }
+    
+    func test_achievement를_추가할_때_파이어베이스_추가가_실패하면_nil을_반환한다() async throws {
+        // given
+        var stub = FirebaseStorageStub()
+        stub.isAddedAchievementSuccess = false
+        repository = AchievementRepository(firebaseStorage: stub)
+        
+        // when
+        let source = await repository.addAchievement(requestValue: requestValue)
+        
+        // then
+        XCTAssertNil(source)
+    }
+    
+    
+    // MARK: - Fetch Achievement
+    
     func test_10개의_아이템을_가져오는_fetchAchievements를_성공하면_achievements의_count는_10이다() async throws {
         // given
         let target = 10
