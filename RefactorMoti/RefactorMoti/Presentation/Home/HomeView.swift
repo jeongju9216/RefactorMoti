@@ -15,6 +15,9 @@ final class HomeView: BaseView {
     var addCategoryButtonDidTap: UIControl.ControlEventPublisher {
         addCategoryButton.publisher(for: .touchUpInside)
     }
+    var addAchievementButtonDidTap: UIControl.ControlEventPublisher {
+        addAchievementButton.publisher(for: .touchUpInside)
+    }
     
     func selectCategory(indexPath: IndexPath) {
         categoriesCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
