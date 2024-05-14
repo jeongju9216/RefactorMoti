@@ -64,6 +64,19 @@ private extension HomeViewController {
                 input.addCategory.send("임시")
             }
             .store(in: &cancellables)
+        
+        layoutView.addAchievementButtonDidTap
+            .sink { [weak self] in
+                guard let self else { return }
+                let requestValue = AchievementRequestValue(
+                    title: "제목: \(Date().description)",
+                    body: "본문: \(Date().description)",
+                    category: CategoryItem(id: "-NxcEEVuEKozBea9ZvWm", name: "미설정"),
+                    imageURLString: "https://picsum.photos/500"
+                )
+                input.addAchievement.send(requestValue)
+            }
+            .store(in: &cancellables)
     }
 }
 
