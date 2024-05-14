@@ -29,6 +29,7 @@ final class HomeView: BaseView {
     private(set) lazy var categoriesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout())
         collectionView.alwaysBounceVertical = false
+        collectionView.alwaysBounceHorizontal = true
         collectionView.register(CategoryCollectionViewCell.self)
         return collectionView
     }()
@@ -107,40 +108,26 @@ private extension HomeView {
             heightDimension: .fractionalHeight(1)
         )
         let item = CompositionalLayoutItem(size: size)
-        let groupEdgeSpacing = NSCollectionLayoutEdgeSpacing(
-            leading: .fixed(Metric.CategoryItem.groupEdgeSpacing),
-            top: .none, trailing: .none, bottom: .none
-        )
-        let group = CompositionalLayoutGroup(size: size, count: 1, edgeSpacing: groupEdgeSpacing)
+        let groupEdgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(Metric.CategoryItem.groupEdgeSpacing))
+        let group = CompositionalLayoutGroup(direction: .horizontal, size: size, edgeSpacing: groupEdgeSpacing)
         let section = CompositionalLayoutSection(orthogonalScrollingBehavior: .continuous)
-        return CompositionalLayout.horizontal.configure(
-            item: item,
-            group: group,
-            section: section
-        )
+        return CompositionalLayout.configure(item: item, group: group, section: section)
     }
     
     func makeAchievementCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        let itemCount = Metric.Achievement.itemCount
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0 / Metric.Achievement.itemCount),
+            widthDimension: .fractionalWidth(1.0 / CGFloat(itemCount)),
             heightDimension: .fractionalHeight(1)
         )
-        let inset = Metric.Achievement.itemEdgeInset
-        let item = CompositionalLayoutItem(
-            size: itemSize,
-            contentInsets: NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-        )
+        let item = CompositionalLayoutItem(size: itemSize, contentInsets: .init(inset: Metric.Achievement.itemEdgeInset))
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: .fractionalWidth(1),
             heightDimension: itemSize.widthDimension
         )
-        let group = CompositionalLayoutGroup(size: groupSize, count: 3)
-        let section = CompositionalLayoutSection(orthogonalScrollingBehavior: .continuous)
-        return CompositionalLayout.horizontal.configure(
-            item: item,
-            group: group,
-            section: section
-        )
+        let group = CompositionalLayoutGroup(direction: .horizontal, size: groupSize, count: itemCount)
+        let section = CompositionalLayoutSection()
+        return CompositionalLayout.configure(item: item, group: group, section: section)
     }
 }
 
@@ -171,7 +158,7 @@ private extension HomeView {
         enum Achievement {
             
             static let itemEdgeInset = 1.0
-            static let itemCount: CGFloat = Constant.isPhone ? 3 : 7
+            static let itemCount = Constant.isPhone ? 3 : 7
             static let topOffset = 10.0
         }
         
