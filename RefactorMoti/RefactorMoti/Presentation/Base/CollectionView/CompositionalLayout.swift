@@ -9,17 +9,14 @@ import UIKit
 
 enum CompositionalLayout {
     
-    case vertical
-    case horizontal
-    
-    func configure(
+    static func configure(
         item: CompositionalLayoutItem,
         group: CompositionalLayoutGroup,
         section: CompositionalLayoutSection
     ) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             let item = item.configure()
-            let group = group.configure(type: self, item: item)
+            let group = group.configure(item: item)
             return section.configure(group: group)
         }
     }
@@ -57,29 +54,35 @@ struct CompositionalLayoutItem {
 
 struct CompositionalLayoutGroup {
     
+    enum Direction {
+        
+        case vertical
+        case horizontal
+    }
+    
+    let direction: Direction
     let size: NSCollectionLayoutSize
     let count: Int
     let contentInsets: NSDirectionalEdgeInsets?
     let edgeSpacing: NSCollectionLayoutEdgeSpacing?
     
     init(
+        direction: Direction,
         size: NSCollectionLayoutSize,
-        count: Int,
+        count: Int = 1,
         contentInsets: NSDirectionalEdgeInsets? = nil,
         edgeSpacing: NSCollectionLayoutEdgeSpacing? = nil
     ) {
+        self.direction = direction
         self.size = size
         self.count = count
         self.contentInsets = contentInsets
         self.edgeSpacing = edgeSpacing
     }
     
-    func configure(
-        type: CompositionalLayout,
-        item: NSCollectionLayoutItem
-    ) -> NSCollectionLayoutGroup {
+    func configure(item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup {
         let subitems = Array(repeating: item, count: count)
-        let group = type == .vertical
+        let group = direction == .vertical
         ? NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: subitems)
         : NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: subitems)
         
@@ -104,7 +107,7 @@ struct CompositionalLayoutSection {
     let footer: NSCollectionLayoutBoundarySupplementaryItem?
     
     init(
-        orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior,
+        orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior = .none,
         header: NSCollectionLayoutBoundarySupplementaryItem? = nil,
         footer: NSCollectionLayoutBoundarySupplementaryItem? = nil
     ) {
@@ -122,4 +125,3 @@ struct CompositionalLayoutSection {
         return section
     }
 }
-
