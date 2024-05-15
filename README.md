@@ -37,7 +37,8 @@
 
 
 # moti 2.0 구조
-![moti2-3](https://github.com/jeongju9216/moti-2.0/assets/89075274/1a67cac1-9f68-4626-bb99-e183aec432db)
+![moti2-3-3](https://github.com/jeongju9216/moti-2.0/assets/89075274/f47d5935-5ebd-4134-bd2f-17447718f8d3)
+
 
 
 # 기술 스택
