@@ -61,6 +61,8 @@
 		9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */; };
 		9B95D9322BF21995003BFDC3 /* AchievementRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */; };
 		9B95D9342BF22E47003BFDC3 /* AddAchievementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9332BF22E47003BFDC3 /* AddAchievementUseCase.swift */; };
+		9B95D93C2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D93B2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift */; };
+		9B95D93E2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D93D2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -157,6 +159,8 @@
 		9B95D92E2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
 		9B95D9312BF21995003BFDC3 /* AchievementRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRequestValue.swift; sourceTree = "<group>"; };
 		9B95D9332BF22E47003BFDC3 /* AddAchievementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAchievementUseCase.swift; sourceTree = "<group>"; };
+		9B95D93B2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+init.swift"; sourceTree = "<group>"; };
+		9B95D93D2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutEdgeSpacing+init.swift"; sourceTree = "<group>"; };
 		9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepositoryTests.swift; sourceTree = "<group>"; };
 		9BA8959A2BE38CCA0080D400 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -593,6 +597,8 @@
 			children = (
 				9BA895D62BE750A60080D400 /* UICollectionReusableView+identifier.swift */,
 				9BA895D82BE750C30080D400 /* UICollectionView+Register.swift */,
+				9B95D93B2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift */,
+				9B95D93D2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -742,6 +748,7 @@
 				9B289C7B2BDCF0E0000813C1 /* LayoutViewController.swift in Sources */,
 				9BA8959F2BE38D6A0080D400 /* Achievement.swift in Sources */,
 				9B411CBF2BDFD0A700A50B78 /* HomeViewController.swift in Sources */,
+				9B95D93C2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift in Sources */,
 				9BA895D42BE74F880080D400 /* CategoryCollectionViewCell.swift in Sources */,
 				9BA895D12BE725D60080D400 /* CompositionalLayout.swift in Sources */,
 				9BA895BA2BE5FBC50080D400 /* FetchCategoriesUseCase.swift in Sources */,
@@ -760,6 +767,7 @@
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
+				9B95D93E2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift in Sources */,
 				9B411CC12BDFD0AC00A50B78 /* HomeView.swift in Sources */,
 				9BA895D72BE750A60080D400 /* UICollectionReusableView+identifier.swift in Sources */,
 				9B289C8D2BDE4687000813C1 /* LoginViewController.swift in Sources */,

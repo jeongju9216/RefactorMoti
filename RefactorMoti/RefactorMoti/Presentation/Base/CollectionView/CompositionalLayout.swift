@@ -125,28 +125,3 @@ struct CompositionalLayoutSection {
         return section
     }
 }
-
-
-// MARK: - NSDirectionalEdgeInsets
-
-extension NSDirectionalEdgeInsets {
-    
-    init(inset: CGFloat) {
-        self.init(top: inset, leading: inset, bottom: inset, trailing: inset)
-    }
-}
-
-
-// MARK: - NSCollectionLayoutEdgeSpacing
-
-extension NSCollectionLayoutEdgeSpacing {
-    
-    convenience init(
-        top: NSCollectionLayoutSpacing? = nil,
-        leading: NSCollectionLayoutSpacing? = nil,
-        bottom: NSCollectionLayoutSpacing? = nil,
-        trailing: NSCollectionLayoutSpacing? = nil
-    ) {
-        self.init(leading: leading, top: top, trailing: trailing, bottom: bottom)
-    }
-}
