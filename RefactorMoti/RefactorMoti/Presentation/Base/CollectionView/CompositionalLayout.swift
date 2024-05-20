@@ -7,41 +7,36 @@
 
 import UIKit
 
-enum CompositionalLayout {
-    
-    static func configure(with section: CompositionalLayoutSection) -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            section.layout
-        }
-    }
-}
-
-
 // MARK: - CompositionalLayoutItem
 
 final class CompositionalLayoutItem {
     
     // MARK: - Interface
     
-    let layout: NSCollectionLayoutItem
-    let size: NSCollectionLayoutSize
+    func configure() -> NSCollectionLayoutItem {
+        let layout = NSCollectionLayoutItem(layoutSize: size)
+        if let contentInsets {
+            layout.contentInsets = contentInsets
+        }
+        return layout
+    }
     
     func contentInsets(_ insets: NSDirectionalEdgeInsets) -> Self {
-        layout.contentInsets = insets
+        contentInsets = insets
         return self
     }
     
     
     // MARK: - Attribute
     
+    private let size: NSCollectionLayoutSize
     private var contentInsets: NSDirectionalEdgeInsets?
     
     
     // MARK: - Initializer
     
-    init(width: NSCollectionLayoutDimension, height: NSCollectionLayoutDimension) {
-        self.size = NSCollectionLayoutSize(widthDimension: width, heightDimension: height)
-        self.layout = NSCollectionLayoutItem(layoutSize: size)
+    init(size: NSCollectionLayoutSize) {
+        self.size = size
     }
 }
 
@@ -51,38 +46,49 @@ final class CompositionalLayoutItem {
 final class CompositionalLayoutGroup {
     
     // MARK: - Interface
-    
-    enum Direction {
-        
-        case vertical
-        case horizontal
+
+    func configure(verticalWith subitems: [NSCollectionLayoutItem]) -> NSCollectionLayoutGroup {
+        let layout = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: subitems)
+        return applyOptions(at: layout)
     }
     
-    let layout: NSCollectionLayoutGroup
-    let size: NSCollectionLayoutSize
+    func configure(horizontalWith subitems: [NSCollectionLayoutItem]) -> NSCollectionLayoutGroup {
+        let layout = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: subitems)
+        return applyOptions(at: layout)
+    }
     
     func contentInsets(_ insets: NSDirectionalEdgeInsets) -> Self {
-        layout.contentInsets = insets
+        contentInsets = insets
         return self
     }
     
-    func edgeSpacing(_ edgeSpacing: NSCollectionLayoutEdgeSpacing) -> Self {
-        layout.edgeSpacing = edgeSpacing
+    func edgeSpacing(_ spacing: NSCollectionLayoutEdgeSpacing) -> Self {
+        edgeSpacing = spacing
         return self
     }
+    
+    
+    // MARK: - Attribute
+    
+    private let size: NSCollectionLayoutSize
+    private var contentInsets: NSDirectionalEdgeInsets?
+    private var edgeSpacing: NSCollectionLayoutEdgeSpacing?
     
     
     // MARK: - Initializer
     
-    init(
-        subitems: [NSCollectionLayoutItem],
-        direction: Direction,
-        size: NSCollectionLayoutSize
-    ) {
+    init(size: NSCollectionLayoutSize) {
         self.size = size
-        self.layout = direction == .vertical
-        ? NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: subitems)
-        : NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: subitems)
+    }
+    
+    private func applyOptions(at group: NSCollectionLayoutGroup) -> NSCollectionLayoutGroup {
+        if let contentInsets {
+            group.contentInsets = contentInsets
+        }
+        if let edgeSpacing {
+            group.edgeSpacing = edgeSpacing
+        }
+        return group
     }
 }
 
@@ -93,22 +99,30 @@ final class CompositionalLayoutSection {
     
     // MARK: - Interface
     
-    let layout: NSCollectionLayoutSection
+    func configure(with group: NSCollectionLayoutGroup) -> NSCollectionLayoutSection {
+        let layout = NSCollectionLayoutSection(group: group)
+        if !supplementaryItems.isEmpty {
+            layout.boundarySupplementaryItems = supplementaryItems
+        }
+        if let orthogonalScrollingBehavior {
+            layout.orthogonalScrollingBehavior = orthogonalScrollingBehavior
+        }
+        return layout
+    }
+    
+    func append(supplementaryItem: NSCollectionLayoutBoundarySupplementaryItem) -> Self {
+        supplementaryItems.append(supplementaryItem)
+        return self
+    }
     
     func orthogonalScrollingBehavior(_ orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior) -> Self {
-        layout.orthogonalScrollingBehavior = orthogonalScrollingBehavior
-        return self
-    }
-    
-    func header(_ header: NSCollectionLayoutBoundarySupplementaryItem) -> Self {
-        layout.boundarySupplementaryItems.append(header)
+        self.orthogonalScrollingBehavior = orthogonalScrollingBehavior
         return self
     }
     
     
-    // MARK: - Initializer
+    // MARK: - Attribute
     
-    init(group: NSCollectionLayoutGroup) {
-        layout = NSCollectionLayoutSection(group: group)
-    }
+    private var supplementaryItems: [NSCollectionLayoutBoundarySupplementaryItem] = []
+    private var orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior?
 }

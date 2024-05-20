@@ -103,24 +103,36 @@ final class HomeView: BaseView {
 private extension HomeView {
     
     func makeCategoriesCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        let item = CompositionalLayoutItem(width: .estimated(Metric.CategoryItem.width), height: .fractionalHeight(1))
-        let subitems = Array(repeating: item.layout, count: 1)
-        let group = CompositionalLayoutGroup(subitems: subitems, direction: .horizontal, size: item.size)
+        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(Metric.CategoryItem.width), heightDimension: .fractionalHeight(1))
+        let item = CompositionalLayoutItem(size: itemSize)
+            .configure()
+        
+        let group = CompositionalLayoutGroup(size: itemSize)
             .edgeSpacing(NSCollectionLayoutEdgeSpacing(leading: .fixed(Metric.CategoryItem.groupEdgeSpacing)))
-        let section = CompositionalLayoutSection(group: group.layout)
+            .configure(verticalWith: [item])
+         
+        let section = CompositionalLayoutSection()
             .orthogonalScrollingBehavior(.continuous)
-        return CompositionalLayout.configure(with: section)
+            .configure(with: group)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
     func makeAchievementCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let itemCount = Metric.Achievement.itemCount
-        let item = CompositionalLayoutItem(width: .fractionalWidth(1.0 / CGFloat(itemCount)), height: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / CGFloat(itemCount)), heightDimension: .fractionalHeight(1))
+        let item = CompositionalLayoutItem(size: itemSize)
             .contentInsets(.init(inset: Metric.Achievement.itemEdgeInset))
-        let subitems = Array(repeating: item.layout, count: itemCount)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: item.size.widthDimension)
-        let group = CompositionalLayoutGroup(subitems: subitems, direction: .horizontal, size: groupSize)
-        let section = CompositionalLayoutSection(group: group.layout)
-        return CompositionalLayout.configure(with: section)
+            .configure()
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: itemSize.widthDimension)
+        let group = CompositionalLayoutGroup(size: groupSize)
+            .configure(horizontalWith: Array(repeating: item, count: itemCount))
+        
+        let section = CompositionalLayoutSection()
+            .configure(with: group)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
 }
 
