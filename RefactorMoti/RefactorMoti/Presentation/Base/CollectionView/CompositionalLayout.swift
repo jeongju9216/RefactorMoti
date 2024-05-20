@@ -7,92 +7,87 @@
 
 import UIKit
 
-enum CompositionalLayout {
-    
-    static func configure(
-        item: CompositionalLayoutItem,
-        group: CompositionalLayoutGroup,
-        section: CompositionalLayoutSection
-    ) -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let item = item.configure()
-            let group = group.configure(item: item)
-            return section.configure(group: group)
-        }
-    }
-}
-
-
 // MARK: - CompositionalLayoutItem
 
-struct CompositionalLayoutItem {
+final class CompositionalLayoutItem {
     
-    let size: NSCollectionLayoutSize
-    let contentInsets: NSDirectionalEdgeInsets?
-    
-    init(
-        size: NSCollectionLayoutSize,
-        contentInsets: NSDirectionalEdgeInsets? = nil
-    ) {
-        self.size = size
-        self.contentInsets = contentInsets
-    }
+    // MARK: - Interface
     
     func configure() -> NSCollectionLayoutItem {
-        let item = NSCollectionLayoutItem(layoutSize: size)
-        
+        let layout = NSCollectionLayoutItem(layoutSize: size)
         if let contentInsets {
-            item.contentInsets = contentInsets
+            layout.contentInsets = contentInsets
         }
-        
-        return item
+        return layout
+    }
+    
+    func contentInsets(_ insets: NSDirectionalEdgeInsets) -> Self {
+        contentInsets = insets
+        return self
+    }
+    
+    
+    // MARK: - Attribute
+    
+    private let size: NSCollectionLayoutSize
+    private var contentInsets: NSDirectionalEdgeInsets?
+    
+    
+    // MARK: - Initializer
+    
+    init(size: NSCollectionLayoutSize) {
+        self.size = size
     }
 }
 
 
 // MARK: - CompositionalLayoutGroup
 
-struct CompositionalLayoutGroup {
+final class CompositionalLayoutGroup {
     
-    enum Direction {
-        
-        case vertical
-        case horizontal
+    // MARK: - Interface
+
+    func configure(verticalWith subitems: [NSCollectionLayoutItem]) -> NSCollectionLayoutGroup {
+        let layout = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: subitems)
+        return applyOptions(at: layout)
     }
     
-    let direction: Direction
-    let size: NSCollectionLayoutSize
-    let count: Int
-    let contentInsets: NSDirectionalEdgeInsets?
-    let edgeSpacing: NSCollectionLayoutEdgeSpacing?
+    func configure(horizontalWith subitems: [NSCollectionLayoutItem]) -> NSCollectionLayoutGroup {
+        let layout = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: subitems)
+        return applyOptions(at: layout)
+    }
     
-    init(
-        direction: Direction,
-        size: NSCollectionLayoutSize,
-        count: Int = 1,
-        contentInsets: NSDirectionalEdgeInsets? = nil,
-        edgeSpacing: NSCollectionLayoutEdgeSpacing? = nil
-    ) {
-        self.direction = direction
+    func contentInsets(_ insets: NSDirectionalEdgeInsets) -> Self {
+        contentInsets = insets
+        return self
+    }
+    
+    func edgeSpacing(_ spacing: NSCollectionLayoutEdgeSpacing) -> Self {
+        edgeSpacing = spacing
+        return self
+    }
+    
+    
+    // MARK: - Attribute
+    
+    private let size: NSCollectionLayoutSize
+    private var contentInsets: NSDirectionalEdgeInsets?
+    private var edgeSpacing: NSCollectionLayoutEdgeSpacing?
+    
+    
+    // MARK: - Initializer
+    
+    init(size: NSCollectionLayoutSize) {
         self.size = size
-        self.count = count
-        self.contentInsets = contentInsets
-        self.edgeSpacing = edgeSpacing
     }
     
-    func configure(item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup {
-        let subitems = Array(repeating: item, count: count)
-        let group = direction == .vertical
-        ? NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: subitems)
-        : NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: subitems)
-        
+    private func applyOptions(at group: NSCollectionLayoutGroup) -> NSCollectionLayoutGroup {
         if let contentInsets {
             group.contentInsets = contentInsets
         }
         if let edgeSpacing {
             group.edgeSpacing = edgeSpacing
         }
-        
         return group
     }
 }
@@ -100,28 +95,34 @@ struct CompositionalLayoutGroup {
 
 // MARK: - CompositionalLayoutSection
 
-struct CompositionalLayoutSection {
+final class CompositionalLayoutSection {
     
-    let orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior
-    let header: NSCollectionLayoutBoundarySupplementaryItem?
-    let footer: NSCollectionLayoutBoundarySupplementaryItem?
+    // MARK: - Interface
     
-    init(
-        orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior = .none,
-        header: NSCollectionLayoutBoundarySupplementaryItem? = nil,
-        footer: NSCollectionLayoutBoundarySupplementaryItem? = nil
-    ) {
+    func configure(with group: NSCollectionLayoutGroup) -> NSCollectionLayoutSection {
+        let layout = NSCollectionLayoutSection(group: group)
+        if !supplementaryItems.isEmpty {
+            layout.boundarySupplementaryItems = supplementaryItems
+        }
+        if let orthogonalScrollingBehavior {
+            layout.orthogonalScrollingBehavior = orthogonalScrollingBehavior
+        }
+        return layout
+    }
+    
+    func append(supplementaryItem: NSCollectionLayoutBoundarySupplementaryItem) -> Self {
+        supplementaryItems.append(supplementaryItem)
+        return self
+    }
+    
+    func orthogonalScrollingBehavior(_ orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior) -> Self {
         self.orthogonalScrollingBehavior = orthogonalScrollingBehavior
-        self.header = header
-        self.footer = footer
+        return self
     }
     
-    func configure(group: NSCollectionLayoutGroup) -> NSCollectionLayoutSection {
-        let section = NSCollectionLayoutSection(group: group)
-        
-        section.orthogonalScrollingBehavior = orthogonalScrollingBehavior
-        section.boundarySupplementaryItems = [header, footer].compactMap { $0 }
-        
-        return section
-    }
+    
+    // MARK: - Attribute
+    
+    private var supplementaryItems: [NSCollectionLayoutBoundarySupplementaryItem] = []
+    private var orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior?
 }
