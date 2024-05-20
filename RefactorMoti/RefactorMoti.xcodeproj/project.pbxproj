@@ -63,6 +63,8 @@
 		9B95D9342BF22E47003BFDC3 /* AddAchievementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D9332BF22E47003BFDC3 /* AddAchievementUseCase.swift */; };
 		9B95D93C2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D93B2BF44D34003BFDC3 /* NSDirectionalEdgeInsets+init.swift */; };
 		9B95D93E2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95D93D2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift */; };
+		9B95D9412BFB81F9003BFDC3 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 9B95D9402BFB81F9003BFDC3 /* FlexLayout */; };
+		9B95D9442BFB8222003BFDC3 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 9B95D9432BFB8222003BFDC3 /* PinLayout */; };
 		9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA895862BDFDB5B0080D400 /* JeongDesignSystem */; };
 		9BA8958C2BE11C820080D400 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8958B2BE11C820080D400 /* HomeViewModelTests.swift */; };
 		9BA895992BE387870080D400 /* AchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895982BE387870080D400 /* AchievementRepositoryTests.swift */; };
@@ -193,8 +195,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B95D9442BFB8222003BFDC3 /* PinLayout in Frameworks */,
 				9B4581742BD7EC40002A32DC /* FirebaseDatabase in Frameworks */,
 				9BA895872BDFDB5B0080D400 /* JeongDesignSystem in Frameworks */,
+				9B95D9412BFB81F9003BFDC3 /* FlexLayout in Frameworks */,
 				9BA895DC2BE7AF820080D400 /* Jeongfisher in Frameworks */,
 				9B95D91D2BEF146A003BFDC3 /* FirebaseAuth in Frameworks */,
 			);
@@ -625,6 +629,8 @@
 				9BA895862BDFDB5B0080D400 /* JeongDesignSystem */,
 				9BA895DB2BE7AF820080D400 /* Jeongfisher */,
 				9B95D91C2BEF146A003BFDC3 /* FirebaseAuth */,
+				9B95D9402BFB81F9003BFDC3 /* FlexLayout */,
+				9B95D9432BFB8222003BFDC3 /* PinLayout */,
 			);
 			productName = RefactorMoti;
 			productReference = 9B45811E2BD52EB7002A32DC /* RefactorMoti.app */;
@@ -681,6 +687,8 @@
 				9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */,
 				9BA895DA2BE7AF820080D400 /* XCRemoteSwiftPackageReference "Jeongfisher" */,
+				9B95D93F2BFB81F9003BFDC3 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+				9B95D9422BFB8222003BFDC3 /* XCRemoteSwiftPackageReference "PinLayout" */,
 			);
 			productRefGroup = 9B45811F2BD52EB7002A32DC /* Products */;
 			projectDirPath = "";
@@ -1116,6 +1124,22 @@
 				minimumVersion = 10.24.0;
 			};
 		};
+		9B95D93F2BFB81F9003BFDC3 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.7;
+			};
+		};
+		9B95D9422BFB8222003BFDC3 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.5;
+			};
+		};
 		9BA895852BDFDB5B0080D400 /* XCRemoteSwiftPackageReference "JeongDesignSystem" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jeongju9216/JeongDesignSystem.git";
@@ -1144,6 +1168,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B4581722BD7EC40002A32DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		9B95D9402BFB81F9003BFDC3 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B95D93F2BFB81F9003BFDC3 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+		9B95D9432BFB8222003BFDC3 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B95D9422BFB8222003BFDC3 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
 		};
 		9BA895862BDFDB5B0080D400 /* JeongDesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
