@@ -9,13 +9,9 @@ import UIKit
 
 enum CompositionalLayout {
     
-    static func configure(
-        item: CompositionalLayoutItem,
-        group: CompositionalLayoutGroup,
-        section: CompositionalLayoutSection
-    ) -> UICollectionViewCompositionalLayout {
+    static func configure(with section: CompositionalLayoutSection) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            section.configure(group: group.layout)
+            section.layout
         }
     }
 }
@@ -93,28 +89,26 @@ final class CompositionalLayoutGroup {
 
 // MARK: - CompositionalLayoutSection
 
-struct CompositionalLayoutSection {
+final class CompositionalLayoutSection {
     
-    let orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior
-    let header: NSCollectionLayoutBoundarySupplementaryItem?
-    let footer: NSCollectionLayoutBoundarySupplementaryItem?
+    // MARK: - Interface
     
-    init(
-        orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior = .none,
-        header: NSCollectionLayoutBoundarySupplementaryItem? = nil,
-        footer: NSCollectionLayoutBoundarySupplementaryItem? = nil
-    ) {
-        self.orthogonalScrollingBehavior = orthogonalScrollingBehavior
-        self.header = header
-        self.footer = footer
+    let layout: NSCollectionLayoutSection
+    
+    func orthogonalScrollingBehavior(_ orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior) -> Self {
+        layout.orthogonalScrollingBehavior = orthogonalScrollingBehavior
+        return self
     }
     
-    func configure(group: NSCollectionLayoutGroup) -> NSCollectionLayoutSection {
-        let section = NSCollectionLayoutSection(group: group)
-        
-        section.orthogonalScrollingBehavior = orthogonalScrollingBehavior
-        section.boundarySupplementaryItems = [header, footer].compactMap { $0 }
-        
-        return section
+    func header(_ header: NSCollectionLayoutBoundarySupplementaryItem) -> Self {
+        layout.boundarySupplementaryItems.append(header)
+        return self
+    }
+    
+    
+    // MARK: - Initializer
+    
+    init(group: NSCollectionLayoutGroup) {
+        layout = NSCollectionLayoutSection(group: group)
     }
 }

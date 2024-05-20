@@ -107,8 +107,9 @@ private extension HomeView {
         let subitems = Array(repeating: item.layout, count: 1)
         let group = CompositionalLayoutGroup(subitems: subitems, direction: .horizontal, size: item.size)
             .edgeSpacing(NSCollectionLayoutEdgeSpacing(leading: .fixed(Metric.CategoryItem.groupEdgeSpacing)))
-        let section = CompositionalLayoutSection(orthogonalScrollingBehavior: .continuous)
-        return CompositionalLayout.configure(item: item, group: group, section: section)
+        let section = CompositionalLayoutSection(group: group.layout)
+            .orthogonalScrollingBehavior(.continuous)
+        return CompositionalLayout.configure(with: section)
     }
     
     func makeAchievementCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -118,8 +119,8 @@ private extension HomeView {
         let subitems = Array(repeating: item.layout, count: itemCount)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: item.size.widthDimension)
         let group = CompositionalLayoutGroup(subitems: subitems, direction: .horizontal, size: groupSize)
-        let section = CompositionalLayoutSection()
-        return CompositionalLayout.configure(item: item, group: group, section: section)
+        let section = CompositionalLayoutSection(group: group.layout)
+        return CompositionalLayout.configure(with: section)
     }
 }
 
