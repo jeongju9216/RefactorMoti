@@ -104,8 +104,9 @@ private extension HomeView {
     
     func makeCategoriesCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let item = CompositionalLayoutItem(width: .estimated(Metric.CategoryItem.width), height: .fractionalHeight(1))
-        let groupEdgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(Metric.CategoryItem.groupEdgeSpacing))
-        let group = CompositionalLayoutGroup(direction: .horizontal, size: item.size, edgeSpacing: groupEdgeSpacing)
+        let subitems = Array(repeating: item.layout, count: 1)
+        let group = CompositionalLayoutGroup(subitems: subitems, direction: .horizontal, size: item.size)
+            .edgeSpacing(NSCollectionLayoutEdgeSpacing(leading: .fixed(Metric.CategoryItem.groupEdgeSpacing)))
         let section = CompositionalLayoutSection(orthogonalScrollingBehavior: .continuous)
         return CompositionalLayout.configure(item: item, group: group, section: section)
     }
@@ -114,11 +115,9 @@ private extension HomeView {
         let itemCount = Metric.Achievement.itemCount
         let item = CompositionalLayoutItem(width: .fractionalWidth(1.0 / CGFloat(itemCount)), height: .fractionalHeight(1))
             .contentInsets(.init(inset: Metric.Achievement.itemEdgeInset))
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: item.size.widthDimension
-        )
-        let group = CompositionalLayoutGroup(direction: .horizontal, size: groupSize, count: itemCount)
+        let subitems = Array(repeating: item.layout, count: itemCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: item.size.widthDimension)
+        let group = CompositionalLayoutGroup(subitems: subitems, direction: .horizontal, size: groupSize)
         let section = CompositionalLayoutSection()
         return CompositionalLayout.configure(item: item, group: group, section: section)
     }

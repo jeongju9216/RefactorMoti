@@ -15,8 +15,7 @@ enum CompositionalLayout {
         section: CompositionalLayoutSection
     ) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let group = group.configure(item: item.layout)
-            return section.configure(group: group)
+            section.configure(group: group.layout)
         }
     }
 }
@@ -53,7 +52,9 @@ final class CompositionalLayoutItem {
 
 // MARK: - CompositionalLayoutGroup
 
-struct CompositionalLayoutGroup {
+final class CompositionalLayoutGroup {
+    
+    // MARK: - Interface
     
     enum Direction {
         
@@ -61,40 +62,31 @@ struct CompositionalLayoutGroup {
         case horizontal
     }
     
-    let direction: Direction
+    let layout: NSCollectionLayoutGroup
     let size: NSCollectionLayoutSize
-    let count: Int
-    let contentInsets: NSDirectionalEdgeInsets?
-    let edgeSpacing: NSCollectionLayoutEdgeSpacing?
     
-    init(
-        direction: Direction,
-        size: NSCollectionLayoutSize,
-        count: Int = 1,
-        contentInsets: NSDirectionalEdgeInsets? = nil,
-        edgeSpacing: NSCollectionLayoutEdgeSpacing? = nil
-    ) {
-        self.direction = direction
-        self.size = size
-        self.count = count
-        self.contentInsets = contentInsets
-        self.edgeSpacing = edgeSpacing
+    func contentInsets(_ insets: NSDirectionalEdgeInsets) -> Self {
+        layout.contentInsets = insets
+        return self
     }
     
-    func configure(item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup {
-        let subitems = Array(repeating: item, count: count)
-        let group = direction == .vertical
+    func edgeSpacing(_ edgeSpacing: NSCollectionLayoutEdgeSpacing) -> Self {
+        layout.edgeSpacing = edgeSpacing
+        return self
+    }
+    
+    
+    // MARK: - Initializer
+    
+    init(
+        subitems: [NSCollectionLayoutItem],
+        direction: Direction,
+        size: NSCollectionLayoutSize
+    ) {
+        self.size = size
+        self.layout = direction == .vertical
         ? NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: subitems)
         : NSCollectionLayoutGroup.horizontal(layoutSize: size, subitems: subitems)
-        
-        if let contentInsets {
-            group.contentInsets = contentInsets
-        }
-        if let edgeSpacing {
-            group.edgeSpacing = edgeSpacing
-        }
-        
-        return group
     }
 }
 
