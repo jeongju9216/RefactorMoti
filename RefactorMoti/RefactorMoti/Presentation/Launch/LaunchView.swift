@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PinLayout
 
 final class LaunchView: BaseView {
     
@@ -13,6 +14,7 @@ final class LaunchView: BaseView {
     
     func update(currentVersion: String) {
         versionLabel.text = currentVersion
+        versionLabel.pin.sizeToFit()
     }
     
     
@@ -30,21 +32,23 @@ final class LaunchView: BaseView {
     }()
     
     
+    // MARK: - Life Cycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+     
+        motiIconImageView.pin.center().size(Size.appIconRound)
+        versionLabel.pin.bottom(pin.safeArea).hCenter()
+            .marginBottom(Metric.VersionLabel.bottomOffset)
+            .sizeToFit()
+    }
+    
+    
     // MARK: - Setup
     
     override func setUpSubview() {
         addSubview(motiIconImageView)
         addSubview(versionLabel)
-    }
-    
-    override func setUpConstraint() {
-        motiIconImageView.atl
-            .size(Size.appIconRound)
-            .center(equalTo: safeAreaLayoutGuide)
-        
-        versionLabel.atl
-            .centerX(equalTo: safeAreaLayoutGuide.centerXAnchor)
-            .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.VersionLabel.bottomOffset)
     }
 }
 
