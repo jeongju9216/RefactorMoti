@@ -15,8 +15,7 @@ enum CompositionalLayout {
         section: CompositionalLayoutSection
     ) -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let item = item.configure()
-            let group = group.configure(item: item)
+            let group = group.configure(item: item.layout)
             return section.configure(group: group)
         }
     }
@@ -25,27 +24,29 @@ enum CompositionalLayout {
 
 // MARK: - CompositionalLayoutItem
 
-struct CompositionalLayoutItem {
+final class CompositionalLayoutItem {
     
+    // MARK: - Interface
+    
+    let layout: NSCollectionLayoutItem
     let size: NSCollectionLayoutSize
-    let contentInsets: NSDirectionalEdgeInsets?
     
-    init(
-        size: NSCollectionLayoutSize,
-        contentInsets: NSDirectionalEdgeInsets? = nil
-    ) {
-        self.size = size
-        self.contentInsets = contentInsets
+    func contentInsets(_ insets: NSDirectionalEdgeInsets) -> Self {
+        layout.contentInsets = insets
+        return self
     }
     
-    func configure() -> NSCollectionLayoutItem {
-        let item = NSCollectionLayoutItem(layoutSize: size)
-        
-        if let contentInsets {
-            item.contentInsets = contentInsets
-        }
-        
-        return item
+    
+    // MARK: - Attribute
+    
+    private var contentInsets: NSDirectionalEdgeInsets?
+    
+    
+    // MARK: - Initializer
+    
+    init(width: NSCollectionLayoutDimension, height: NSCollectionLayoutDimension) {
+        self.size = NSCollectionLayoutSize(widthDimension: width, heightDimension: height)
+        self.layout = NSCollectionLayoutItem(layoutSize: size)
     }
 }
 

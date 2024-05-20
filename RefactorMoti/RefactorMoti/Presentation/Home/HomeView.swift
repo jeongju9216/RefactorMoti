@@ -103,27 +103,20 @@ final class HomeView: BaseView {
 private extension HomeView {
     
     func makeCategoriesCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        let size = NSCollectionLayoutSize(
-            widthDimension: .estimated(Metric.CategoryItem.width),
-            heightDimension: .fractionalHeight(1)
-        )
-        let item = CompositionalLayoutItem(size: size)
+        let item = CompositionalLayoutItem(width: .estimated(Metric.CategoryItem.width), height: .fractionalHeight(1))
         let groupEdgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(Metric.CategoryItem.groupEdgeSpacing))
-        let group = CompositionalLayoutGroup(direction: .horizontal, size: size, edgeSpacing: groupEdgeSpacing)
+        let group = CompositionalLayoutGroup(direction: .horizontal, size: item.size, edgeSpacing: groupEdgeSpacing)
         let section = CompositionalLayoutSection(orthogonalScrollingBehavior: .continuous)
         return CompositionalLayout.configure(item: item, group: group, section: section)
     }
     
     func makeAchievementCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let itemCount = Metric.Achievement.itemCount
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0 / CGFloat(itemCount)),
-            heightDimension: .fractionalHeight(1)
-        )
-        let item = CompositionalLayoutItem(size: itemSize, contentInsets: .init(inset: Metric.Achievement.itemEdgeInset))
+        let item = CompositionalLayoutItem(width: .fractionalWidth(1.0 / CGFloat(itemCount)), height: .fractionalHeight(1))
+            .contentInsets(.init(inset: Metric.Achievement.itemEdgeInset))
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: itemSize.widthDimension
+            heightDimension: item.size.widthDimension
         )
         let group = CompositionalLayoutGroup(direction: .horizontal, size: groupSize, count: itemCount)
         let section = CompositionalLayoutSection()
