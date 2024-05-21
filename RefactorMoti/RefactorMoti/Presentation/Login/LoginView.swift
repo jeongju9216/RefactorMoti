@@ -8,6 +8,7 @@
 import UIKit
 import AuthenticationServices
 import JeongDesignSystem
+import PinLayout
 
 final class LoginView: BaseView {
     
@@ -28,21 +29,22 @@ final class LoginView: BaseView {
     private let loginButton = ASAuthorizationAppleIDButton(type: .default, style: .whiteOutline)
     
     
+    // MARK: - Life Cycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        motiIconImageView.pin.center().size(Size.appIconRound)
+        loginButton.pin.bottom(pin.safeArea).size(Metric.LoginButton.size).hCenter()
+            .marginBottom(Metric.LoginButton.offset)
+    }
+    
+    
     // MARK: - Setup
     
     override func setUpSubview() {
         addSubview(motiIconImageView)
         addSubview(loginButton)
-    }
-    
-    override func setUpConstraint() {
-        motiIconImageView.atl
-            .size(Size.appIconRound)
-            .center(equalTo: safeAreaLayoutGuide)
-        loginButton.atl
-            .size(Metric.LoginButton.size)
-            .centerX(equalTo: safeAreaLayoutGuide.centerXAnchor)
-            .bottom(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metric.LoginButton.offset)
     }
 }
 
