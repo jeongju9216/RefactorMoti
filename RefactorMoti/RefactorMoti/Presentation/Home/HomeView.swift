@@ -7,6 +7,8 @@
 
 import UIKit
 import JeongDesignSystem
+import FlexLayout
+import PinLayout
 
 final class HomeView: BaseView {
     
@@ -26,6 +28,7 @@ final class HomeView: BaseView {
     
     // MARK: - UI
     
+    private let flexBox = UIView()
     private(set) lazy var categoriesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout())
         collectionView.alwaysBounceVertical = false
@@ -62,38 +65,30 @@ final class HomeView: BaseView {
     }()
     
     
+    // MARK: - Life Cycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        flexBox.pin.all(pin.safeArea)
+        flexBox.flex.layout()
+    }
+    
+    
     // MARK: - Setup
     
     override func setUpSubview() {
-        addSubview(addCategoryButton)
-        addSubview(separatorView)
-        addSubview(categoriesCollectionView)
-        addSubview(achievementCollectionView)
-        addSubview(addAchievementButton)
+        addSubview(flexBox)
     }
     
     override func setUpConstraint() {
-        addCategoryButton.atl
-            .width(equalTo: addCategoryButton.heightAnchor)
-            .height(Metric.CategoryList.height)
-            .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
-            .left(equalTo: safeAreaLayoutGuide.leftAnchor, constant: Metric.AddCategoryButton.horizontalOffset)
-            .right(equalTo: separatorView.leftAnchor, constant: -Metric.AddCategoryButton.horizontalOffset)
-        separatorView.atl
-            .width(1)
-            .height(Metric.CategoryList.height)
-            .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
-            .right(equalTo: categoriesCollectionView.leftAnchor)
-        categoriesCollectionView.atl
-            .height(Metric.CategoryList.height)
-            .top(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.CategoryList.topOffset)
-            .right(equalTo: safeAreaLayoutGuide.rightAnchor)
-        achievementCollectionView.atl
-            .top(equalTo: categoriesCollectionView.bottomAnchor, constant: Metric.Achievement.topOffset)
-            .bottom(equalTo: self.bottomAnchor)
-            .horizontal(equalTo: safeAreaLayoutGuide)
-        addAchievementButton.atl
-            .center(equalTo: self)
+        flexBox.flex.direction(.column).define { flex in
+            flex.direction(.row).height(Metric.CategoryList.height).marginTop(Metric.CategoryList.topOffset).define { flex in
+                flex.addItem(addCategoryButton).width(Metric.CategoryList.height).marginHorizontal(Metric.AddCategoryButton.horizontalOffset)
+                flex.addItem(separatorView).width(1)
+                flex.addItem(categoriesCollectionView).grow(1)
+            }
+        }
     }
 }
 
