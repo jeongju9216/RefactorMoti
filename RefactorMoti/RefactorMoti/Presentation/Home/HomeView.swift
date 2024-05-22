@@ -48,11 +48,6 @@ final class HomeView: BaseView {
         button.jd.cornerRadius(.small)
         return button
     }()
-    private let separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Color.AddCategoryButton.separator
-        return view
-    }()
     
     // TODO: 임시 도전기록 추가 버튼입니다.
     private let addAchievementButton: UIButton = {
@@ -82,12 +77,14 @@ final class HomeView: BaseView {
     }
     
     override func setUpConstraint() {
-        flexBox.flex.direction(.column).define { flex in
-            flex.direction(.row).height(Metric.CategoryList.height).marginTop(Metric.CategoryList.topOffset).define { flex in
+        flexBox.flex.define { flex in
+            flex.addItem().direction(.row).height(Metric.CategoryList.height).marginTop(Metric.CategoryList.topOffset).define { flex in
                 flex.addItem(addCategoryButton).width(Metric.CategoryList.height).marginHorizontal(Metric.AddCategoryButton.horizontalOffset)
-                flex.addItem(separatorView).width(1)
+                flex.addItem().width(1).backgroundColor(Color.AddCategoryButton.separator)
                 flex.addItem(categoriesCollectionView).grow(1)
             }
+            
+            flex.addItem(achievementCollectionView).marginTop(Metric.Achievement.topOffset).grow(1)
         }
     }
 }
