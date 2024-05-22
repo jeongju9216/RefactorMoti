@@ -7,6 +7,7 @@
 
 import UIKit
 import Jeongfisher
+import PinLayout
 
 final class AchievementCollectionViewCell: UICollectionViewCell {
     
@@ -39,7 +40,6 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpSubview()
-        setUpConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +48,12 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
     
     
     // MARK: - Life Cycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imageView.pin.all()
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -59,9 +65,5 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
     
     private func setUpSubview() {
         addSubview(imageView)
-    }
-    
-    private func setUpConstraint() {
-        imageView.atl.all(equalTo: self)
     }
 }
