@@ -7,6 +7,7 @@
 
 import UIKit
 import JeongDesignSystem
+import PinLayout
 
 final class CategoryCollectionViewCell: UICollectionViewCell {
     
@@ -16,6 +17,10 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         didSet {
             isSelected ? selected() : deselected()
         }
+    }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        autoSizeThatFits(size, layoutClosure: setUpConstraints)
     }
     
     func configure(with category: CategoryItem) {
@@ -39,7 +44,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setUpAttribute()
         setUpSubview()
-        setUpConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +52,11 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     
     
     // MARK: - Life Cycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setUpConstraints()
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -63,14 +72,12 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         deselected()
     }
     
-    private func setUpSubview() {
-        addSubview(label)
+    private func setUpConstraints() {
+        label.pin.center().marginHorizontal(Metric.horizontalOffset).sizeToFit()
     }
     
-    private func setUpConstraint() {
-        label.atl
-            .centerY(equalTo: self.centerYAnchor)
-            .horizontal(equalTo: self, constant: Metric.horizontalOffset)
+    private func setUpSubview() {
+        addSubview(label)
     }
     
     private func selected() {
