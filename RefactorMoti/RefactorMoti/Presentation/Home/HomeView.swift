@@ -65,7 +65,7 @@ final class HomeView: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        flexBox.pin.all(pin.safeArea)
+        flexBox.pin.top(pin.safeArea).bottom().horizontally(pin.safeArea)
         flexBox.flex.layout()
     }
     
