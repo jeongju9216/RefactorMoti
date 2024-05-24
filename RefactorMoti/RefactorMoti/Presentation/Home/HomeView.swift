@@ -48,15 +48,12 @@ final class HomeView: BaseView {
         button.jd.cornerRadius(.small)
         return button
     }()
-    
-    // TODO: 임시 도전기록 추가 버튼입니다.
     private let addAchievementButton: UIButton = {
-        var configuration = UIButton.Configuration.plain()
-        configuration.title = "Achievement 파이어베이스 추가"
-        configuration.baseForegroundColor = .red
-        let button = UIButton(configuration: configuration)
-        button.jd.cornerRadius(.small)
-        return button
+        var configuration = UIButton.Configuration.filled()
+        configuration.background.backgroundColor = JDColor.primary
+        configuration.cornerStyle = .capsule
+        configuration.title = Text.AchievementButton.title
+        return UIButton(configuration: configuration)
     }()
     
     
@@ -67,6 +64,8 @@ final class HomeView: BaseView {
         
         flexBox.pin.top(pin.safeArea).bottom().horizontally(pin.safeArea)
         flexBox.flex.layout()
+        
+        addAchievementButton.pin.bottom(pin.safeArea).hCenter().size(Metric.AchievementButton.size)
     }
     
     
@@ -74,6 +73,7 @@ final class HomeView: BaseView {
     
     override func setUpSubview() {
         addSubview(flexBox)
+        addSubview(addAchievementButton)
     }
     
     override func setUpConstraint() {
@@ -163,6 +163,12 @@ private extension HomeView {
             
             static let horizontalOffset = 5.0
         }
+        
+        enum AchievementButton {
+            
+            static let bottomOffset = 10.0
+            static let size = CGSize(width: 180, height: 60)
+        }
     }
     
     enum Text {
@@ -170,6 +176,11 @@ private extension HomeView {
         enum AddCategoryButton {
             
             static let title = "+"
+        }
+        
+        enum AchievementButton {
+            
+            static let title = "도전"
         }
     }
     
