@@ -73,6 +73,7 @@ final class HomeView: BaseView {
     
     override func setUpSubview() {
         addSubview(flexBox)
+        addSubview(addAchievementButton)
     }
     
     override func setUpConstraint() {
@@ -84,7 +85,6 @@ final class HomeView: BaseView {
             }
             
             flex.addItem(achievementCollectionView).marginTop(Metric.Achievement.topOffset).grow(1)
-            flex.addItem(addAchievementButton)
         }
     }
 }
