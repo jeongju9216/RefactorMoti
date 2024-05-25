@@ -23,6 +23,11 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Setup
     
     private func setUpAttributes() {
+        delegate = self
+        setUpTabBar()
+    }
+    
+    private func setUpTabBar() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         tabBar.standardAppearance = appearance
@@ -68,9 +73,41 @@ final class TabBarViewController: UITabBarController {
 }
 
 
+// MARK: - Present
+
+private extension TabBarViewController {
+    
+    func presentCapture() {
+        let viewController = CaptureViewController()
+        present(viewController, animated: true)
+    }
+}
+
+
+// MARK: - UITabBarControllerDelegate
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        guard let tappedIndex = tabBarController.viewControllers?.firstIndex(of: viewController),
+              tappedIndex == Constant.captureItemIndex
+        else {
+            return true
+        }
+        presentCapture()
+        return false
+    }
+}
+
+
 // MARK: - Constant
 
 private extension TabBarViewController {
+    
+    enum Constant {
+        
+        static let captureItemIndex = 1
+    }
     
     enum Title {
         
