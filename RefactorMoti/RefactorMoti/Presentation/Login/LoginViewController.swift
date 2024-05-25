@@ -70,10 +70,9 @@ final class LoginViewController: LayoutViewController<LoginView> {
 private extension LoginViewController {
     
     func moveToHomeViewController() {
-        let homeVC = HomeViewController()
-        let navigationVC = UINavigationController(rootViewController: homeVC)
-        navigationVC.modalPresentationStyle = .fullScreen
-        present(navigationVC, animated: true)
+        let tabBarVC = TabBarViewController()
+        tabBarVC.modalPresentationStyle = .fullScreen
+        present(tabBarVC, animated: true)
     }
 }
 
