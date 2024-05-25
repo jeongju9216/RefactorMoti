@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B08B80F2C01D4980035E55F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B08B80E2C01D4980035E55F /* SettingsView.swift */; };
 		9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C722BDCDDBD000813C1 /* BaseView.swift */; };
 		9B289C752BDCE249000813C1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C742BDCE249000813C1 /* BaseViewController.swift */; };
 		9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C762BDCED27000813C1 /* LaunchViewController.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B08B80E2C01D4980035E55F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9B289C722BDCDDBD000813C1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9B289C742BDCE249000813C1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B289C762BDCED27000813C1 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3559DB2C017892008D9C32 /* SettingsViewController.swift */,
+				9B08B80E2C01D4980035E55F /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
 				9B95D93E2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift in Sources */,
 				9B3559DC2C017892008D9C32 /* SettingsViewController.swift in Sources */,
+				9B08B80F2C01D4980035E55F /* SettingsView.swift in Sources */,
 				9B3559D92C017806008D9C32 /* TabBarViewController.swift in Sources */,
 				9B411CC12BDFD0AC00A50B78 /* HomeView.swift in Sources */,
 				9BA895D72BE750A60080D400 /* UICollectionReusableView+identifier.swift in Sources */,

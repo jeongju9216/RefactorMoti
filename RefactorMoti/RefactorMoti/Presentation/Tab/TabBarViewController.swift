@@ -41,11 +41,14 @@ final class TabBarViewController: UITabBarController {
         captureVC.tabBarItem.image = UIImage(systemName: Image.Normal.capture)
         captureVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.capture)
         
-        let settingsVC = UINavigationController(rootViewController: SettingsViewController())
-        settingsVC.tabBarItem.image = UIImage(systemName: Image.Normal.settings)
-        settingsVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.settings)
+        let settingsVC = SettingsViewController()
+        settingsVC.navigationItem.title = Title.settings
+        let settingsNavigationVC = UINavigationController(rootViewController: settingsVC)
+        settingsNavigationVC.navigationBar.prefersLargeTitles = true
+        settingsNavigationVC.tabBarItem.image = UIImage(systemName: Image.Normal.settings)
+        settingsNavigationVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.settings)
         
-        setViewControllers([homeNavigationVC, captureVC, settingsVC], animated: true)
+        setViewControllers([homeNavigationVC, captureVC, settingsNavigationVC], animated: true)
     }
 }
 
@@ -53,6 +56,11 @@ final class TabBarViewController: UITabBarController {
 // MARK: - Constant
 
 private extension TabBarViewController {
+    
+    enum Title {
+        
+        static let settings = "설정"
+    }
     
     enum Image {
         
