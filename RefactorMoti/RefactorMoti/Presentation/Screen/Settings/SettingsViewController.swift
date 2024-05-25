@@ -7,4 +7,4 @@
 
 import UIKit
 
-class SettingsViewController: BaseViewController {}
+final class SettingsViewController: LayoutViewController<SettingsView> {}

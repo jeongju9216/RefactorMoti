@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B08B80F2C01D4980035E55F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B08B80E2C01D4980035E55F /* SettingsView.swift */; };
 		9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C722BDCDDBD000813C1 /* BaseView.swift */; };
 		9B289C752BDCE249000813C1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C742BDCE249000813C1 /* BaseViewController.swift */; };
 		9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B289C762BDCED27000813C1 /* LaunchViewController.swift */; };
@@ -94,6 +95,8 @@
 		9BA895DE2BE7B0460080D400 /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */; };
 		9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */; };
 		9BA895E22BE875360080D400 /* AddCategoryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */; };
+		9BE3B4772C01D90B00E3F884 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */; };
+		9BE3B4792C01D91800E3F884 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B4782C01D91800E3F884 /* CaptureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B08B80E2C01D4980035E55F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9B289C722BDCDDBD000813C1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9B289C742BDCE249000813C1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B289C762BDCED27000813C1 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 		9BA895DD2BE7B0460080D400 /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BA895DF2BE874D80080D400 /* AddCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryUseCase.swift; sourceTree = "<group>"; };
 		9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryUseCaseTests.swift; sourceTree = "<group>"; };
+		9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		9BE3B4782C01D91800E3F884 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +224,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B08B80D2C01D43D0035E55F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9BE3B4752C01D8FB00E3F884 /* Capture */,
+				9B4581872BD936BE002A32DC /* Launch */,
+				9B289C892BDE466B000813C1 /* Login */,
+				9B411CBD2BDFD09D00A50B78 /* Home */,
+				9B3559DA2C017882008D9C32 /* Settings */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		9B289C712BDCDDB5000813C1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3559DB2C017892008D9C32 /* SettingsViewController.swift */,
+				9B08B80E2C01D4980035E55F /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -361,14 +380,11 @@
 		9B45815F2BD7EA26002A32DC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9B3559DA2C017882008D9C32 /* Settings */,
 				9BA895D52BE7509C0080D400 /* Extension */,
 				9B289C7C2BDD3368000813C1 /* AutoLayout */,
 				9B289C712BDCDDB5000813C1 /* Base */,
 				9B3559D72C0177AD008D9C32 /* Tab */,
-				9B4581872BD936BE002A32DC /* Launch */,
-				9B289C892BDE466B000813C1 /* Login */,
-				9B411CBD2BDFD09D00A50B78 /* Home */,
+				9B08B80D2C01D43D0035E55F /* Screen */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -629,6 +645,15 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		9BE3B4752C01D8FB00E3F884 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */,
+				9BE3B4782C01D91800E3F884 /* CaptureView.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -797,8 +822,10 @@
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
+				9BE3B4792C01D91800E3F884 /* CaptureView.swift in Sources */,
 				9B95D93E2BF44D7F003BFDC3 /* NSCollectionLayoutEdgeSpacing+init.swift in Sources */,
 				9B3559DC2C017892008D9C32 /* SettingsViewController.swift in Sources */,
+				9B08B80F2C01D4980035E55F /* SettingsView.swift in Sources */,
 				9B3559D92C017806008D9C32 /* TabBarViewController.swift in Sources */,
 				9B411CC12BDFD0AC00A50B78 /* HomeView.swift in Sources */,
 				9BA895D72BE750A60080D400 /* UICollectionReusableView+identifier.swift in Sources */,
@@ -827,6 +854,7 @@
 				9BA895C02BE604DA0080D400 /* HomeViewModel.swift in Sources */,
 				9B4581242BD52EB7002A32DC /* SceneDelegate.swift in Sources */,
 				9BA895B42BE5F6E10080D400 /* CategoryRepository.swift in Sources */,
+				9BE3B4772C01D90B00E3F884 /* CaptureViewController.swift in Sources */,
 				9BA895A62BE519420080D400 /* FetchAchievementsUseCase.swift in Sources */,
 				9BA8959B2BE38CCA0080D400 /* AchievementRepository.swift in Sources */,
 				9BA895C22BE604E90080D400 /* HomeViewModelInputOutput.swift in Sources */,

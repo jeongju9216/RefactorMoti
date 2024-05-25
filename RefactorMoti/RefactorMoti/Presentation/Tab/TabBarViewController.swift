@@ -23,6 +23,11 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Setup
     
     private func setUpAttributes() {
+        delegate = self
+        setUpTabBar()
+    }
+    
+    private func setUpTabBar() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         tabBar.standardAppearance = appearance
@@ -32,20 +37,65 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func setUpViewControllers() {
-        let homeNavigationVC = UINavigationController(rootViewController: HomeViewController())
-        homeNavigationVC.tabBarItem.image = UIImage(systemName: Image.Normal.home)
-        homeNavigationVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.home)
-        homeNavigationVC.isNavigationBarHidden = true
+        let viewControllers = [setUpHome(), setUpCapture(), setUpSettings()]
+        setViewControllers(viewControllers, animated: true)
+    }
+    
+    
+    // MARK: - Setup ViewController
+    
+    private func setUpHome() -> UIViewController {
+        let viewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.image = UIImage(systemName: Image.Normal.home)
+        navigationController.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.home)
+        navigationController.isNavigationBarHidden = true
+        return navigationController
+    }
+    
+    private func setUpCapture() -> UIViewController {
+        let viewController = UIViewController()
+        viewController.tabBarItem.image = UIImage(systemName: Image.Normal.capture)
+        viewController.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.capture)
+        return viewController
+    }
+    
+    private func setUpSettings() -> UIViewController {
+        let viewController = SettingsViewController()
+        viewController.navigationItem.title = Title.settings
         
-        let captureVC = UIViewController()
-        captureVC.tabBarItem.image = UIImage(systemName: Image.Normal.capture)
-        captureVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.capture)
-        
-        let settingsVC = UINavigationController(rootViewController: SettingsViewController())
-        settingsVC.tabBarItem.image = UIImage(systemName: Image.Normal.settings)
-        settingsVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.settings)
-        
-        setViewControllers([homeNavigationVC, captureVC, settingsVC], animated: true)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.image = UIImage(systemName: Image.Normal.settings)
+        navigationController.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.settings)
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
+    }
+}
+
+
+// MARK: - Present
+
+private extension TabBarViewController {
+    
+    func presentCapture() {
+        let viewController = CaptureViewController()
+        present(viewController, animated: true)
+    }
+}
+
+
+// MARK: - UITabBarControllerDelegate
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        guard let tappedIndex = tabBarController.viewControllers?.firstIndex(of: viewController),
+              tappedIndex == Constant.captureItemIndex
+        else {
+            return true
+        }
+        presentCapture()
+        return false
     }
 }
 
@@ -53,6 +103,16 @@ final class TabBarViewController: UITabBarController {
 // MARK: - Constant
 
 private extension TabBarViewController {
+    
+    enum Constant {
+        
+        static let captureItemIndex = 1
+    }
+    
+    enum Title {
+        
+        static let settings = "설정"
+    }
     
     enum Image {
         
