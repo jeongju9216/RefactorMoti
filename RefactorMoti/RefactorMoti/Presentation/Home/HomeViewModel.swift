@@ -32,7 +32,6 @@ final class HomeViewModel {
     // UseCase
     private let addCategoryUseCase: AddCategoryUseCaseProtocol
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
-    private let addAchievementUseCase: AddAchievementUseCaseProtocol
     private let fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol
     
     // Output
@@ -52,12 +51,10 @@ final class HomeViewModel {
     init(
         addCategoryUseCase: AddCategoryUseCaseProtocol = AddCategoryUseCase(),
         fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = FetchCategoriesUseCase(),
-        addAchievementUseCase: AddAchievementUseCaseProtocol = AddAchievementUseCase(),
         fetchAchievementsUseCase: FetchAchievementsUseCaseProtocol = FetchAchievementsUseCase()
     ) {
         self.addCategoryUseCase = addCategoryUseCase
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
-        self.addAchievementUseCase = addAchievementUseCase
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
     }
 }
@@ -85,13 +82,6 @@ extension HomeViewModel {
             .sink { [weak self] indexPath in
                 guard let self else { return }
                 selectCategory(at: indexPath)
-            }
-            .store(in: &cancellables)
-        
-        input.addAchievement
-            .sink { [weak self] achievementRequestValue in
-                guard let self else { return }
-                addAchievement(requestValue: achievementRequestValue)
             }
             .store(in: &cancellables)
     }
@@ -127,21 +117,6 @@ private extension HomeViewModel {
         }
         
         output.selectedCategoryIndex.send(indexPath)
-    }
-    
-    func addAchievement(requestValue: AchievementRequestValue) {
-        Task {
-            guard let addedAchievement = await addAchievementUseCase.execute(requestValue: requestValue) else {
-                output.isAddedAchievementSuccess.send(false)
-                return
-            }
-            
-            let newAchievements = achievements + [addedAchievement]
-            achievementDataSource?.update(data: newAchievements)
-            
-            output.isAddedAchievementSuccess.send(true)
-            output.achievements.send(newAchievements)
-        }
     }
 }
 
