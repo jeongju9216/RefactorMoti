@@ -32,23 +32,38 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func setUpViewControllers() {
-        let homeNavigationVC = UINavigationController(rootViewController: HomeViewController())
-        homeNavigationVC.tabBarItem.image = UIImage(systemName: Image.Normal.home)
-        homeNavigationVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.home)
-        homeNavigationVC.isNavigationBarHidden = true
+        let viewControllers = [setUpHome(), setUpCapture(), setUpSettings()]
+        setViewControllers(viewControllers, animated: true)
+    }
+    
+    
+    // MARK: - Setup ViewController
+    
+    private func setUpHome() -> UIViewController {
+        let viewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.image = UIImage(systemName: Image.Normal.home)
+        navigationController.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.home)
+        navigationController.isNavigationBarHidden = true
+        return navigationController
+    }
+    
+    private func setUpCapture() -> UIViewController {
+        let viewController = UIViewController()
+        viewController.tabBarItem.image = UIImage(systemName: Image.Normal.capture)
+        viewController.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.capture)
+        return viewController
+    }
+    
+    private func setUpSettings() -> UIViewController {
+        let viewController = SettingsViewController()
+        viewController.navigationItem.title = Title.settings
         
-        let captureVC = UIViewController()
-        captureVC.tabBarItem.image = UIImage(systemName: Image.Normal.capture)
-        captureVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.capture)
-        
-        let settingsVC = SettingsViewController()
-        settingsVC.navigationItem.title = Title.settings
-        let settingsNavigationVC = UINavigationController(rootViewController: settingsVC)
-        settingsNavigationVC.navigationBar.prefersLargeTitles = true
-        settingsNavigationVC.tabBarItem.image = UIImage(systemName: Image.Normal.settings)
-        settingsNavigationVC.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.settings)
-        
-        setViewControllers([homeNavigationVC, captureVC, settingsNavigationVC], animated: true)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.image = UIImage(systemName: Image.Normal.settings)
+        navigationController.tabBarItem.selectedImage = UIImage(systemName: Image.Selected.settings)
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
     }
 }
 
