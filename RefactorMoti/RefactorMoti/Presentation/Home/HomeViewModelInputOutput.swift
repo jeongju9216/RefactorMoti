@@ -18,9 +18,6 @@ extension HomeViewModel {
         // Category
         let addCategory: PassthroughSubject<String, Never> = .init()
         let selectCategoryCell: PassthroughSubject<IndexPath, Never> = .init()
-        
-        // Achievement
-        let addAchievement: PassthroughSubject<AchievementRequestValue, Never> = .init()
     }
     
     struct Output {
@@ -32,7 +29,6 @@ extension HomeViewModel {
         
         // Achievement
         let achievements: CurrentValueSubject<[Achievement], Never> = .init([])
-        let isAddedAchievementSuccess: PassthroughSubject<Bool, Never> = .init()
     }
 }
 

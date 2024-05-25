@@ -17,9 +17,6 @@ final class HomeView: BaseView {
     var addCategoryButtonDidTap: UIControl.ControlEventPublisher {
         addCategoryButton.publisher(for: .touchUpInside)
     }
-    var addAchievementButtonDidTap: UIControl.ControlEventPublisher {
-        addAchievementButton.publisher(for: .touchUpInside)
-    }
     
     func selectCategory(indexPath: IndexPath) {
         categoriesCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
@@ -48,13 +45,6 @@ final class HomeView: BaseView {
         button.jd.cornerRadius(.small)
         return button
     }()
-    private let addAchievementButton: UIButton = {
-        var configuration = UIButton.Configuration.filled()
-        configuration.background.backgroundColor = JDColor.primary
-        configuration.cornerStyle = .capsule
-        configuration.title = Text.AchievementButton.title
-        return UIButton(configuration: configuration)
-    }()
     
     
     // MARK: - Life Cycle
@@ -64,8 +54,6 @@ final class HomeView: BaseView {
         
         flexBox.pin.top(pin.safeArea).bottom().horizontally(pin.safeArea)
         flexBox.flex.layout()
-        
-        addAchievementButton.pin.bottom(pin.safeArea).hCenter().size(Metric.AchievementButton.size)
     }
     
     
@@ -73,7 +61,6 @@ final class HomeView: BaseView {
     
     override func setUpSubview() {
         addSubview(flexBox)
-        addSubview(addAchievementButton)
     }
     
     override func setUpConstraint() {
@@ -163,12 +150,6 @@ private extension HomeView {
             
             static let horizontalOffset = 5.0
         }
-        
-        enum AchievementButton {
-            
-            static let bottomOffset = 10.0
-            static let size = CGSize(width: 180, height: 60)
-        }
     }
     
     enum Text {
@@ -176,11 +157,6 @@ private extension HomeView {
         enum AddCategoryButton {
             
             static let title = "+"
-        }
-        
-        enum AchievementButton {
-            
-            static let title = "도전"
         }
     }
     

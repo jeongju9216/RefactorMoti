@@ -85,9 +85,9 @@ private extension LaunchViewController {
     }
     
     func moveToHomeViewController() {
-        let homeVC = HomeViewController()
-        homeVC.modalPresentationStyle = .fullScreen
+        let tabBarVC = TabBarViewController()
+        tabBarVC.modalPresentationStyle = .fullScreen
         dismiss(animated: false)
-        present(homeVC, animated: false)
+        present(tabBarVC, animated: false)
     }
 }
