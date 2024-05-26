@@ -37,7 +37,7 @@ final class CaptureView: BaseView {
     private let captureButton = CaptureButton()
     private let cameraSwitchingButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: Image.cameraBack)
+        configuration.image = UIImage(systemName: Image.cameraSwitching)
         configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
         configuration.baseForegroundColor = JDColor.darkGray
         return UIButton(configuration: configuration)
@@ -98,7 +98,6 @@ private extension CaptureView {
         
         static let close = "xmark.circle"
         static let album = "photo"
-        static let cameraFront = "iphone"
-        static let cameraBack = "iphone.rear.camera"
+        static let cameraSwitching = "arrow.triangle.2.circlepath.camera"
     }
 }
