@@ -18,7 +18,7 @@ final class CaptureView: BaseView {
     private let closeButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
         configuration.image = UIImage(systemName: Image.close)
-        configuration.preferredSymbolConfigurationForImage =  .init(pointSize: Size.closePointSize, weight: .bold)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
         configuration.baseForegroundColor = JDColor.darkGray
         return UIButton(configuration: configuration)
     }()
@@ -27,7 +27,21 @@ final class CaptureView: BaseView {
         view.backgroundColor = JDColor.gray
         return view
     }()
+    private let albumButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: Image.album)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
+        configuration.baseForegroundColor = JDColor.darkGray
+        return UIButton(configuration: configuration)
+    }()
     private let captureButton = CaptureButton()
+    private let cameraSwitchingButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: Image.cameraBack)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
+        configuration.baseForegroundColor = JDColor.darkGray
+        return UIButton(configuration: configuration)
+    }()
     
     
     // MARK: - Life Cycle
@@ -36,7 +50,7 @@ final class CaptureView: BaseView {
         super.layoutSubviews()
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
-        previewView.pin.hCenter().vCenter(-Size.close.height)
+        previewView.pin.hCenter().vCenter(-Size.systemButton.height)
     }
     
     
@@ -52,7 +66,7 @@ final class CaptureView: BaseView {
         flexBox.flex.define { flex in
             flex.addItem().direction(.row).define { flex in
                 flex.addItem().grow(1)
-                flex.addItem(closeButton).size(Size.close)
+                flex.addItem(closeButton).size(Size.systemButton)
             }
             
             flex.addItem().grow(1).define { flex in
@@ -60,9 +74,9 @@ final class CaptureView: BaseView {
             }
             
             flex.addItem().direction(.row).justifyContent(.spaceAround).alignItems(.center).define { flex in
-                flex.addItem().backgroundColor(.red).size(Size.close)
+                flex.addItem(albumButton).size(Size.systemButton)
                 flex.addItem(captureButton).size(Size.capture)
-                flex.addItem().backgroundColor(.red).size(Size.close)
+                flex.addItem(cameraSwitchingButton).size(Size.systemButton)
             }
         }
     }
@@ -75,13 +89,16 @@ private extension CaptureView {
     
     enum Size {
         
-        static let closePointSize = 21.0
-        static let close = CGSize(width: 44, height: 44)
+        static let buttonPointSize = 21.0
+        static let systemButton = CGSize(width: 44, height: 44)
         static let capture = CGSize(width: 75, height: 75)
     }
     
     enum Image {
         
         static let close = "xmark.circle"
+        static let album = "photo"
+        static let cameraFront = "iphone"
+        static let cameraBack = "iphone.rear.camera"
     }
 }
