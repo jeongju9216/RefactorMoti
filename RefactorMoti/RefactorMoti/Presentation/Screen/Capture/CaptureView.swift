@@ -6,17 +6,21 @@
 //
 
 import UIKit
+import FlexLayout
 import PinLayout
+import JeongDesignSystem
 
 final class CaptureView: BaseView {
     
     // MARK: - UI
     
-    private let label: UILabel = {
-        let label = UILabel()
-        label.text = "Capture"
-        label.textAlignment = .center
-        return label
+    private let flexBox = UIView()
+    private let closeButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: Image.close)
+        configuration.preferredSymbolConfigurationForImage =  .init(pointSize: Size.closePointSize, weight: .bold)
+        configuration.baseForegroundColor = JDColor.darkGray
+        return UIButton(configuration: configuration)
     }()
     
     
@@ -24,8 +28,8 @@ final class CaptureView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        label.pin.all()
+        flexBox.pin.all(pin.safeArea)
+        flexBox.flex.layout()
     }
     
     
@@ -33,6 +37,33 @@ final class CaptureView: BaseView {
     
     override func setUpSubview() {
         super.setUpSubview()
-        addSubview(label)
+        addSubview(flexBox)
+    }
+    
+    override func setUpConstraint() {
+        super.setUpConstraint()
+        flexBox.flex.define { flex in
+            flex.direction(.row).define { flex in
+                flex.addItem().grow(1)
+                flex.addItem(closeButton).size(Size.close)
+            }
+        }
+    }
+}
+
+
+// MARK: - Constant
+
+private extension CaptureView {
+    
+    enum Size {
+        
+        static let closePointSize = 21.0
+        static let close = CGSize(width: 44, height: 44)
+    }
+    
+    enum Image {
+        
+        static let close = "xmark.circle"
     }
 }
