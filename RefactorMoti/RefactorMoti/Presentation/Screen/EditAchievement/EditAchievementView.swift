@@ -12,6 +12,16 @@ import JeongDesignSystem
 
 final class EditAchievementView: BaseView {
     
+    // MARK: - Interface
+    
+    var cancelButtonDidTap: UIControl.ControlEventPublisher {
+        cancelButton.publisher(for: .touchUpInside)
+    }
+    var doneButtonDidTap: UIControl.ControlEventPublisher {
+        doneButton.publisher(for: .touchUpInside)
+    }
+    
+    
     // MARK: - UI
     
     private let flexBox = UIView()
