@@ -35,6 +35,7 @@ final class EditAchievementView: BaseView {
         super.layoutSubviews()
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
+        previewView.pin.hCenter().vCenter(-Size.systemButton.height)
     }
     
     
@@ -51,6 +52,10 @@ final class EditAchievementView: BaseView {
             flex.addItem().direction(.row).define { flex in
                 flex.addItem().grow(1)
                 flex.addItem(closeButton).size(Size.systemButton)
+            }
+            
+            flex.addItem().grow(1).define { flex in
+                flex.addItem(previewView).width(100%).aspectRatio(1)
             }
         }
     }
