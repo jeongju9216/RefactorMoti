@@ -30,5 +30,24 @@ final class CaptureViewController: LayoutViewController<CaptureView> {
                 dismiss(animated: true)
             }
             .store(in: &cancellables)
+        
+        layoutView.captureButtonDidTap
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in
+                guard let self else { return }
+                moveToEditAchievementViewController()
+            }
+            .store(in: &cancellables)
+    }
+}
+
+
+// MARK: - Move to EditAchievementViewController
+
+private extension CaptureViewController {
+    
+    func moveToEditAchievementViewController() {
+        let viewController = EditAchievementViewController()
+        present(viewController, animated: true)
     }
 }

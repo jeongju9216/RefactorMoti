@@ -17,6 +17,9 @@ final class CaptureView: BaseView {
     var closeButtonDidTap: UIControl.ControlEventPublisher {
         closeButton.publisher(for: .touchUpInside)
     }
+    var captureButtonDidTap: UIControl.ControlEventPublisher {
+        captureButton.publisher(for: .touchUpInside)
+    }
     
     
     // MARK: - UI
