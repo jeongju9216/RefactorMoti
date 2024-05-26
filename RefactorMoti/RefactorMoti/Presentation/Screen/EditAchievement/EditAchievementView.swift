@@ -50,7 +50,6 @@ final class EditAchievementView: BaseView {
         super.layoutSubviews()
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
-        previewView.pin.center()
     }
     
     
@@ -70,7 +69,7 @@ final class EditAchievementView: BaseView {
                 flex.addItem(doneButton)
             }
             
-            flex.addItem(titleTextField).horizontally(Metric.horizontalOffset)
+            flex.addItem(titleTextField).height(Metric.TextField.height).marginVertical(Metric.TextField.verticalOffset).horizontally(Metric.horizontalOffset)
             
             flex.addItem().grow(1).define { flex in
                 flex.addItem(previewView).width(100%).aspectRatio(1)
@@ -99,6 +98,12 @@ private extension EditAchievementView {
     enum Metric {
         
         static let horizontalOffset = 20.0
+        
+        enum TextField {
+            
+            static let height = 40.0
+            static let verticalOffset = 20.0
+        }
     }
     
     enum Font {

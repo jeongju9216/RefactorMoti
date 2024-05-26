@@ -60,7 +60,6 @@ final class CaptureView: BaseView {
         super.layoutSubviews()
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
-        previewView.pin.hCenter().vCenter(-Size.systemButton.height)
     }
     
     
@@ -79,7 +78,7 @@ final class CaptureView: BaseView {
                 flex.addItem(closeButton).size(Size.systemButton)
             }
             
-            flex.addItem().grow(1).define { flex in
+            flex.addItem().grow(1).marginTop(Metric.marginTop).define { flex in
                 flex.addItem(previewView).width(100%).aspectRatio(1)
             }
             
@@ -102,6 +101,11 @@ private extension CaptureView {
         static let buttonPointSize = 21.0
         static let systemButton = CGSize(width: 44, height: 44)
         static let capture = CGSize(width: 75, height: 75)
+    }
+    
+    enum Metric {
+        
+        static let marginTop = 80.0
     }
     
     enum Image {
