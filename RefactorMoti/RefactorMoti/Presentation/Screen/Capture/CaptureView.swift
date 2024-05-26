@@ -6,17 +6,41 @@
 //
 
 import UIKit
+import FlexLayout
 import PinLayout
+import JeongDesignSystem
 
 final class CaptureView: BaseView {
     
     // MARK: - UI
     
-    private let label: UILabel = {
-        let label = UILabel()
-        label.text = "Capture"
-        label.textAlignment = .center
-        return label
+    private let flexBox = UIView()
+    private let closeButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: Image.close)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
+        configuration.baseForegroundColor = JDColor.darkGray
+        return UIButton(configuration: configuration)
+    }()
+    private let previewView: UIView = {
+        let view = UIView()
+        view.backgroundColor = JDColor.gray
+        return view
+    }()
+    private let albumButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: Image.album)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
+        configuration.baseForegroundColor = JDColor.darkGray
+        return UIButton(configuration: configuration)
+    }()
+    private let captureButton = CaptureButton()
+    private let cameraSwitchingButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(systemName: Image.cameraSwitching)
+        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
+        configuration.baseForegroundColor = JDColor.darkGray
+        return UIButton(configuration: configuration)
     }()
     
     
@@ -24,8 +48,9 @@ final class CaptureView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        label.pin.all()
+        flexBox.pin.all(pin.safeArea)
+        flexBox.flex.layout()
+        previewView.pin.hCenter().vCenter(-Size.systemButton.height)
     }
     
     
@@ -33,6 +58,46 @@ final class CaptureView: BaseView {
     
     override func setUpSubview() {
         super.setUpSubview()
-        addSubview(label)
+        addSubview(flexBox)
+    }
+    
+    override func setUpConstraint() {
+        super.setUpConstraint()
+        flexBox.flex.define { flex in
+            flex.addItem().direction(.row).define { flex in
+                flex.addItem().grow(1)
+                flex.addItem(closeButton).size(Size.systemButton)
+            }
+            
+            flex.addItem().grow(1).define { flex in
+                flex.addItem(previewView).width(100%).aspectRatio(1)
+            }
+            
+            flex.addItem().direction(.row).justifyContent(.spaceAround).alignItems(.center).define { flex in
+                flex.addItem(albumButton).size(Size.systemButton)
+                flex.addItem(captureButton).size(Size.capture)
+                flex.addItem(cameraSwitchingButton).size(Size.systemButton)
+            }
+        }
+    }
+}
+
+
+// MARK: - Constant
+
+private extension CaptureView {
+    
+    enum Size {
+        
+        static let buttonPointSize = 21.0
+        static let systemButton = CGSize(width: 44, height: 44)
+        static let capture = CGSize(width: 75, height: 75)
+    }
+    
+    enum Image {
+        
+        static let close = "xmark.circle"
+        static let album = "photo"
+        static let cameraSwitching = "arrow.triangle.2.circlepath.camera"
     }
 }

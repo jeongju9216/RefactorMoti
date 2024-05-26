@@ -79,6 +79,7 @@ private extension TabBarViewController {
     
     func presentCapture() {
         let viewController = CaptureViewController()
+        viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
 }
