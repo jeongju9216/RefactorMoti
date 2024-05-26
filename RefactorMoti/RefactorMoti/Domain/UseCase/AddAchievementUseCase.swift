@@ -20,11 +20,9 @@ struct AddAchievementUseCase: AddAchievementUseCaseProtocol {
         await repository.addAchievement(requestValue: requestValue)
     }
     
-    
     // MARK: - Attribute
     
     private let repository: AchievementRepositoryProtocol
-    
     
     // MARK: - Initializer
     

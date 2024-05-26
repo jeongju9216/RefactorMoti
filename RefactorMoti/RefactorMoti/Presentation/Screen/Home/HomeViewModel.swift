@@ -23,7 +23,6 @@ final class HomeViewModel {
         self.achievementDataSource = dataSource
     }
     
-    
     // MARK: - Attribute
     
     private var categoryDataSource: CategoryDataSource?
@@ -45,7 +44,6 @@ final class HomeViewModel {
         output.achievements.value
     }
     
-    
     // MARK: - Initializer
     
     init(
@@ -58,7 +56,6 @@ final class HomeViewModel {
         self.fetchAchievementsUseCase = fetchAchievementsUseCase
     }
 }
-
 // MARK: - Binding Interface
 
 extension HomeViewModel {
@@ -86,7 +83,6 @@ extension HomeViewModel {
             .store(in: &cancellables)
     }
 }
-
 // MARK: - Binding Action
 
 private extension HomeViewModel {
@@ -119,7 +115,6 @@ private extension HomeViewModel {
         output.selectedCategoryIndex.send(indexPath)
     }
 }
-
 
 // MARK: - Action Method
 

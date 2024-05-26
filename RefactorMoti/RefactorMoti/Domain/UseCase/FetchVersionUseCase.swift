@@ -20,11 +20,9 @@ struct FetchVersionUseCase: FetchVersionUseCaseProtocol {
         await repository.fetchVersion()
     }
     
-    
     // MARK: - Attribute
     
     private let repository: VersionRepositoryProtocol
-    
     
     // MARK: - Initializer
     

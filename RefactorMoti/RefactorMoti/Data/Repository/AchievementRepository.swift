@@ -19,11 +19,9 @@ struct AchievementRepository: AchievementRepositoryProtocol {
         await firebaseStorage.addAchievement(requestValue: requestValue)
     }
     
-    
     // MARK: - Attribute
     
     private let firebaseStorage: FirebaseStorageProtocol
-    
     
     // MARK: - Initializer
     

@@ -16,13 +16,11 @@ class LayoutViewController<LayoutView: BaseView>: BaseViewController {
         view as! LayoutView
     }
     
-    
     // MARK: - Life Cycle
     
     override func loadView() {
         view = LayoutView()
     }
-    
     
     // MARK: - Setup
     

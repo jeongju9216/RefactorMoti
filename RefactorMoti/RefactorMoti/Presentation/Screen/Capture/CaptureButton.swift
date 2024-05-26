@@ -21,7 +21,6 @@ final class CaptureButton: UIButton {
         return view
     }()
     
-    
     // MARK: - Initializer
     
     override init(frame: CGRect = .zero) {
@@ -36,7 +35,6 @@ final class CaptureButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Life Cycle
     
     override func layoutSubviews() {
@@ -45,7 +43,6 @@ final class CaptureButton: UIButton {
         pin.size(Metric.size)
         circleView.pin.size(Metric.smallSize).center()
     }
-    
     
     // MARK: - Setup
     
@@ -66,7 +63,6 @@ final class CaptureButton: UIButton {
         addSubview(circleView)
     }
 }
-
 
 // MARK: - Action
 
@@ -94,7 +90,6 @@ private extension CaptureButton {
         }
     }
 }
-
 
 // MARK: - Constant
 

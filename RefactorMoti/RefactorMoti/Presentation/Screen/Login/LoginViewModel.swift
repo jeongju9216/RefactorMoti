@@ -19,14 +19,12 @@ final class LoginViewModel: ViewModelable {
     let output: Output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Initializer
     
     init(createDefaultCategoriesUseCase: CreateDefaultCategoriesUseCaseProtocol = CreateDefaultCategoriesUseCase()) {
         self.createDefaultCategoriesUseCase = createDefaultCategoriesUseCase
     }
 }
-
 
 // MARK: - Binding Interface
 
@@ -41,7 +39,6 @@ extension LoginViewModel {
             .store(in: &cancellables)
     }
 }
-
 
 // MARK: - Binding Action
 

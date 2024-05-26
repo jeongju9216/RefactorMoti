@@ -36,11 +36,9 @@ struct SingleDiffableDataSource<T: Hashable> {
         }
     }
     
-    
     // MARK: - Attribute
     
     private let dataSource: DataSource
-    
     
     // MARK: - Initializer
     

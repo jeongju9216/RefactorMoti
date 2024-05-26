@@ -132,7 +132,6 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         return achievements
     }
     
-    
     // MARK: - Attribute
     
     private var firebaseRef: DatabaseReference?
@@ -143,7 +142,6 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         
         return firebaseRef?.child(user.uid)
     }
-    
     
     // MARK: - Initializer
     
@@ -166,7 +164,6 @@ final class FirebaseStorage: FirebaseStorageProtocol {
         return CategoryItem(information: information)
     }
 }
-
 
 // MARK: - Fetch Data
 
@@ -212,7 +209,6 @@ private extension FirebaseStorage {
         }
     }
 }
-
 
 // MARK: - Constant
 

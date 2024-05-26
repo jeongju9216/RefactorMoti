@@ -29,7 +29,6 @@ final class LoginViewController: LayoutViewController<LoginView> {
         return appleLoginRequester
     }()
     
-    
     // MARK: - Setup
     
     override func setUpBinding() {
@@ -64,7 +63,6 @@ final class LoginViewController: LayoutViewController<LoginView> {
     }
 }
 
-
 // MARK: - Move To HomeViewController
 
 private extension LoginViewController {
@@ -75,7 +73,6 @@ private extension LoginViewController {
         present(tabBarVC, animated: true)
     }
 }
-
 
 // MARK: - AppleLoginRequesterDelegate
 

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 // MARK: - CompositionalLayoutItem
 
 final class CompositionalLayoutItem {
@@ -26,12 +25,10 @@ final class CompositionalLayoutItem {
         return self
     }
     
-    
     // MARK: - Attribute
     
     private let size: NSCollectionLayoutSize
     private var contentInsets: NSDirectionalEdgeInsets?
-    
     
     // MARK: - Initializer
     
@@ -39,7 +36,6 @@ final class CompositionalLayoutItem {
         self.size = size
     }
 }
-
 
 // MARK: - CompositionalLayoutGroup
 
@@ -67,13 +63,11 @@ final class CompositionalLayoutGroup {
         return self
     }
     
-    
     // MARK: - Attribute
     
     private let size: NSCollectionLayoutSize
     private var contentInsets: NSDirectionalEdgeInsets?
     private var edgeSpacing: NSCollectionLayoutEdgeSpacing?
-    
     
     // MARK: - Initializer
     
@@ -91,7 +85,6 @@ final class CompositionalLayoutGroup {
         return group
     }
 }
-
 
 // MARK: - CompositionalLayoutSection
 
@@ -119,7 +112,6 @@ final class CompositionalLayoutSection {
         self.orthogonalScrollingBehavior = orthogonalScrollingBehavior
         return self
     }
-    
     
     // MARK: - Attribute
     

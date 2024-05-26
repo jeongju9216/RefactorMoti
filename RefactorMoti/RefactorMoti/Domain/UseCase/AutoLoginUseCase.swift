@@ -20,11 +20,9 @@ struct AutoLoginUseCase: AutoLoginUseCaseProtocol {
         await repository.isExistUser()
     }
     
-    
     // MARK: - Attribute
     
     private let repository: UserRepositoryProtocol
-    
     
     // MARK: - Initializer
     

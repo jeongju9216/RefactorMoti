@@ -19,7 +19,6 @@ extension AutoLayoutWrapper {
         return self
     }
     
-    
     // MARK: - Width
     
     @discardableResult
@@ -35,7 +34,6 @@ extension AutoLayoutWrapper {
         view.widthAnchor.constraint(equalToConstant: constant).isActive = true
         return self
     }
-    
     
     // MARK: - Height
     

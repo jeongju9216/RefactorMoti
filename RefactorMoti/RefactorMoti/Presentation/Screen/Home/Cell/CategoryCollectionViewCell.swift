@@ -27,7 +27,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         label.text = category.name
     }
     
-    
     // MARK: - UI
     
     private let label: UILabel = {
@@ -36,7 +35,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
-    
     
     // MARK: - Initializer
     
@@ -50,7 +48,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Life Cycle
     
     override func layoutSubviews() {
@@ -62,7 +59,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         deselected()
     }
-    
     
     // MARK: - Setup
     
@@ -92,7 +88,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         label.textColor = Color.Deselected.label
     }
 }
-
 
 // MARK: - Constant
 

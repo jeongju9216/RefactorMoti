@@ -20,7 +20,6 @@ final class LaunchViewModel: ViewModelable {
     let output = Output()
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Initializer
     
     init(
@@ -31,7 +30,6 @@ final class LaunchViewModel: ViewModelable {
         self.autoLoginUseCase = autoLoginUseCase
     }
 }
-
 
 // MARK: - Bind Interface
 
@@ -53,7 +51,6 @@ extension LaunchViewModel {
             .store(in: &cancellables)
     }
 }
-
 
 // MARK: - Bind Action
 

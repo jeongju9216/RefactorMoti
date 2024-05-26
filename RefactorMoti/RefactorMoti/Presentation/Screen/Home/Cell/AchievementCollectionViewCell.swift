@@ -24,7 +24,6 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
         imageView.jf.cancelDownloadImage()
     }
     
-    
     // MARK: - UI
     
     private let imageView = {
@@ -33,7 +32,6 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
         imageView.jd.cornerRadius(.small)
         return imageView
     }()
-    
     
     // MARK: - Initializer
     
@@ -45,7 +43,6 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     // MARK: - Life Cycle
     
@@ -59,7 +56,6 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         imageView.image = nil
     }
-    
     
     // MARK: - Setup
     

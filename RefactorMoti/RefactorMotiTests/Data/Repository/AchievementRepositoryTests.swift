@@ -18,7 +18,6 @@ final class AchievementRepositoryTests: XCTestCase {
         imageURLString: ""
     )
     
-    
     // MARK: - Add Achievement
     
     func test_achievement를_추가할_때_파이어베이스_추가가_성공하면_생성된_achievement를_반환한다() async throws {
@@ -46,7 +45,6 @@ final class AchievementRepositoryTests: XCTestCase {
         // then
         XCTAssertNil(source)
     }
-    
     
     // MARK: - Fetch Achievement
     

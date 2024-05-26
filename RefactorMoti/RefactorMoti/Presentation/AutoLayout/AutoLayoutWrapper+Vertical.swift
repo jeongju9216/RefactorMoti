@@ -27,7 +27,6 @@ extension AutoLayoutWrapper {
         return self
     }
     
-    
     // MARK: - Top
     
     @discardableResult
@@ -50,7 +49,6 @@ extension AutoLayoutWrapper {
         view.topAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant).isActive = true
         return self
     }
-    
     
     // MARK: - Bottom
     

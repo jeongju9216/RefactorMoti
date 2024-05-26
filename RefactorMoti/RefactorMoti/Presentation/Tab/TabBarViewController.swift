@@ -19,7 +19,6 @@ final class TabBarViewController: UITabBarController {
         setUpViewControllers()
     }
     
-    
     // MARK: - Setup
     
     private func setUpAttributes() {
@@ -40,7 +39,6 @@ final class TabBarViewController: UITabBarController {
         let viewControllers = [setUpHome(), setUpCapture(), setUpSettings()]
         setViewControllers(viewControllers, animated: true)
     }
-    
     
     // MARK: - Setup ViewController
     
@@ -72,7 +70,6 @@ final class TabBarViewController: UITabBarController {
     }
 }
 
-
 // MARK: - Present
 
 private extension TabBarViewController {
@@ -83,7 +80,6 @@ private extension TabBarViewController {
         present(viewController, animated: true)
     }
 }
-
 
 // MARK: - UITabBarControllerDelegate
 
@@ -99,7 +95,6 @@ extension TabBarViewController: UITabBarControllerDelegate {
         return false
     }
 }
-
 
 // MARK: - Constant
 

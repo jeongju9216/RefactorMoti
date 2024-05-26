@@ -48,7 +48,6 @@ final class HomeViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    
     // MARK: - Category
     
     func test_viewDidLoad가_input되면_카테고리_리스트를_output() throws { 
@@ -175,7 +174,6 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(source, targetIndexPath)
     }
     
-    
     // MARK: - Achievement
     
     func test_viewDidLoad가_input되면_사진_리스트를_output() throws { 
@@ -208,7 +206,6 @@ final class HomeViewModelTests: XCTestCase {
     
     func test_selectCategory가_input되면_해당_카테고리의_사진_리스트를_output() throws { }
 }
-
 
 // MARK: - Achievement
 

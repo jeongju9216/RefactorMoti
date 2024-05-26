@@ -17,7 +17,6 @@ struct Achievement: Hashable {
     let createdAt: Date?
 }
 
-
 // MARK: - Information
 
 extension Achievement {
@@ -52,7 +51,6 @@ extension Achievement {
         ]
     }
 }
-
 
 // MARK: - Constant
 

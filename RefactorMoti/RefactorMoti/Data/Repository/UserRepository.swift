@@ -15,11 +15,9 @@ struct UserRepository: UserRepositoryProtocol {
         await storage.isExistUser()
     }
     
-    
     // MARK: - Attribute
     
     private let storage: FirebaseStorageProtocol
-    
     
     // MARK: - Initializer
     

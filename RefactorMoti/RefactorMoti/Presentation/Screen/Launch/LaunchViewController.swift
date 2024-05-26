@@ -17,14 +17,12 @@ final class LaunchViewController: LayoutViewController<LaunchView> {
     private var output: LaunchViewModel.Output { viewModel.output }
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         input.viewDidLoad.send()
     }
-    
     
     // MARK: - Setup
     
@@ -33,7 +31,6 @@ final class LaunchViewController: LayoutViewController<LaunchView> {
         setUpViewModelBinding()
     }
 }
-
 
 // MARK: - Binding ViewModel
 
@@ -71,7 +68,6 @@ private extension LaunchViewController {
             .store(in: &cancellables)
     }
 }
-
 
 // MARK: - Move To Next ViewController
 

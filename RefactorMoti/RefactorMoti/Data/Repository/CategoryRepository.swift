@@ -21,11 +21,9 @@ struct CategoryRepository: CategoryRepositoryProtocol {
         try await firebaseStorage.fetchCategories()
     }
     
-    
     // MARK: - Attribute
     
     private let firebaseStorage: FirebaseStorageProtocol
-    
     
     // MARK: - Initializer
     

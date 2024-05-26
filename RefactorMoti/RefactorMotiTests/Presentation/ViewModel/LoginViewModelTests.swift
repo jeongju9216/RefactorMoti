@@ -18,7 +18,6 @@ final class LoginViewModelTests: XCTestCase {
     private var output: LoginViewModel.Output { viewModel.output }
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Life Cycle
     
     override func setUp() {
@@ -31,7 +30,6 @@ final class LoginViewModelTests: XCTestCase {
         cancellables.forEach { $0.cancel() }
         super.tearDown()
     }
-    
     
     // MARK: - Test
     

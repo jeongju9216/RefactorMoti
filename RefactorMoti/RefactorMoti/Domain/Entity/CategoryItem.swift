@@ -15,7 +15,6 @@ struct CategoryItem: Hashable {
     var lastChallenged: Date? = nil
 }
 
-
 // MARK: - Information
 
 extension CategoryItem {
@@ -49,7 +48,6 @@ extension CategoryItem {
     }
 }
 
-
 // MARK: - Equatable
 
 extension CategoryItem {
@@ -58,7 +56,6 @@ extension CategoryItem {
         lhs.id == rhs.id
     }
 }
-
 
 // MARK: - Constant
 

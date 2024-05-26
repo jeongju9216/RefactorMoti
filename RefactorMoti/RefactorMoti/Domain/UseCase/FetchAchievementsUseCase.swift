@@ -20,11 +20,9 @@ struct FetchAchievementsUseCase: FetchAchievementsUseCaseProtocol {
         try await repository.fetchAchievements()
     }
     
-    
     // MARK: - Attribute
     
     private let repository: AchievementRepositoryProtocol
-    
     
     // MARK: - Initializer
     
