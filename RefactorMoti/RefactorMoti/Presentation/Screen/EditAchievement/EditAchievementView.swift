@@ -22,6 +22,13 @@ final class EditAchievementView: BaseView {
         configuration.baseForegroundColor = JDColor.darkGray
         return UIButton(configuration: configuration)
     }()
+    private let titleTextField: UITextField = {
+        let textField = UITextField()
+        textField.font = Font.textField
+        textField.placeholder = Text.textFieldPlaceholder
+        textField.returnKeyType = .done
+        return textField
+    }()
     private let previewView: UIView = {
         let view = UIView()
         view.backgroundColor = JDColor.gray
@@ -54,6 +61,8 @@ final class EditAchievementView: BaseView {
                 flex.addItem(closeButton).size(Size.systemButton)
             }
             
+            flex.addItem(titleTextField).horizontally(Metric.horizontalOffset)
+            
             flex.addItem().grow(1).define { flex in
                 flex.addItem(previewView).width(100%).aspectRatio(1)
             }
@@ -72,8 +81,23 @@ private extension EditAchievementView {
         static let systemButton = CGSize(width: 44, height: 44)
     }
     
+    enum Metric {
+        
+        static let horizontalOffset = 20.0
+    }
+    
     enum Image {
         
         static let close = "xmark.circle"
+    }
+    
+    enum Font {
+        
+        static let textField = UIFont.boldSystemFont(ofSize: 24)
+    }
+    
+    enum Text {
+        
+        static let textFieldPlaceholder = "제목을 입력하세요."
     }
 }
