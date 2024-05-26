@@ -98,6 +98,8 @@
 		9BE3B4772C01D90B00E3F884 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */; };
 		9BE3B4792C01D91800E3F884 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B4782C01D91800E3F884 /* CaptureView.swift */; };
 		9BE3B47B2C02CBBC00E3F884 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B47A2C02CBBC00E3F884 /* CaptureButton.swift */; };
+		9BE3B47E2C034C1F00E3F884 /* EditAchievementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B47D2C034C1F00E3F884 /* EditAchievementViewController.swift */; };
+		9BE3B4802C034C2500E3F884 /* EditAchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B47F2C034C2500E3F884 /* EditAchievementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +202,8 @@
 		9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		9BE3B4782C01D91800E3F884 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		9BE3B47A2C02CBBC00E3F884 /* CaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
+		9BE3B47D2C034C1F00E3F884 /* EditAchievementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAchievementViewController.swift; sourceTree = "<group>"; };
+		9BE3B47F2C034C2500E3F884 /* EditAchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAchievementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,7 @@
 		9B08B80D2C01D43D0035E55F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				9BE3B47C2C034C0200E3F884 /* EditAchievement */,
 				9BE3B4752C01D8FB00E3F884 /* Capture */,
 				9B4581872BD936BE002A32DC /* Launch */,
 				9B289C892BDE466B000813C1 /* Login */,
@@ -657,6 +662,15 @@
 			path = Capture;
 			sourceTree = "<group>";
 		};
+		9BE3B47C2C034C0200E3F884 /* EditAchievement */ = {
+			isa = PBXGroup;
+			children = (
+				9BE3B47D2C034C1F00E3F884 /* EditAchievementViewController.swift */,
+				9BE3B47F2C034C2500E3F884 /* EditAchievementView.swift */,
+			);
+			path = EditAchievement;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -824,6 +838,7 @@
 				9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */,
 				9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */,
 				9B289C732BDCDDBD000813C1 /* BaseView.swift in Sources */,
+				9BE3B4802C034C2500E3F884 /* EditAchievementView.swift in Sources */,
 				9B411CBC2BDFCB9F00A50B78 /* UIView+Combine.swift in Sources */,
 				9B289C772BDCED27000813C1 /* LaunchViewController.swift in Sources */,
 				9BE3B4792C01D91800E3F884 /* CaptureView.swift in Sources */,
@@ -850,6 +865,7 @@
 				9B4581902BD93D3F002A32DC /* LaunchViewModelInputOutput.swift in Sources */,
 				9BA895E02BE874D80080D400 /* AddCategoryUseCase.swift in Sources */,
 				9B289C882BDD3C03000813C1 /* AutoLayoutWrapper+All.swift in Sources */,
+				9BE3B47E2C034C1F00E3F884 /* EditAchievementViewController.swift in Sources */,
 				9BA895D92BE750C30080D400 /* UICollectionView+Register.swift in Sources */,
 				9B4581802BD92FED002A32DC /* FetchVersionUseCase.swift in Sources */,
 				9B4581782BD7EF2F002A32DC /* Version.swift in Sources */,

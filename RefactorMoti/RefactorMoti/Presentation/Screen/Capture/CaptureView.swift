@@ -12,6 +12,16 @@ import JeongDesignSystem
 
 final class CaptureView: BaseView {
     
+    // MARK: - Interface
+    
+    var closeButtonDidTap: UIControl.ControlEventPublisher {
+        closeButton.publisher(for: .touchUpInside)
+    }
+    var captureButtonDidTap: UIControl.ControlEventPublisher {
+        captureButton.publisher(for: .touchUpInside)
+    }
+    
+    
     // MARK: - UI
     
     private let flexBox = UIView()
