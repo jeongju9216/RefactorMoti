@@ -27,6 +27,7 @@ final class CaptureView: BaseView {
         view.backgroundColor = JDColor.gray
         return view
     }()
+    private let captureButton = CaptureButton()
     
     
     // MARK: - Life Cycle
@@ -57,6 +58,12 @@ final class CaptureView: BaseView {
             flex.addItem().grow(1).define { flex in
                 flex.addItem(previewView).width(100%).aspectRatio(1)
             }
+            
+            flex.addItem().direction(.row).justifyContent(.spaceAround).alignItems(.center).define { flex in
+                flex.addItem().backgroundColor(.red).size(Size.close)
+                flex.addItem(captureButton).size(Size.capture)
+                flex.addItem().backgroundColor(.red).size(Size.close)
+            }
         }
     }
 }
@@ -70,6 +77,7 @@ private extension CaptureView {
         
         static let closePointSize = 21.0
         static let close = CGSize(width: 44, height: 44)
+        static let capture = CGSize(width: 75, height: 75)
     }
     
     enum Image {
