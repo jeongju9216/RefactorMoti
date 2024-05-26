@@ -22,7 +22,6 @@ final class HomeView: BaseView {
         categoriesCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     
-    
     // MARK: - UI
     
     private let flexBox = UIView()
@@ -46,7 +45,6 @@ final class HomeView: BaseView {
         return button
     }()
     
-    
     // MARK: - Life Cycle
     
     override func layoutSubviews() {
@@ -55,7 +53,6 @@ final class HomeView: BaseView {
         flexBox.pin.top(pin.safeArea).bottom().horizontally(pin.safeArea)
         flexBox.flex.layout()
     }
-    
     
     // MARK: - Setup
     
@@ -75,7 +72,6 @@ final class HomeView: BaseView {
         }
     }
 }
-
 
 // MARK: - Compositional Layout
 
@@ -114,7 +110,6 @@ private extension HomeView {
         return UICollectionViewCompositionalLayout(section: section)
     }
 }
-
 
 // MARK: - Constant
 

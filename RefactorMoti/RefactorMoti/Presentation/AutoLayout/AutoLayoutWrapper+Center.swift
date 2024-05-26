@@ -27,7 +27,6 @@ extension AutoLayoutWrapper {
         return self
     }
     
-    
     // MARK: - Center X
     
     @discardableResult
@@ -50,7 +49,6 @@ extension AutoLayoutWrapper {
         view.centerXAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant).isActive = true
         return self
     }
-    
     
     // MARK: - Center Y
     

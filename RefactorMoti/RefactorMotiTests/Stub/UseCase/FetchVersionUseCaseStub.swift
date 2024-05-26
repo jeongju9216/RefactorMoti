@@ -16,13 +16,11 @@ struct FetchVersionUseCaseStub: FetchVersionUseCaseProtocol {
         Version(current: current, latest: latest, forced: forced)
     }
     
-    
     // MARK: - Attribute
     
     private let current: String
     private let latest: String
     private let forced: String
-    
     
     // MARK: - Initializer
     

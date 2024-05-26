@@ -18,7 +18,6 @@ final class LoginView: BaseView {
         loginButton.publisher(for: .touchUpInside)
     }
     
-    
     // MARK: - UI
     
     private let motiIconImageView: UIImageView = {
@@ -27,7 +26,6 @@ final class LoginView: BaseView {
         return view
     }()
     private let loginButton = ASAuthorizationAppleIDButton(type: .default, style: .whiteOutline)
-    
     
     // MARK: - Life Cycle
     
@@ -39,7 +37,6 @@ final class LoginView: BaseView {
             .marginBottom(Metric.LoginButton.offset)
     }
     
-    
     // MARK: - Setup
     
     override func setUpSubview() {
@@ -47,7 +44,6 @@ final class LoginView: BaseView {
         addSubview(loginButton)
     }
 }
-
 
 // MARK: - Constant
 

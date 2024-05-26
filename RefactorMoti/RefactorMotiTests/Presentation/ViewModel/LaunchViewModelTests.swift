@@ -15,7 +15,6 @@ final class LaunchViewModelTests: XCTestCase {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Life Cycle
     
     override func tearDown() {
@@ -23,7 +22,6 @@ final class LaunchViewModelTests: XCTestCase {
         cancellables = []
         super.tearDown()
     }
-    
     
     // MARK: - Test
     

@@ -21,7 +21,6 @@ final class CaptureView: BaseView {
         captureButton.publisher(for: .touchUpInside)
     }
     
-    
     // MARK: - UI
     
     private let flexBox = UIView()
@@ -53,7 +52,6 @@ final class CaptureView: BaseView {
         return UIButton(configuration: configuration)
     }()
     
-    
     // MARK: - Life Cycle
     
     override func layoutSubviews() {
@@ -61,7 +59,6 @@ final class CaptureView: BaseView {
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
     }
-    
     
     // MARK: - Setup
     
@@ -90,7 +87,6 @@ final class CaptureView: BaseView {
         }
     }
 }
-
 
 // MARK: - Constant
 

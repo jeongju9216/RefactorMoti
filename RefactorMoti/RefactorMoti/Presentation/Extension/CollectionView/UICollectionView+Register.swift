@@ -23,7 +23,6 @@ extension UICollectionView {
         return cell
     }
     
-    
     // MARK: - UICollectionReusableView
     
     func register<T: UICollectionReusableView>(_ view: T.Type, forSupplementaryViewOfKind elementKind: String) {

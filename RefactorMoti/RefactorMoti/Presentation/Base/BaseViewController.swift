@@ -19,7 +19,6 @@ class BaseViewController: UIViewController {
         setUpBinding()
     }
     
-    
     // MARK: - Setup
     
     /// View의 Attribute 속성을 설정

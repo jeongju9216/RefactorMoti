@@ -14,7 +14,6 @@ final class CaptureViewController: LayoutViewController<CaptureView> {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Setup
     
     override func setUpBinding() {
@@ -40,7 +39,6 @@ final class CaptureViewController: LayoutViewController<CaptureView> {
             .store(in: &cancellables)
     }
 }
-
 
 // MARK: - Move to EditAchievementViewController
 

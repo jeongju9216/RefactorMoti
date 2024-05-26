@@ -17,7 +17,6 @@ final class LaunchView: BaseView {
         versionLabel.pin.sizeToFit()
     }
     
-    
     // MARK: - UI
     
     private let motiIconImageView: UIImageView = {
@@ -31,7 +30,6 @@ final class LaunchView: BaseView {
         return label
     }()
     
-    
     // MARK: - Life Cycle
     
     override func layoutSubviews() {
@@ -43,7 +41,6 @@ final class LaunchView: BaseView {
             .sizeToFit()
     }
     
-    
     // MARK: - Setup
     
     override func setUpSubview() {
@@ -51,7 +48,6 @@ final class LaunchView: BaseView {
         addSubview(versionLabel)
     }
 }
-
 
 // MARK: - Constant
 

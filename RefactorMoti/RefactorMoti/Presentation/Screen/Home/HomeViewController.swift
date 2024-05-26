@@ -17,14 +17,12 @@ final class HomeViewController: LayoutViewController<HomeView> {
     private var output: HomeViewModel.Output { viewModel.output }
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         input.viewDidLoad.send()
     }
-    
     
     // MARK: - Setup
     
@@ -41,7 +39,6 @@ final class HomeViewController: LayoutViewController<HomeView> {
         setUpUIControlBinding()
     }
 }
-
 
 // MARK: - Binding ViewModel
 
@@ -66,7 +63,6 @@ private extension HomeViewController {
             .store(in: &cancellables)
     }
 }
-
 
 // MARK: - ViewModel DataSource
 
@@ -106,7 +102,6 @@ private extension HomeViewController {
         )
     }
 }
-
 
 // MARK: - UICollectionViewDelegate
 

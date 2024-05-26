@@ -21,7 +21,6 @@ final class EditAchievementView: BaseView {
         doneButton.publisher(for: .touchUpInside)
     }
     
-    
     // MARK: - UI
     
     private let flexBox = UIView()
@@ -53,7 +52,6 @@ final class EditAchievementView: BaseView {
         return textView
     }()
     
-    
     // MARK: - Life Cycle
     
     override func layoutSubviews() {
@@ -61,7 +59,6 @@ final class EditAchievementView: BaseView {
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
     }
-    
     
     // MARK: - Setup
     
@@ -91,7 +88,6 @@ final class EditAchievementView: BaseView {
         }
     }
 }
-
 
 // MARK: - Constant
 

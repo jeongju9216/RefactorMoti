@@ -20,11 +20,9 @@ struct FetchCategoriesUseCase: FetchCategoriesUseCaseProtocol {
         try await repository.fetchCategories()
     }
     
-    
     // MARK: - Attribute
     
     private let repository: CategoryRepositoryProtocol
-    
     
     // MARK: - Initializer
     

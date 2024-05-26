@@ -16,7 +16,6 @@ extension UIControl {
         ControlEventPublisher(control: self, event: controlEvents)
     }
     
-    
     // MARK: - ControlEventSubscription
     
     class ControlEventSubscription<S: Subscriber>: Subscription where S.Input == Void {
@@ -45,7 +44,6 @@ extension UIControl {
             _ = subscriber?.receive(())
         }
     }
-    
     
     // MARK: - InteractionPublisher
     

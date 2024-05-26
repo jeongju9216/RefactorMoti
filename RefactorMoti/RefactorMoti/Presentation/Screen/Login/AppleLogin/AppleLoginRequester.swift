@@ -36,12 +36,10 @@ final class AppleLoginRequester: NSObject {
         controller.performRequests()
     }
     
-    
     // MARK: - Attribute
 
     private var window: UIWindow
     private var currentNonce: String?
-    
     
     // MARK: - Initializer
     
@@ -49,7 +47,6 @@ final class AppleLoginRequester: NSObject {
         self.window = window
     }
 }
-
 
 // MARK: - ASAuthorizationControllerDelegate
 
@@ -111,7 +108,6 @@ extension AppleLoginRequester: ASAuthorizationControllerDelegate {
     }
 }
 
-
 // MARK: - ASAuthorizationControllerPresentationContextProviding
 
 extension AppleLoginRequester: ASAuthorizationControllerPresentationContextProviding {
@@ -120,7 +116,6 @@ extension AppleLoginRequester: ASAuthorizationControllerPresentationContextProvi
         window
     }
 }
-
 
 // MARK: - Nonce
 

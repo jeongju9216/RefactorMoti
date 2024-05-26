@@ -15,7 +15,6 @@ struct FirebaseStorageStub: FirebaseStorageProtocol {
     var isExistUser: Bool = false
     var isAddedAchievementSuccess = true
     
-    
     // MARK: - Interface
     
     func configure() { }

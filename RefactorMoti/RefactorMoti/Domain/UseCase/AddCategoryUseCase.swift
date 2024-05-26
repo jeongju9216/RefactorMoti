@@ -20,11 +20,9 @@ struct AddCategoryUseCase: AddCategoryUseCaseProtocol {
         await repository.addCategory(name: categoryName)
     }
     
-    
     // MARK: - Attribute
     
     private let repository: CategoryRepositoryProtocol
-    
     
     // MARK: - Initializer
     

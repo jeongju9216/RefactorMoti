@@ -23,7 +23,6 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - Setup
     
     /// View의 Attribute 속성을 설정

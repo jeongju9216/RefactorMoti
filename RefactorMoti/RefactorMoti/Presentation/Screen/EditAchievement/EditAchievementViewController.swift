@@ -14,7 +14,6 @@ final class EditAchievementViewController: LayoutViewController<EditAchievementV
     
     private var cancellables: Set<AnyCancellable> = []
     
-    
     // MARK: - Setup
     
     override func setUpBinding() {

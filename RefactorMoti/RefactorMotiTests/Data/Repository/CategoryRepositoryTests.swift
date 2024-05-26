@@ -13,7 +13,6 @@ final class CategoryRepositoryTests: XCTestCase {
     private let defaultCategories = [CategoryItem(id: "0", name: "전체"), CategoryItem(id: "1", name: "미설정")]
     private let customCategory = CategoryItem(id: "2", name: "음식")
     
-    
     // MARK: - Fetch Categories
     
     func test_기본_카테고리만_있을_때_fetchCategories_수행에_성공하면_기본_category_리스트를_반환한다() async throws {

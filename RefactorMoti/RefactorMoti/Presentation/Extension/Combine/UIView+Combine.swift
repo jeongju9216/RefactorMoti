@@ -15,14 +15,12 @@ extension UIView {
     }
 }
 
-
 // MARK: - Publisher
 
 struct GesturePublisher: Publisher {
     
     typealias Output = GestureType
     typealias Failure = Never
-    
     
     // MARK: Interface
     
@@ -37,12 +35,10 @@ struct GesturePublisher: Publisher {
         subscriber.receive(subscription: subscription)
     }
     
-    
     // MARK: Attribute
     
     private let view: UIView
     private let gestureType: GestureType
-    
     
     // MARK: Initialization
     
@@ -51,7 +47,6 @@ struct GesturePublisher: Publisher {
         self.gestureType = gestureType
     }
 }
-
 
 // MARK: - Subscription
 
@@ -65,13 +60,11 @@ final class GestureSubscription<S: Subscriber>: Subscription where S.Input == Ge
         subscriber = nil
     }
     
-    
     // MARK: Attribute
     
     private var subscriber: S?
     private var gestureType: GestureType
     private var view: UIView
-    
     
     // MARK: - Initializer
     
@@ -93,7 +86,6 @@ final class GestureSubscription<S: Subscriber>: Subscription where S.Input == Ge
         _ = subscriber?.receive(gestureType)
     }
 }
-
 
 // MARK: - GestureType
 

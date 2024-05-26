@@ -20,11 +20,9 @@ struct CreateDefaultCategoriesUseCase: CreateDefaultCategoriesUseCaseProtocol {
         await repository.createDefaultCategories()
     }
     
-    
     // MARK: - Attribute
     
     private let repository: CategoryRepositoryProtocol
-    
     
     // MARK: - Initializer
     
