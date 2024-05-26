@@ -48,6 +48,7 @@ private extension CaptureViewController {
     
     func moveToEditAchievementViewController() {
         let viewController = EditAchievementViewController()
-        present(viewController, animated: true)
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: false)
     }
 }
