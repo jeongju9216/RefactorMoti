@@ -15,11 +15,14 @@ final class EditAchievementView: BaseView {
     // MARK: - UI
     
     private let flexBox = UIView()
-    private let closeButton: UIButton = {
+    private let cancelButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: Image.close)
-        configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
-        configuration.baseForegroundColor = JDColor.darkGray
+        configuration.title = Text.cancel
+        return UIButton(configuration: configuration)
+    }()
+    private let doneButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.title = Text.done
         return UIButton(configuration: configuration)
     }()
     private let titleTextField: UITextField = {
@@ -62,8 +65,9 @@ final class EditAchievementView: BaseView {
         super.setUpConstraint()
         flexBox.flex.define { flex in
             flex.addItem().direction(.row).define { flex in
+                flex.addItem(cancelButton)
                 flex.addItem().grow(1)
-                flex.addItem(closeButton).size(Size.systemButton)
+                flex.addItem(doneButton)
             }
             
             flex.addItem(titleTextField).horizontally(Metric.horizontalOffset)
@@ -89,16 +93,12 @@ private extension EditAchievementView {
         static let buttonPointSize = 21.0
         static let systemButton = CGSize(width: 44, height: 44)
         static let bodyTextViewHeight = 100.0
+        static let doneButton = CGSize(width: 180, height: 60)
     }
     
     enum Metric {
         
         static let horizontalOffset = 20.0
-    }
-    
-    enum Image {
-        
-        static let close = "xmark.circle"
     }
     
     enum Font {
@@ -108,6 +108,8 @@ private extension EditAchievementView {
     
     enum Text {
         
+        static let cancel = "취소"
+        static let done = "업로드"
         static let textFieldPlaceholder = "제목을 입력하세요."
         static let sampleBody = """
         친구는 세월의 도둑이다.
