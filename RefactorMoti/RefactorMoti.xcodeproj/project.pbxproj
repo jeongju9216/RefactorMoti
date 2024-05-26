@@ -97,6 +97,7 @@
 		9BA895E22BE875360080D400 /* AddCategoryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */; };
 		9BE3B4772C01D90B00E3F884 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */; };
 		9BE3B4792C01D91800E3F884 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B4782C01D91800E3F884 /* CaptureView.swift */; };
+		9BE3B47B2C02CBBC00E3F884 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B47A2C02CBBC00E3F884 /* CaptureButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		9BA895E12BE875360080D400 /* AddCategoryUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryUseCaseTests.swift; sourceTree = "<group>"; };
 		9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		9BE3B4782C01D91800E3F884 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		9BE3B47A2C02CBBC00E3F884 /* CaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -650,6 +652,7 @@
 			children = (
 				9BE3B4762C01D90B00E3F884 /* CaptureViewController.swift */,
 				9BE3B4782C01D91800E3F884 /* CaptureView.swift */,
+				9BE3B47A2C02CBBC00E3F884 /* CaptureButton.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				9B411CB32BDFC31F00A50B78 /* LoginViewModel.swift in Sources */,
 				9B45812C2BD52EB7002A32DC /* RefactorMoti.xcdatamodeld in Sources */,
 				9B4581222BD52EB7002A32DC /* AppDelegate.swift in Sources */,
+				9BE3B47B2C02CBBC00E3F884 /* CaptureButton.swift in Sources */,
 				9B95D9292BF0C006003BFDC3 /* UserRepositoryProtocol.swift in Sources */,
 				9BA8959D2BE38CDA0080D400 /* AchievementRepositoryProtocol.swift in Sources */,
 				9B95D92F2BF0C7CE003BFDC3 /* AutoLoginUseCase.swift in Sources */,
