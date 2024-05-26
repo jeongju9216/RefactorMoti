@@ -22,6 +22,11 @@ final class CaptureView: BaseView {
         configuration.baseForegroundColor = JDColor.darkGray
         return UIButton(configuration: configuration)
     }()
+    private let previewView: UIView = {
+        let view = UIView()
+        view.backgroundColor = JDColor.gray
+        return view
+    }()
     
     
     // MARK: - Life Cycle
@@ -30,6 +35,7 @@ final class CaptureView: BaseView {
         super.layoutSubviews()
         flexBox.pin.all(pin.safeArea)
         flexBox.flex.layout()
+        previewView.pin.hCenter().vCenter(-Size.close.height)
     }
     
     
@@ -43,9 +49,13 @@ final class CaptureView: BaseView {
     override func setUpConstraint() {
         super.setUpConstraint()
         flexBox.flex.define { flex in
-            flex.direction(.row).define { flex in
+            flex.addItem().direction(.row).define { flex in
                 flex.addItem().grow(1)
                 flex.addItem(closeButton).size(Size.close)
+            }
+            
+            flex.addItem().grow(1).define { flex in
+                flex.addItem(previewView).width(100%).aspectRatio(1)
             }
         }
     }
