@@ -9,6 +9,7 @@ import UIKit
 import FlexLayout
 import PinLayout
 import JeongDesignSystem
+import Then
 
 final class CaptureView: BaseView {
     
@@ -24,33 +25,31 @@ final class CaptureView: BaseView {
     // MARK: - UI
     
     private let flexBox = UIView()
-    private let closeButton: UIButton = {
+    private let closeButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
         configuration.image = UIImage(systemName: Image.close)
         configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
         configuration.baseForegroundColor = JDColor.darkGray
-        return UIButton(configuration: configuration)
-    }()
-    private let previewView: UIView = {
-        let view = UIView()
-        view.backgroundColor = JDColor.gray
-        return view
-    }()
-    private let albumButton: UIButton = {
+        $0.configuration = configuration
+    }
+    private let previewView = UIView().then {
+        $0.backgroundColor = JDColor.gray
+    }
+    private let albumButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
         configuration.image = UIImage(systemName: Image.album)
         configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
         configuration.baseForegroundColor = JDColor.darkGray
-        return UIButton(configuration: configuration)
-    }()
+        $0.configuration = configuration
+    }
     private let captureButton = CaptureButton()
-    private let cameraSwitchingButton: UIButton = {
+    private let cameraSwitchingButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
         configuration.image = UIImage(systemName: Image.cameraSwitching)
         configuration.preferredSymbolConfigurationForImage = .init(pointSize: Size.buttonPointSize, weight: .bold)
         configuration.baseForegroundColor = JDColor.darkGray
-        return UIButton(configuration: configuration)
-    }()
+        $0.configuration = configuration
+    }
     
     // MARK: - Life Cycle
     
