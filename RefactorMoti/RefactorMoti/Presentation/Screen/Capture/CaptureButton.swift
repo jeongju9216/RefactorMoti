@@ -8,18 +8,17 @@
 import UIKit
 import JeongDesignSystem
 import PinLayout
+import Then
 
 final class CaptureButton: UIButton {
 
     // MARK: - UI
     
-    private let circleView: UIView = {
-        let view = UIView()
-        view.isUserInteractionEnabled = false
-        view.backgroundColor = Color.button
-        view.layer.cornerRadius = Metric.smallSize.width / 2
-        return view
-    }()
+    private let circleView = UIView().then {
+        $0.isUserInteractionEnabled = false
+        $0.backgroundColor = Color.button
+        $0.layer.cornerRadius = Metric.smallSize.width / 2
+    }
     
     // MARK: - Initializer
     
