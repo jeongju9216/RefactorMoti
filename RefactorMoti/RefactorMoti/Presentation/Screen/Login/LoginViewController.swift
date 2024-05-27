@@ -19,15 +19,9 @@ final class LoginViewController: LayoutViewController<LoginView> {
     private var cancellables: Set<AnyCancellable> = []
     
     // Apple Login
-    private lazy var appleLoginRequester: AppleLoginRequester? = {
-        guard let window = view.window else {
-            return nil
-        }
-        
-        let appleLoginRequester = AppleLoginRequester(window: window)
-        appleLoginRequester.delegate = self
-        return appleLoginRequester
-    }()
+    private lazy var appleLoginRequester = AppleLoginRequester(viewController: self).then {
+        $0.delegate = self
+    }
     
     // MARK: - Setup
     
@@ -42,7 +36,7 @@ final class LoginViewController: LayoutViewController<LoginView> {
             .receive(on: RunLoop.main)
             .sink { [weak self] in
                 guard let self else { return }
-                appleLoginRequester?.request()
+                appleLoginRequester.request()
             }
             .store(in: &cancellables)
     }
