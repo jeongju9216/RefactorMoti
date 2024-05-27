@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 import PinLayout
 
 final class LaunchView: BaseView {
@@ -19,16 +20,12 @@ final class LaunchView: BaseView {
     
     // MARK: - UI
     
-    private let motiIconImageView: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(resource: .appIconRound)
-        return view
-    }()
-    private let versionLabel: UILabel = {
-        let label = UILabel()
-        label.text = Text.waitingVersion
-        return label
-    }()
+    private let motiIconImageView = UIImageView().then {
+        $0.image = UIImage(resource: .appIconRound)
+    }
+    private let versionLabel = UILabel().then {
+        $0.text = Text.waitingVersion
+    }
     
     // MARK: - Life Cycle
     
