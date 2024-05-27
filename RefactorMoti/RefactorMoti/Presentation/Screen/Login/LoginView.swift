@@ -20,11 +20,9 @@ final class LoginView: BaseView {
     
     // MARK: - UI
     
-    private let motiIconImageView: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(resource: .appIconRound)
-        return view
-    }()
+    private let motiIconImageView = UIImageView().then {
+        $0.image = UIImage(resource: .appIconRound)
+    }
     private let loginButton = ASAuthorizationAppleIDButton(type: .default, style: .whiteOutline)
     
     // MARK: - Life Cycle
