@@ -38,13 +38,13 @@ final class AppleLoginRequester: NSObject {
     
     // MARK: - Attribute
 
-    private var window: UIWindow
+    private let window: UIWindow?
     private var currentNonce: String?
     
     // MARK: - Initializer
     
-    init(window: UIWindow) {
-        self.window = window
+    init(viewController: UIViewController) {
+        self.window = viewController.view.window
     }
 }
 
@@ -113,7 +113,7 @@ extension AppleLoginRequester: ASAuthorizationControllerDelegate {
 extension AppleLoginRequester: ASAuthorizationControllerPresentationContextProviding {
 
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        window
+        window ?? .init()
     }
 }
 

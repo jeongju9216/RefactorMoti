@@ -26,12 +26,10 @@ final class AchievementCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI
     
-    private let imageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.jd.cornerRadius(.small)
-        return imageView
-    }()
+    private let imageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+        $0.jd.cornerRadius(.small)
+    }
     
     // MARK: - Initializer
     

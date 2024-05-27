@@ -25,25 +25,19 @@ final class HomeView: BaseView {
     // MARK: - UI
     
     private let flexBox = UIView()
-    private(set) lazy var categoriesCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout())
-        collectionView.alwaysBounceVertical = false
-        collectionView.alwaysBounceHorizontal = true
-        collectionView.register(CategoryCollectionViewCell.self)
-        return collectionView
-    }()
-    private(set) lazy var achievementCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeAchievementCompositionalLayout())
-        collectionView.register(AchievementCollectionViewCell.self)
-        return collectionView
-    }()
-    private let addCategoryButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = Color.AddCategoryButton.background
-        button.setTitle(Text.AddCategoryButton.title, for: .normal)
-        button.jd.cornerRadius(.small)
-        return button
-    }()
+    private(set) lazy var categoriesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCategoriesCompositionalLayout()).then {
+        $0.alwaysBounceVertical = false
+        $0.alwaysBounceHorizontal = true
+        $0.register(CategoryCollectionViewCell.self)
+    }
+    private(set) lazy var achievementCollectionView = UICollectionView(frame: .zero, collectionViewLayout: makeAchievementCompositionalLayout()).then {
+        $0.register(AchievementCollectionViewCell.self)
+    }
+    private let addCategoryButton = UIButton().then {
+        $0.backgroundColor = Color.AddCategoryButton.background
+        $0.setTitle(Text.AddCategoryButton.title, for: .normal)
+        $0.jd.cornerRadius(.small)
+    }
     
     // MARK: - Life Cycle
     

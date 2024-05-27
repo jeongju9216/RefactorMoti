@@ -29,12 +29,10 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI
     
-    private let label: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textAlignment = .center
-        return label
-    }()
+    private let label = UILabel().then {
+        $0.numberOfLines = 1
+        $0.textAlignment = .center
+    }
     
     // MARK: - Initializer
     
