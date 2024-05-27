@@ -24,33 +24,27 @@ final class EditAchievementView: BaseView {
     // MARK: - UI
     
     private let flexBox = UIView()
-    private let cancelButton: UIButton = {
+    private let cancelButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
         configuration.title = Text.cancel
-        return UIButton(configuration: configuration)
-    }()
-    private let doneButton: UIButton = {
+        $0.configuration = configuration
+    }
+    private let doneButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
         configuration.title = Text.done
-        return UIButton(configuration: configuration)
-    }()
-    private let titleTextField: UITextField = {
-        let textField = UITextField()
-        textField.font = Font.textField
-        textField.placeholder = Text.textFieldPlaceholder
-        textField.returnKeyType = .done
-        return textField
-    }()
-    private let previewView: UIView = {
-        let view = UIView()
-        view.backgroundColor = JDColor.gray
-        return view
-    }()
-    private let bodyTextView: UITextView = {
-        let textView = UITextView()
-        textView.text = Text.sampleBody
-        return textView
-    }()
+        $0.configuration = configuration
+    }
+    private let titleTextField = UITextField().then {
+        $0.font = Font.textField
+        $0.placeholder = Text.textFieldPlaceholder
+        $0.returnKeyType = .done
+    }
+    private let previewView = UIView().then {
+        $0.backgroundColor = JDColor.gray
+    }
+    private let bodyTextView = UITextView().then {
+        $0.text = Text.sampleBody
+    }
     
     // MARK: - Life Cycle
     
